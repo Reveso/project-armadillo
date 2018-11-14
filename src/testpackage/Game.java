@@ -25,14 +25,15 @@ public class Game {
         while(endOfGame()) {
             move = player1.askForMove();
             board.setNewMove(move);
-            board.updateFreeCells();
+//            board.updateCells();
             move = player2.askForMove();
             board.setNewMove(move);
-            board.updateFreeCells();
+//            board.updateCells();
         }
     }
 
     private boolean endOfGame() {
         return false;
     }
+
 }
