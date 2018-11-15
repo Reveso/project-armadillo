@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="project-armadillo:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/project_armadillo_jar</output-path>
-    <root id="archive" name="project-armadillo.jar">
-      <element id="module-output" name="project-armadillo" />
-    </root>
-  </artifact>
-</component>

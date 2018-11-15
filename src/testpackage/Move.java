@@ -9,6 +9,10 @@ public class Move {
         this.point2 = point2;
     }
 
+    public Move(String moveAsString) {
+        //TODO
+    }
+
     public Point getPoint1() {
         return point1;
     }

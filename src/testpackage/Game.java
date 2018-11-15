@@ -23,10 +23,10 @@ public class Game {
 
     public void playGame() {
         while(endOfGame()) {
-            move = player1.askForMove();
+            move = player1.askForMove(board.getFreeCellsAsString());
             board.setNewMove(move);
 //            board.updateCells();
-            move = player2.askForMove();
+            move = player2.askForMove(board.getFreeCellsAsString());
             board.setNewMove(move);
 //            board.updateCells();
         }
@@ -35,5 +35,6 @@ public class Game {
     private boolean endOfGame() {
         return false;
     }
+
 
 }

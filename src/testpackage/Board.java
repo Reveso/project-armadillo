@@ -70,4 +70,9 @@ public class Board {
         } return false;
     }
 
+    public String getFreeCellsAsString(){
+        //TODO
+        return null;
+    }
+
 }
