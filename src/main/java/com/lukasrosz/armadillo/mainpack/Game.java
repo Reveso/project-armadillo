@@ -1,29 +1,23 @@
 package com.lukasrosz.armadillo.mainpack;
 
+import com.lukasrosz.armadillo.player.AbstractPlayer;
+
 public class Game {
 
-    private Player player1;
-    private Player player2;
+    private AbstractPlayer player1;
+    private AbstractPlayer player2;
     private Board board;
     private Move move;
 
-    public Game(Player player1, Player player2, Board board) {
+    public Game(AbstractPlayer player1, AbstractPlayer player2, Board board) {
         this.player1 = player1;
         this.player2 = player2;
         this.board = board;
     }
 
-    public Player getPlayer1() {
-        return player1;
-    }
-
-    public Player getPlayer2() {
-        return player2;
-    }
-
     public void playGame() {
         while(endOfGame()) {
-            move = player1.askForMove(board.getFreeCellsAsString());
+            move = player1.askForMove(board.getFreeCellsAsString()); //TODO If .askForMove return null player loses
             board.setNewMove(move);
 //            board.updateCells();
             move = player2.askForMove(board.getFreeCellsAsString());
