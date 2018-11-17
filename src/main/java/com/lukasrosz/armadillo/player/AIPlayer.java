@@ -1,12 +1,14 @@
 package com.lukasrosz.armadillo.player;
 
 import com.lukasrosz.armadillo.game.Move;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.val;
 
 import java.io.*;
 import java.util.concurrent.*;
 
-
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AIPlayer extends AbstractPlayer {
 
     private Process process;
@@ -15,10 +17,11 @@ public class AIPlayer extends AbstractPlayer {
         val processBuilder = new ProcessBuilder(command);
         processBuilder.directory(dir);
         try {
-            Process process = processBuilder.start();
+            process = processBuilder.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override

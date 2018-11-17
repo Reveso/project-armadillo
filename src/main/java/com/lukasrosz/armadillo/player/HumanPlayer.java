@@ -14,16 +14,20 @@ public class HumanPlayer extends AbstractPlayer {
         System.out.println(freeCells);
         System.out.println("Make a move");
         val scanner = new Scanner(System.in);
-        String move = scanner.nextLine();
+
+        boolean exit = false;
+        do {
+            String move = scanner.nextLine();
+//            if() { //TODO check if move is correct with parser or sth
+//                exit = true;
+//            }
+        } while(!exit);
         scanner.close();
-        //TODO Some String - Move Converter
-        //TODO As this is a human player, we can give
-        //TODO him infinitive or so chances to write a correct move
+
         return new Move();
     }
 
     @Override
     public void killPlayer() {
-        return;
     }
 }

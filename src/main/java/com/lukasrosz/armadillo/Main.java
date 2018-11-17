@@ -1,13 +1,16 @@
 package com.lukasrosz.armadillo;
 
-import java.io.*;
-import java.util.concurrent.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        //THIS IS USELESS, JUST FOR TESTS
-        //DON'T DELETE
+        //TODO Get user input on what game does he want
+        //TODO Create came by calling GameMaker.whatGamePlayerWantsStaticMethod()
+    }
+
+//    private void processCommunicationTestMethod() {
+//        THIS IS USELESS, JUST FOR TESTS
+//        DON'T DELETE
 //        String[] command = {"java", "-jar", "messenger.jar"};
 //        ProcessBuilder processBuilder = new ProcessBuilder(command);
 //        processBuilder.directory(new File("messenger"));
@@ -42,6 +45,5 @@ public class Main {
 //            e.printStackTrace();
 //        }
 //        System.out.println("End");
-
-    }
+//    }
 }

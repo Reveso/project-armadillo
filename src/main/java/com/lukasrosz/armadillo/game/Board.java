@@ -17,8 +17,6 @@ public class Board {
         }
     }
 
-
-
     public Board(int size) {
         this.size = size;
         board = new boolean[size][size];
