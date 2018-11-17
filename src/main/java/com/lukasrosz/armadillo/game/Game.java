@@ -11,7 +11,6 @@ public class Game {
     private Board board;
 
     public String playGame() {
-
         while(endOfGame()) {
             Move move = player1.askForMove(board.getFreeCellsAsString());
             if(move == null) {

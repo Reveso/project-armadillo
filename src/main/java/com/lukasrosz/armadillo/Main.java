@@ -1,11 +1,19 @@
 package com.lukasrosz.armadillo;
 
 
+import com.lukasrosz.armadillo.gamemaker.GameMaker;
+import com.lukasrosz.armadillo.player.AIPlayer;
+import com.lukasrosz.armadillo.player.AbstractPlayer;
+
+import java.io.File;
+
 public class Main {
 
     public static void main(String[] args) {
         //TODO Get user input on what game does he want
         //TODO Create came by calling GameMaker.whatGamePlayerWantsStaticMethod()
+        System.out.println(System.getProperty("user.dir"));
+        GameMaker.newBattleGame(new File(System.getProperty("user.dir")), 16);
     }
 
 //    private void processCommunicationTestMethod() {

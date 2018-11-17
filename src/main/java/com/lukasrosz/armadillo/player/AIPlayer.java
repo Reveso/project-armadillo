@@ -3,6 +3,7 @@ package com.lukasrosz.armadillo.player;
 import com.lukasrosz.armadillo.game.Move;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.val;
 
 import java.io.*;
@@ -11,21 +12,30 @@ import java.util.concurrent.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AIPlayer extends AbstractPlayer {
 
+    private ProcessBuilder processBuilder;
     private Process process;
+    private boolean activated = false;
 
-    public AIPlayer(File dir, String command) {
-        val processBuilder = new ProcessBuilder(command);
+    public AIPlayer(@NonNull File dir, @NonNull PlayerDetails playerDetails) {
+        this.playerDetails = playerDetails;
+        this.processBuilder = new ProcessBuilder(playerDetails.getAlias());
         processBuilder.directory(dir);
+    }
+
+    private boolean activatePlayer() {
         try {
             process = processBuilder.start();
+            activated = true;
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        return false;
     }
 
     @Override
     public Move askForMove(String freeCells) {
+        if(!activated) if(!activatePlayer()) return null;
         if(!sendMessageToProcess(freeCells)) return null;
         if(getMessageFromProcess() == null) return null;
 

@@ -1,13 +1,15 @@
 package com.lukasrosz.armadillo.player;
 
 import com.lukasrosz.armadillo.game.Move;
-import lombok.NoArgsConstructor;
 import lombok.val;
 
 import java.util.Scanner;
 
-@NoArgsConstructor
 public class HumanPlayer extends AbstractPlayer {
+
+    public HumanPlayer() {
+        playerDetails = new PlayerDetails("Hooman", "Homo", "Sapiens", "");
+    }
 
     @Override
     public Move askForMove(String freeCells) {
@@ -27,7 +29,4 @@ public class HumanPlayer extends AbstractPlayer {
         return new Move();
     }
 
-    @Override
-    public void killPlayer() {
-    }
 }
