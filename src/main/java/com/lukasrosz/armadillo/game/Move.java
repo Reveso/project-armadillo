@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo.mainpack;
+package com.lukasrosz.armadillo.game;
 
 public class Move {
     private Point point1;

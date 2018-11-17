@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo.mainpack;
+package com.lukasrosz.armadillo.player;
 
 import lombok.AllArgsConstructor;
 

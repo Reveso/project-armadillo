@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo.mainpack;
+package com.lukasrosz.armadillo;
 
 import com.sun.istack.internal.Nullable;
 import com.sun.jndi.toolkit.url.Uri;

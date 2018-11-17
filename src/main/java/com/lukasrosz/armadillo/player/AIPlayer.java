@@ -1,7 +1,6 @@
 package com.lukasrosz.armadillo.player;
 
-import com.lukasrosz.armadillo.mainpack.CallableReader;
-import com.lukasrosz.armadillo.mainpack.Move;
+import com.lukasrosz.armadillo.game.Move;
 import lombok.val;
 
 import java.io.*;

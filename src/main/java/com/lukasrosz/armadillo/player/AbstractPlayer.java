@@ -1,8 +1,6 @@
 package com.lukasrosz.armadillo.player;
 
-import com.lukasrosz.armadillo.mainpack.Move;
-
-import java.io.IOException;
+import com.lukasrosz.armadillo.game.Move;
 
 public abstract class AbstractPlayer {
 

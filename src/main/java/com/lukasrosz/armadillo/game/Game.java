@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo.mainpack;
+package com.lukasrosz.armadillo.game;
 
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 

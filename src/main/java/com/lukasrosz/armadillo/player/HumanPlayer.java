@@ -1,6 +1,6 @@
 package com.lukasrosz.armadillo.player;
 
-import com.lukasrosz.armadillo.mainpack.Move;
+import com.lukasrosz.armadillo.game.Move;
 import lombok.NoArgsConstructor;
 import lombok.val;
 

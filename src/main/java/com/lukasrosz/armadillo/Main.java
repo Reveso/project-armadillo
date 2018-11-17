@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo.mainpack;
+package com.lukasrosz.armadillo;
 
 import java.io.*;
 import java.util.concurrent.*;
