@@ -6,13 +6,19 @@ import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import lombok.AllArgsConstructor;
+import lombok.NonNull;
 
-@AllArgsConstructor
 public class Game {
 
     private AbstractPlayer player1;
     private AbstractPlayer player2;
     private Board board;
+
+    public Game(@NonNull AbstractPlayer player1, @NonNull AbstractPlayer player2, @NonNull Board board) {
+        this.player1 = player1;
+        this.player2 = player2;
+        this.board = board;
+    }
 
     public GameResult playGame() {
         GameResult gameResult = gameLoop();
