@@ -17,6 +17,7 @@ public class Game {
         GameResult gameResult;
         while(true) {
             //TODO board.getFreeCellsAsString() - if null -> player2 won
+            //TODO and getFreeCellsAsString should be coming from another converting class
             MoveResponse moveResponse = player1.askForMove(board.getFreeCellsAsString());
 
             if(moveResponse.getMove() == null) {
@@ -29,6 +30,7 @@ public class Game {
 //            board.updateCells();
 
             //TODO board.getFreeCellsAsString() - if null -> player1 won
+            //TODO and getFreeCellsAsString should be coming from another converting class
             moveResponse = player2.askForMove(board.getFreeCellsAsString());
             if(moveResponse.getMove() == null) {
                 gameResult = new GameResult(player2.getPlayerDetails(), player1.getPlayerDetails(),
@@ -39,11 +41,13 @@ public class Game {
             board.setNewMove(moveResponse.getMove());
 //            board.updateCells();
         }
+        finishGame();
         return gameResult;
     }
 
-    private boolean endOfGame() {
-        return false;
+    private void finishGame() {
+        player1.killPlayer();
+        player2.killPlayer();
     }
 
 

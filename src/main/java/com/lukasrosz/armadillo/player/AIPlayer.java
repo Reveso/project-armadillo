@@ -2,16 +2,12 @@ package com.lukasrosz.armadillo.player;
 
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
-import com.lukasrosz.armadillo.game.Move;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.val;
 
 import java.io.*;
 import java.util.concurrent.*;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AIPlayer extends AbstractPlayer {
 
     private ProcessBuilder processBuilder;
@@ -94,6 +90,7 @@ public class AIPlayer extends AbstractPlayer {
 
     @Override
     public void killPlayer() {
-        process.destroy();
+        if(process.isAlive())
+            process.destroy();
     }
 }
