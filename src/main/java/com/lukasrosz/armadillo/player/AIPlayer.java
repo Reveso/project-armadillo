@@ -21,6 +21,7 @@ public class AIPlayer extends AbstractPlayer {
     }
 
     private boolean activatePlayer() {
+        if(activated) return true;
         try {
             process = processBuilder.start();
             activated = true;
@@ -63,11 +64,11 @@ public class AIPlayer extends AbstractPlayer {
             } catch (TimeoutException e){
                 e.printStackTrace();
                 System.out.println("Too much time for a response"); //TODO This should be logged
-                process.destroy();
+                killPlayer();
                 moveResponse.setResponseType(ResponseType.TIMEOUT);
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
-                process.destroy();
+                killPlayer();
                 moveResponse.setResponseType(ResponseType.EXCEPTION);
             }
         } catch (IOException e) {
@@ -90,7 +91,9 @@ public class AIPlayer extends AbstractPlayer {
 
     @Override
     public void killPlayer() {
-        if(process.isAlive())
+        if(process.isAlive()) {
             process.destroy();
+            activated = false;
+        }
     }
 }
