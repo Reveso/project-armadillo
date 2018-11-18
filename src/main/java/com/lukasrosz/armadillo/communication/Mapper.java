@@ -16,8 +16,9 @@ public class Mapper {
         for (Point point : freeCells) {
             stringBuilder.append("{").append(point.getX()).append(";").append(point.getY()).append("}").append(",");
         }
-        stringBuilder.delete(stringBuilder.length() - 1,  stringBuilder.length() - 1);
-        stringBuilder.append("\n");
+//        stringBuilder.delete(stringBuilder.length() ,  stringBuilder.length());
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+//        stringBuilder.append("\n");
         return stringBuilder.toString();
     }
 

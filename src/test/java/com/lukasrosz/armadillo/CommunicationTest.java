@@ -3,6 +3,7 @@ package com.lukasrosz.armadillo;
 import com.lukasrosz.armadillo.communication.ProcessCommunicator;
 import lombok.val;
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeoutException;
 
 public class CommunicationTest {
 
-    @org.junit.Test(expected = TimeoutException.class)
+    @Test(expected = TimeoutException.class)
     public void processCommunicationTimeout() throws TimeoutException {
         File dir = new File("messenger");
         String[] command = {"java", "-jar", "messenger.jar"};
@@ -30,7 +31,7 @@ public class CommunicationTest {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void processCommunicationNormal() {
         File dir = new File("messenger");
         String[] command = {"java", "-jar", "messenger.jar"};
