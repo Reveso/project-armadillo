@@ -114,12 +114,39 @@ public class Board {
             return CellIsOccupied(x, size - 1);
         } else {
             return CellIsOccupied(x, y - 1);
+//            return CellIsOccupied(x, 0);
         }
     }
 
-    private boolean checkCellNeighboursIfOccupied(int x, int y) {
+    /*private boolean checkCellNeighboursIfOccupied(int x, int y) {
         return (checkIfBottomOccupied(x, y) && checkIfTopOccupied(x, y)
         && checkIfLeftOccupied(x, y) && checkIfRightOccupied(x, y));
+    }*/
+
+    private boolean checkCellNeighboursIfOccupied(int x, int y) {
+        return cellOccupied(convertToValidMove(new Point(x + 1, y)))
+                && cellOccupied(convertToValidMove(new Point(x - 1, y)))
+                && cellOccupied(convertToValidMove(new Point(x, y + 1)))
+                && cellOccupied(convertToValidMove(new Point(x, y - 1)));
+    }
+
+    private Point convertToValidMove(Point point) {
+        int x = point.getX();
+        int y = point.getY();
+
+        if (x >= size) {
+            x = 0;
+        }
+        if (y >= size) {
+            y = 0;
+        }
+        if (x < 0) {
+            x = size - 1;
+        }
+        if (y < 0) {
+            y = size - 1;
+        }
+        return new Point(x,y);
     }
 
     private boolean checkNeighbouringCellsIfOccupiedIfCellIsNotOnEdge(Point point) {
@@ -137,17 +164,36 @@ public class Board {
         }
     }
 
+    private boolean checkIfNeiNeighbours(Point p1, Point p2) {
+        if(Math.abs(p1.getX() - p2.getX()) == 1 && Math.abs(p1.getY() - p2.getY()) == 0 ||
+                Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == 1) {
+            return true;
+        } else return false;
+    }
+
     public boolean setNewMove(Move move) {
         if (occupiedCells.contains(move.getPoint1()) || occupiedCells.contains(move.getPoint2())) {
             return false;
         } else {
-            updateCells(move.getPoint1(), move.getPoint2());
-            return true;
+            if (checkIfNeiNeighbours(move.getPoint1(), move.getPoint2())) {
+                updateCells(move.getPoint1(), move.getPoint2());
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
     public boolean cellOccupied(int x, int y) {
         if (board[x][y] == false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean cellOccupied(Point point) {
+        if (board[point.getX()][point.getY()] == false) {
             return false;
         } else {
             return true;

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a85fdac5-6ed4-423d-be23-1eb4575a7828" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -131,13 +129,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="1" />
-          <entry key="java" value="3318" />
+          <entry key="java" value="3664" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="3318" />
+          <entry key="JAVA" value="3664" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -156,26 +154,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="199" column="38" selection-start-line="199" selection-start-column="38" selection-end-line="199" selection-end-column="38" />
+            <state relative-caret-position="514">
+              <caret line="181" column="29" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
               <folding>
-                <element signature="e#4824#4825#0" expanded="true" />
-                <element signature="e#4856#4857#0" expanded="true" />
-                <element signature="e#4901#4902#0" expanded="true" />
-                <element signature="e#4937#4938#0" expanded="true" />
+                <element signature="e#6053#6054#0" expanded="true" />
+                <element signature="e#6085#6086#0" expanded="true" />
+                <element signature="e#6130#6131#0" expanded="true" />
+                <element signature="e#6166#6167#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="205">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -599,8 +597,8 @@
         <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/MapperTestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/Mapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
       </list>
     </option>
   </component>
@@ -725,7 +723,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542572772584" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542574695531" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CURVE-FEVER" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -875,15 +873,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BoardTestSuite_boardTest - 2018.11.18 at 20h 48m 57s.xml">
-      <configuration name="BoardTestSuite.boardTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BoardTestSuite_boardTest - 2018.11.18 at 20h 49m 01s.xml">
-      <configuration name="BoardTestSuite.boardTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BoardTestSuite_boardTest - 2018.11.18 at 20h 51m 52s.xml">
-      <configuration name="BoardTestSuite.boardTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BoardTestSuite_boardTest - 2018.11.18 at 20h 52m 24s.xml">
       <configuration name="BoardTestSuite.boardTest" configurationId="JUnit" />
     </history-entry>
@@ -905,9 +894,18 @@
     <history-entry file="BoardTestSuite_move - 2018.11.18 at 21h 21m 49s.xml">
       <configuration name="BoardTestSuite.move" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BoardTestSuite_checkIfEndGame - 2018.11.18 at 21h 26m 03s.xml">
+      <configuration name="BoardTestSuite.checkIfEndGame" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTestSuite_checkIfEndGame - 2018.11.18 at 21h 38m 12s.xml">
+      <configuration name="BoardTestSuite.checkIfEndGame" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTestSuite_checkIfEndGame - 2018.11.18 at 21h 41m 23s.xml">
+      <configuration name="BoardTestSuite.checkIfEndGame" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53151000" />
+    <option name="totallyTimeSpent" value="55085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1177,25 +1175,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="199" column="38" selection-start-line="199" selection-start-column="38" selection-end-line="199" selection-end-column="38" />
+        <state relative-caret-position="205">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#4824#4825#0" expanded="true" />
-            <element signature="e#4856#4857#0" expanded="true" />
-            <element signature="e#4901#4902#0" expanded="true" />
-            <element signature="e#4937#4938#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="514">
+          <caret line="181" column="29" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#6053#6054#0" expanded="true" />
+            <element signature="e#6085#6086#0" expanded="true" />
+            <element signature="e#6130#6131#0" expanded="true" />
+            <element signature="e#6166#6167#0" expanded="true" />
           </folding>
         </state>
       </provider>
