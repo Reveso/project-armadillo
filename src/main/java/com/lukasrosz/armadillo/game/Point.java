@@ -1,7 +1,10 @@
 package com.lukasrosz.armadillo.game;
 
+import lombok.EqualsAndHashCode;
+
 import java.util.Random;
 
+@EqualsAndHashCode
 public class Point {
     private int x;
     private int y;

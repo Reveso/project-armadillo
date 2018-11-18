@@ -15,10 +15,10 @@ import static org.mockito.Mockito.when;
 public class MapperTestSuite {
     @Test
     public void getStringAsCellsTest() {
-        String test = new String("{2;1},{3;3}");
+        String test = "{2;1},{3;3}";
         List<Point> points = Mapper.getStringAsCells(test);
 //        System.out.println(points);
-        assertEquals("[Point{x=2, y=1}, Point{x=3, y=3}]", points.toString());
+        assertEquals("[Point{x=2, y=1}, Point{x=3, y=3}]", points);
     }
 
     @Test
@@ -30,9 +30,8 @@ public class MapperTestSuite {
         cells.add(new Point(2,1));
         cells.add(new Point(1,1));
         cells.add(new Point(7,1));
-        when(boardMock.getFreeCells()).thenReturn(cells);
 
-        String score = Mapper.getFreeCellsAsString(boardMock);
+        String score = Mapper.getFreeCellsAsString(cells);
         assertEquals("{3;1},{2;1},{1;1},{7;1}", score);
 
     }

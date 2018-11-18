@@ -1,5 +1,6 @@
 package com.lukasrosz.armadillo.game;
 
+import com.lukasrosz.armadillo.communication.Mapper;
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
@@ -18,7 +19,7 @@ public class Game {
         while(true) {
             //TODO board.getFreeCellsAsString() - if null -> player2 won
             //TODO and getFreeCellsAsString should be coming from another converting class
-            MoveResponse moveResponse = player1.askForMove(board.getFreeCellsAsString());
+            MoveResponse moveResponse = player1.askForMove(Mapper.getFreeCellsAsString(board.getFreeCells()));
 
             if(moveResponse.getMove() == null) {
                 gameResult = new GameResult(player2.getPlayerDetails(), player1.getPlayerDetails(),
@@ -31,7 +32,7 @@ public class Game {
 
             //TODO board.getFreeCellsAsString() - if null -> player1 won
             //TODO and getFreeCellsAsString should be coming from another converting class
-            moveResponse = player2.askForMove(board.getFreeCellsAsString());
+            moveResponse = player2.askForMove(Mapper.getFreeCellsAsString(board.getFreeCells()));
             if(moveResponse.getMove() == null) {
                 gameResult = new GameResult(player2.getPlayerDetails(), player1.getPlayerDetails(),
                         moveResponse.getResponseType().equals(ResponseType.TIMEOUT));

@@ -10,8 +10,7 @@ public class Mapper {
 
     private static final String STRING_MATCHER = "(\\{\\d;\\d\\})++(,\\{\\d;\\d\\})*";
 
-    public static String getFreeCellsAsString(Board board) {
-        List<Point> freeCells = board.getFreeCells();
+    public static String getFreeCellsAsString(List<Point> freeCells) {
         StringBuilder stringBuilder = new StringBuilder();
         for (Point point : freeCells) {
             stringBuilder.append("{").append(point.getX()).append(";").append(point.getY()).append("}").append(",");
@@ -37,7 +36,7 @@ public class Mapper {
     }
 
     public static void main(String[] args) {
-        String string = new String("{3;4},{8;5}");
+        String string = "{3;4},{8;5}";
         System.out.println(string.matches("(\\{\\d;\\d\\})++(,\\{\\d;\\d\\})*"));
     }
 }
