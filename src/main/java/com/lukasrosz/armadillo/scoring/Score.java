@@ -27,10 +27,10 @@ public class Score implements Comparable<Score>{
 
     @Override
     public int compareTo(Score o) {
-        if(o.getVictories() - this.getVictories() == 0) {
+        if(this.getVictories() - o.getVictories() == 0) {
             if(o.getDefeats() - this.getDefeats() == 0) {
                 return o.getDisqualifications() - this.getDisqualifications();
             } return o.getDefeats() - this.getDefeats();
-        } return o.getVictories() - this.getVictories();
+        } return this.getVictories() - o.getVictories();
     }
 }

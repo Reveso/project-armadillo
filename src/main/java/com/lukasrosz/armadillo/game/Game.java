@@ -15,41 +15,60 @@ public class Game {
     private Board board;
 
     public GameResult playGame() {
-        GameResult gameResult;
-        while(true) {
-            //TODO board.getFreeCellsAsString() - if null -> player2 won
-            //TODO and getFreeCellsAsString should be coming from another converting class
-            MoveResponse moveResponse = player1.askForMove(Mapper.getFreeCellsAsString(board.getFreeCells()));
-
-            if(moveResponse.getMove() == null) {
-                gameResult = new GameResult(player2.getPlayerDetails(), player1.getPlayerDetails(),
-                        moveResponse.getResponseType().equals(ResponseType.TIMEOUT));
-                break;
-            }
-
-            board.setNewMove(moveResponse.getMove());
-//            board.updateCells();
-
-            //TODO board.getFreeCellsAsString() - if null -> player1 won
-            //TODO and getFreeCellsAsString should be coming from another converting class
-            moveResponse = player2.askForMove(Mapper.getFreeCellsAsString(board.getFreeCells()));
-            if(moveResponse.getMove() == null) {
-                gameResult = new GameResult(player2.getPlayerDetails(), player1.getPlayerDetails(),
-                        moveResponse.getResponseType().equals(ResponseType.TIMEOUT));
-                break;
-            }
-
-            board.setNewMove(moveResponse.getMove());
-//            board.updateCells();
-        }
+        GameResult gameResult = gameLoop();
         finishGame();
         return gameResult;
+    }
+
+    private GameResult gameLoop() {
+        GameResult gameResult = null;
+        while (true) {
+            gameResult = checkIfEndGame(player2, player1);
+            if (gameResult != null) return gameResult;
+
+            MoveResponse moveResponse = player1.askForMove(Mapper.getPointsAsString(board.getFreeCells()));
+
+            gameResult = checkResponse(moveResponse, player2, player1);
+            if (gameResult != null) return gameResult;
+
+            gameResult = checkIfEndGame(player1, player2);
+            if (gameResult != null) return gameResult;
+
+            moveResponse = player2.askForMove(Mapper.getPointsAsString(board.getFreeCells()));
+
+            gameResult = checkResponse(moveResponse, player1, player2);
+            if (gameResult != null) return gameResult;
+        }
+    }
+
+    private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
+                                 AbstractPlayer potentialLoser) {
+        if (response.getMove() == null || !board.setNewMove(response.getMove())) {
+            return new GameResult(potentialWinner.getPlayerDetails(),
+                    potentialLoser.getPlayerDetails(),
+                    checkIfDisqualified(response.getResponseType()));
+        } else return null;
+    }
+
+    private GameResult checkIfEndGame(AbstractPlayer winner, AbstractPlayer loser) {
+        if(board.checkIfEndGame()) {
+            return new GameResult(winner.getPlayerDetails(),
+                    loser.getPlayerDetails(), false);
+        } else return null;
+    }
+
+    private boolean checkIfDisqualified(ResponseType responseType) {
+        if(responseType.equals(ResponseType.EXCEPTION) ||
+                responseType.equals(ResponseType.TIMEOUT)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void finishGame() {
         player1.killPlayer();
         player2.killPlayer();
     }
-
 
 }

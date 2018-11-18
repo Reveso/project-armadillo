@@ -1,13 +1,17 @@
 package com.lukasrosz.armadillo.player;
 
+import com.lukasrosz.armadillo.communication.Mapper;
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
+import com.lukasrosz.armadillo.game.Move;
+import com.lukasrosz.armadillo.game.Point;
 import lombok.val;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class HumanPlayer extends AbstractPlayer {
-    public static int count = 1;
+    private static int count = 1;
     public HumanPlayer() {
         playerDetails = new PlayerDetails("Hooman" + count++, "Homo", "Sapiens", "");
     }
@@ -19,16 +23,21 @@ public class HumanPlayer extends AbstractPlayer {
         val moveResponse = new MoveResponse();
         val scanner = new Scanner(System.in);
 
+        Move move = null;
         boolean exit = false;
         do {
-            String move = scanner.nextLine();
-//            if() { //TODO check if move is correct with parser or sth (and move should be logged)
-//                exit = true;
-//            }
+            String stringMove = scanner.nextLine();
+            List<Point> points = Mapper.getStringAsPoints(stringMove);
+            if(points != null && points.size() == 2) {
+                move = new Move(points.get(0), points.get(1)); //TODO this should be logged
+                exit = true;
+            }
+
         } while(!exit);
         scanner.close();
 
         moveResponse.setResponseType(ResponseType.NORMAL);
+        moveResponse.setMove(move);
         return moveResponse;
     }
 

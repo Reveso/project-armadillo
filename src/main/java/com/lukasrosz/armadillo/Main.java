@@ -1,6 +1,7 @@
 package com.lukasrosz.armadillo;
 
 import com.lukasrosz.armadillo.communication.ProcessCommunicator;
+import com.lukasrosz.armadillo.scoring.Score;
 import lombok.val;
 
 import java.io.*;
@@ -15,5 +16,4 @@ public class Main {
 //        val gameMaker = new GameMaker();
 //        gameMaker.newBattleGame(new File(System.getProperty("user.dir")), 16);
     }
-
 }

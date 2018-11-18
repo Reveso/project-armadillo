@@ -10,9 +10,9 @@ public class Mapper {
 
     private static final String STRING_MATCHER = "(\\{\\d;\\d\\})++(,\\{\\d;\\d\\})*";
 
-    public static String getFreeCellsAsString(List<Point> freeCells) {
+    public static String getPointsAsString(List<Point> points) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (Point point : freeCells) {
+        for (Point point : points) {
             stringBuilder.append("{").append(point.getX()).append(";").append(point.getY()).append("}").append(",");
         }
 //        stringBuilder.delete(stringBuilder.length() ,  stringBuilder.length());
@@ -21,22 +21,17 @@ public class Mapper {
         return stringBuilder.toString();
     }
 
-    public static List<Point> getStringAsCells(String string) {
-        if (!string.matches(STRING_MATCHER)) {
+    public static List<Point> getStringAsPoints(String stringPoints) {
+        if (!stringPoints.matches(STRING_MATCHER)) {
             System.err.println("something is wrong in string received");
             return null;
         } else {
-            List<Point> cells = new ArrayList<>();
-            String[] strings = string.split(",");
+            List<Point> points = new ArrayList<>();
+            String[] strings = stringPoints.split(",");
             for (String s: strings) {
-                cells.add(new Point(Integer.parseInt(String.valueOf(s.charAt(1))), Integer.parseInt(String.valueOf(s.charAt(3)))));
+                points.add(new Point(Integer.parseInt(String.valueOf(s.charAt(1))), Integer.parseInt(String.valueOf(s.charAt(3)))));
             }
-            return cells;
+            return points;
         }
-    }
-
-    public static void main(String[] args) {
-        String string = "{3;4},{8;5}";
-        System.out.println(string.matches("(\\{\\d;\\d\\})++(,\\{\\d;\\d\\})*"));
     }
 }

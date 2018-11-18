@@ -164,7 +164,7 @@ public class Board {
         }
     }
 
-    private boolean checkIfNeiNeighbours(Point p1, Point p2) {
+    private boolean checkIfNeighbours(Point p1, Point p2) {
         if(Math.abs(p1.getX() - p2.getX()) == 1 && Math.abs(p1.getY() - p2.getY()) == 0 ||
                 Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == 1) {
             return true;
@@ -175,7 +175,7 @@ public class Board {
         if (occupiedCells.contains(move.getPoint1()) || occupiedCells.contains(move.getPoint2())) {
             return false;
         } else {
-            if (checkIfNeiNeighbours(move.getPoint1(), move.getPoint2())) {
+            if (checkIfNeighbours(move.getPoint1(), move.getPoint2())) {
                 updateCells(move.getPoint1(), move.getPoint2());
                 return true;
             } else {
@@ -221,7 +221,7 @@ public class Board {
             return true;
         } else {
             for (Point point: freeCells) {
-                if( checkCellNeighboursIfOccupied(point.getX(), point.getY()) == false) {
+                if(!checkCellNeighboursIfOccupied(point.getX(), point.getY())) {
                     return false;
                 }
             }

@@ -1,45 +1,22 @@
 package com.lukasrosz.armadillo.game;
 
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Random;
 
 @EqualsAndHashCode
+@AllArgsConstructor
 public class Point {
+    @Getter @Setter
     private int x;
+    @Getter @Setter
     private int y;
-
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
 
     public static Point generatePoint(int minIndex, int maxIndex) {
         Random random = new Random();
         return new Point(random.nextInt(maxIndex - minIndex + 1) + minIndex, random.nextInt(maxIndex - minIndex + 1) + minIndex);
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "Point{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
     }
 }
