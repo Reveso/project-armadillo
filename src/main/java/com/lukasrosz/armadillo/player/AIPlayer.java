@@ -1,5 +1,7 @@
 package com.lukasrosz.armadillo.player;
 
+import com.lukasrosz.armadillo.communication.MoveResponse;
+import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.game.Move;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -34,16 +36,27 @@ public class AIPlayer extends AbstractPlayer {
     }
 
     @Override
-    public Move askForMove(String freeCells) {
-        if(!activated) if(!activatePlayer()) return null;
-        if(!sendMessageToProcess(freeCells)) return null;
-        if(getMessageFromProcess() == null) return null;
+    public MoveResponse askForMove(String freeCells) {
+        val moveResponse = new MoveResponse();
+        if(!activated) if(!activatePlayer()) {
+            moveResponse.setResponseType(ResponseType.EXCEPTION);
+            return moveResponse;
+        }
+        if(!sendMessageToProcess(freeCells)) {
+            moveResponse.setResponseType(ResponseType.EXCEPTION);
+            return moveResponse;
+        }
+        if(getMessageFromProcess(moveResponse) == null) {
+            return moveResponse;
+        }
 
-        //TODO Some String - Move Converter
-        return new Move();
+        //TODO Some String - Move Converter, EXCEPTION response if parse fails
+        //TODO and moveResponse.setMove(move) also here
+        moveResponse.setResponseType(ResponseType.NORMAL);
+        return moveResponse;
     }
 
-    private String getMessageFromProcess() {
+    private String getMessageFromProcess(MoveResponse moveResponse) {
         String move = null;
         try(val reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             ExecutorService executor = Executors.newCachedThreadPool();
@@ -55,12 +68,15 @@ public class AIPlayer extends AbstractPlayer {
                 e.printStackTrace();
                 System.out.println("Too much time for a response"); //TODO This should be logged
                 process.destroy();
+                moveResponse.setResponseType(ResponseType.TIMEOUT);
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
                 process.destroy();
+                moveResponse.setResponseType(ResponseType.EXCEPTION);
             }
         } catch (IOException e) {
             e.printStackTrace();
+            moveResponse.setResponseType(ResponseType.EXCEPTION);
         }
         return move;
     }
