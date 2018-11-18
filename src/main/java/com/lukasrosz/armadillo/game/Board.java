@@ -194,5 +194,16 @@ public class Board {
         return stringBuilder.toString();
     }
 
+    public void setFullBoard() {
+
+        occupiedCells = new ArrayList<>();
+        freeCells = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                board[i][j] = true;
+                occupiedCells.add(new Point(i,j));
+            }
+        }
+    }
 
 }
