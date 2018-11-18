@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo;
+package com.lukasrosz.armadillo.communication;
 
 import com.lukasrosz.armadillo.communication.Mapper;
 import com.lukasrosz.armadillo.game.Board;
