@@ -165,14 +165,6 @@ public class Board {
         }
     }
 
-    public String getFreeCellsAsString() {
-        //TODO
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Point point : freeCells) {
-            stringBuilder.append("{").append(point.getX()).append(";").append(point.getY()).append("}").append(",");
-        }
-        stringBuilder.delete(stringBuilder.length() - 1,  stringBuilder.length() - 1);
-        return stringBuilder.toString();
-    }
+
 
 }
