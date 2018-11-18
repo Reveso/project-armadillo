@@ -1,14 +1,22 @@
 package com.lukasrosz.armadillo.game;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Board {
 
+//    in board true means its occupied
     private boolean[][] board;
     private int size;
     private List<Point> freeCells;
     private List<Point> occupiedCells;
+    private boolean oddSize;
+
+    private enum LimesValues {
+        TOP_SIDE, BOTTOM_SIDE, RIGHT_SIDE, LEFT_SIDE, Unexceptable;
+    }
+
     public void init() {
         for(int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -22,6 +30,93 @@ public class Board {
         board = new boolean[size][size];
         freeCells = new ArrayList<>();
         init();
+    }
+
+    private void ifSizeIsOddFlag() {
+        if (size % 2 == 1)
+            oddSize = true;
+    }
+
+    private boolean isOnEdge(Point point) {
+        if (point.getX() == 0 || point.getX() == size - 1 ||
+                point.getY() == 0 || point.getY() == size - 1) {
+            return  true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean CellIsOccupied(int x, int y) {
+        if (board[x][y] == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private LimesValues checkLimesOnCell(int x, int y) {
+        if (x == size - 1) {
+            return LimesValues.RIGHT_SIDE;
+        } else if (x == 0) {
+            return LimesValues.LEFT_SIDE;
+        } else if (y == size - 1) {
+            return LimesValues.TOP_SIDE;
+        } else if (y == 0) {
+            return LimesValues.BOTTOM_SIDE;
+        }
+        return LimesValues.Unexceptable;
+    }
+
+    private boolean checkIfRightOccupied(int x, int y) {
+        if (checkLimesOnCell(x, y).equals(LimesValues.RIGHT_SIDE)) {
+            return CellIsOccupied(0, y);
+        } else {
+            return CellIsOccupied(x + 1, y);
+        }
+    }
+
+    private boolean checkIfLeftOccupied(int x, int y) {
+        if (checkLimesOnCell(x, y).equals(LimesValues.LEFT_SIDE)) {
+            return CellIsOccupied(size - 1, y);
+        } else {
+            return CellIsOccupied(x - 1, y);
+        }
+    }
+
+    private boolean checkIfTopOccupied(int x, int y) {
+        if (checkLimesOnCell(x, y).equals(LimesValues.TOP_SIDE)) {
+            return CellIsOccupied(x, 0);
+        } else {
+            return CellIsOccupied(x, y + 1);
+        }
+    }
+
+    private boolean checkIfBottomOccupied(int x, int y) {
+        if (checkLimesOnCell(x, y).equals(LimesValues.BOTTOM_SIDE)) {
+            return CellIsOccupied(x, size - 1);
+        } else {
+            return CellIsOccupied(x, y - 1);
+        }
+    }
+
+    private boolean checkCellNeighboursIfOccupied(int x, int y) {
+        return (checkIfBottomOccupied(x, y) && checkIfTopOccupied(x, y)
+        && checkIfLeftOccupied(x, y) && checkIfRightOccupied(x, y));
+    }
+
+    private boolean checkNeighbouringCellsIfOccupiedIfCellIsNotOnEdge(Point point) {
+        int x = point.getX();
+        int y = point.getY();
+        return (CellIsOccupied(x, y - 1) && CellIsOccupied(x, y + 1)
+                && CellIsOccupied(x - 1, y) && CellIsOccupied(x + 1, y));
+    }
+
+    private boolean checkIfOutOfRange(int x, int y) {
+        if (x < 0 || x > size -1 || y < 0 || y > size -1 ) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean setNewMove(Move move) {
@@ -58,19 +153,26 @@ public class Board {
     }
 
     public boolean checkIfEndGame() {
-        for (int i = 0; i < freeCells.size() - 1; i++) {
-            for ( int j = i + 1; j < freeCells.size(); j++) {
-                if (Math.abs(freeCells.get(i).getX() - freeCells.get(j).getX()) <= 1
-                || Math.abs(freeCells.get(i).getY() - freeCells.get(j).getY()) <= 1) {
-                    return true;
+        if (freeCells == null) {
+            return true;
+        } else {
+            for (Point point: freeCells) {
+                if( checkCellNeighboursIfOccupied(point.getX(), point.getY()) == false) {
+                    return false;
                 }
             }
-        } return false;
+            return true;
+        }
     }
 
-    public String getFreeCellsAsString(){
+    public String getFreeCellsAsString() {
         //TODO
-        return null;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Point point : freeCells) {
+            stringBuilder.append("{").append(point.getX()).append(";").append(point.getY()).append("}").append(",");
+        }
+        stringBuilder.delete(stringBuilder.length() - 1,  stringBuilder.length() - 1);
+        return stringBuilder.toString();
     }
 
 }
