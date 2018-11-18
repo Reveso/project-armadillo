@@ -14,8 +14,9 @@ public class Board {
     private boolean oddSize;
 
     private enum LimesValues {
-        TOP_SIDE, BOTTOM_SIDE, RIGHT_SIDE, LEFT_SIDE, Unexceptable;
+        TOP_SIDE, BOTTOM_SIDE, RIGHT_SIDE, LEFT_SIDE, Unexceptable ;
     }
+//    UNEXCEPTABLE
 
     public void init() {
         for(int i = 0; i < size; i++) {
@@ -23,12 +24,29 @@ public class Board {
                 freeCells.add(new Point(i,j));
             }
         }
+        generateRandomPoints();
     }
 
-    public Board(int size) {
+    private void generateRandomPoints() {
+        int pointsToGenerate = (int) (size * size * 0.1);
+        while (pointsToGenerate > 0) {
+            Point randomPoint = Point.generatePoint(0, size - 1);
+            if (freeCells.contains(randomPoint)) {
+                freeCells.remove(randomPoint);
+                pointsToGenerate--;
+                if (!occupiedCells.contains(randomPoint)) {
+                    occupiedCells.add(randomPoint);
+                }
+            }
+        }
+    }
+
+    public Board(int size) /*throws Exception */{
+        /*if (size % 2 == 0 || size < 13 || size > 51) throw new Exception("not good number");*/
         this.size = size;
         board = new boolean[size][size];
         freeCells = new ArrayList<>();
+        occupiedCells = new ArrayList<>();
         init();
     }
 
@@ -165,6 +183,16 @@ public class Board {
         }
     }
 
+    public String getFreeCellsAsString() {
+        List<Point> freeCells = getFreeCells();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Point point : freeCells) {
+            stringBuilder.append("{").append(point.getX()).append(";").append(point.getY()).append("}").append(",");
+        }
+        stringBuilder.delete(stringBuilder.length() - 1,  stringBuilder.length() - 1);
+        stringBuilder.append("\n");
+        return stringBuilder.toString();
+    }
 
 
 }

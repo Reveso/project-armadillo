@@ -11,7 +11,7 @@ public class Point {
         this.y = y;
     }
 
-    public Point generatePoint(int minIndex, int maxIndex) {
+    public static Point generatePoint(int minIndex, int maxIndex) {
         Random random = new Random();
         return new Point(random.nextInt(maxIndex - minIndex + 1) + minIndex, random.nextInt(maxIndex - minIndex + 1) + minIndex);
     }
