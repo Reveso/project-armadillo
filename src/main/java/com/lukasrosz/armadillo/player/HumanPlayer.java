@@ -2,15 +2,14 @@ package com.lukasrosz.armadillo.player;
 
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
-import com.lukasrosz.armadillo.game.Move;
 import lombok.val;
 
 import java.util.Scanner;
 
 public class HumanPlayer extends AbstractPlayer {
-
+    public static int count = 1;
     public HumanPlayer() {
-        playerDetails = new PlayerDetails("Hooman", "Homo", "Sapiens", "");
+        playerDetails = new PlayerDetails("Hooman" + count++, "Homo", "Sapiens", "");
     }
 
     @Override
