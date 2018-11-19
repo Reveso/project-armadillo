@@ -16,7 +16,10 @@ public class MapperTestSuite {
         String test = "{2;1},{3;3}";
         List<Point> points = Mapper.getStringAsPoints(test);
 //        System.out.println(points);
-        assertEquals("[Point{x=2, y=1}, Point{x=3, y=3}]", points);
+        List<Point> asserPoints = new ArrayList<>();
+        asserPoints.add(new Point(2, 1));
+        asserPoints.add(new Point(3, 3));
+        assertEquals(asserPoints, points);
     }
 
     @Test

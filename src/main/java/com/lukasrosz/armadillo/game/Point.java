@@ -1,14 +1,12 @@
 package com.lukasrosz.armadillo.game;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Random;
 
 @EqualsAndHashCode
 @AllArgsConstructor
+@ToString
 public class Point {
     @Getter @Setter
     private int x;
