@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ScrollPane?>
+<BorderPane fx:id="borderPane"
+            onKeyReleased="#onBorderPaneKeyReleased"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lukasrosz.armadillo.controller.MainWindowController">
+
+    <top>
+        <HBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets bottom="10" top="10"/>
+            </padding>
+            <Label fx:id="maxNumberLabel" text="Set max number of players"/>
+            <TextField fx:id="maxPlayerNumberTextField" prefHeight="25.0" prefWidth="40.0" text="2" alignment="CENTER"
+                       onKeyPressed="#onMaxPlayerNumberTextFieldKeyPressed"/>
+            <Button fx:id="maxNumberOkButton" onAction="#onMaxPlayerNumberButtonMouseClicked"
+                    onKeyPressed="#onMaxPlayerNumberKeyPressed" text="OK"/>
+            <ComboBox fx:id="languageComboBox" onHidden="#onLanguageComboBoxHidden"
+                      onKeyPressed="#onLanguageComboBoxKeyPressed">
+                <items>
+                    <FXCollections fx:id="languageComboList" fx:factory="observableArrayList"/>
+                </items>
+            </ComboBox>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane hbarPolicy="NEVER">
+            <padding>
+                <Insets bottom="10" top="10"/>
+            </padding>
+            <GridPane fx:id="gridPaneOne" alignment="CENTER" hgap="10" vgap="10"/>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" spacing="10">
+            <padding>
+                <Insets bottom="10" right="10" top="10"/>
+            </padding>
+            <Button fx:id="okayButton" disable="true" onAction="#onOkayClicked" onKeyPressed="#onOkayKeyPressed"
+                    prefWidth="90" text="Okay"/>
+            <Button fx:id="clearButton" disable="true" onMouseClicked="#onClearClicked" prefWidth="90" text="Clear"/>
+            <Button fx:id="exitButton" onMouseClicked="#onExitClicked" prefWidth="90" text="Exit"/>
+        </HBox>
+    </bottom>
+</BorderPane>
