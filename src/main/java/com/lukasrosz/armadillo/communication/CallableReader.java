@@ -1,4 +1,4 @@
-package com.lukasrosz.armadillo.player;
+package com.lukasrosz.armadillo.communication;
 
 import lombok.AllArgsConstructor;
 import lombok.val;
@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.concurrent.Callable;
 
 @AllArgsConstructor
+@Deprecated
 public class CallableReader implements Callable<String> {
 
     private BufferedReader reader;

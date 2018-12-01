@@ -1,6 +1,5 @@
 package com.lukasrosz.armadillo.communication;
 
-import com.lukasrosz.armadillo.player.CallableReader;
 import lombok.Getter;
 import lombok.NonNull;
 
@@ -40,7 +39,9 @@ public class ProcessCommunicator {
         String move = null;
 
         executor = Executors.newCachedThreadPool();
-        Future<String> futureCall = executor.submit(new CallableReader(reader));
+
+//        Future<String> futureCall = executor.submit(new CallableReader(reader));
+        Future<String> futureCall = executor.submit(() -> reader.readLine());
 
         move = futureCall.get(500, TimeUnit.MILLISECONDS);
         executor.shutdownNow();

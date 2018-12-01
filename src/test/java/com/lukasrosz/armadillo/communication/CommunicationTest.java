@@ -13,26 +13,20 @@ import java.util.concurrent.TimeoutException;
 public class CommunicationTest {
 
     @Test(expected = TimeoutException.class)
-    public void processCommunicationTimeout() throws TimeoutException {
+    public void processCommunicationTimeout() throws Exception {
         File dir = new File("messenger");
         String[] command = {"java", "-jar", "messenger.jar"};
 
         val processCommunicator = new ProcessCommunicator(dir, command);
         processCommunicator.startProcess();
-        try {
-            processCommunicator.sendMessageToProcess("timeout");
-            processCommunicator.getMessageFromProcess();
-        } catch (TimeoutException e) {
-            throw e;
-        } catch (InterruptedException | ExecutionException | IOException e){
-            e.printStackTrace();
-        } finally {
-            processCommunicator.killProcess();
-        }
+
+        processCommunicator.sendMessageToProcess("timeout");
+        processCommunicator.getMessageFromProcess();
+
     }
 
     @Test
-    public void processCommunicationNormal() {
+    public void processCommunicationNormal() throws Exception {
         File dir = new File("messenger");
         String[] command = {"java", "-jar", "messenger.jar"};
 
@@ -40,14 +34,10 @@ public class CommunicationTest {
         processCommunicator.startProcess();
         String result = "";
         String message = "move (1;0),(2;0)";
-        try {
-            processCommunicator.sendMessageToProcess(message);
-            result = processCommunicator.getMessageFromProcess();
-        } catch (TimeoutException | InterruptedException | ExecutionException | IOException e) {
-            e.printStackTrace();
-        } finally {
-            processCommunicator.killProcess();
-        }
+
+        processCommunicator.sendMessageToProcess(message);
+        result = processCommunicator.getMessageFromProcess();
+
         Assert.assertEquals(message.split(" ")[1]
                 .replaceAll("[(]", "{")
                 .replaceAll("[)]", "}"), result);
