@@ -10,8 +10,8 @@ import lombok.NonNull;
 
 public class Game {
 
-    private AbstractPlayer player1;
-    private AbstractPlayer player2;
+    private final AbstractPlayer player1;
+    private final AbstractPlayer player2;
     private Board board;
 
     public Game(@NonNull AbstractPlayer player1, @NonNull AbstractPlayer player2, @NonNull Board board) {
@@ -64,12 +64,8 @@ public class Game {
     }
 
     private boolean checkIfDisqualified(ResponseType responseType) {
-        if(responseType.equals(ResponseType.EXCEPTION) ||
-                responseType.equals(ResponseType.TIMEOUT)) {
-            return true;
-        } else {
-            return false;
-        }
+        return responseType.equals(ResponseType.EXCEPTION) ||
+                responseType.equals(ResponseType.TIMEOUT);
     }
 
     private void finishGame() {

@@ -11,6 +11,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.ScrollPane?>
+
+<!--some sample from another project-->
 <BorderPane fx:id="borderPane"
             onKeyReleased="#onBorderPaneKeyReleased"
             xmlns="http://javafx.com/javafx/8.0.121"

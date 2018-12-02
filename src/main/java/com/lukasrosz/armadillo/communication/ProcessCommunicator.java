@@ -14,28 +14,26 @@ public class ProcessCommunicator {
     private BufferedReader reader;
     private BufferedWriter writer;
     private ExecutorService executor;
-    @Getter private boolean activated = false;
+    @Getter
+    private boolean activated = false;
 
     public ProcessCommunicator(@NonNull File dir, @NonNull String[] command) {
         processBuilder = new ProcessBuilder(command);
         processBuilder.directory(dir);
     }
 
-    public boolean startProcess() {
-        if(activated) return false;
-        try {
-            process = processBuilder.start();
-            activated = true;
-            reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
+    private void startProcess() throws IOException {
+        if (activated) return;
+        process = processBuilder.start();
+        reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
+        activated = true;
     }
 
-    public String getMessageFromProcess() throws TimeoutException, InterruptedException, ExecutionException {
+    public String getMessageFromProcess() throws TimeoutException, InterruptedException,
+            ExecutionException, IOException {
+        startProcess();
+
         String move = null;
 
         executor = Executors.newCachedThreadPool();
@@ -50,20 +48,31 @@ public class ProcessCommunicator {
     }
 
     public void sendMessageToProcess(String msg) throws IOException {
-        writer.write(msg + "\n");
+        startProcess();
+
+        msg = msg.contains("\n") ? msg : msg + "\n";
+        writer.write(msg);
         writer.flush();
     }
 
     public void killProcess() {
-        if(process != null) process.destroy();
-        if(process != null) executor.shutdownNow();
+        if(!activated) return;
+        performCleanup();
+        activated = false;
+    }
+
+    private void performCleanup() {
+        if (process != null) process.destroy();
+        if (process != null) executor.shutdownNow();
         try {
             reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            activated = false;
         }
     }
 }

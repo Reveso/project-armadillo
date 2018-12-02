@@ -18,11 +18,14 @@ public class CommunicationTest {
         String[] command = {"java", "-jar", "messenger.jar"};
 
         val processCommunicator = new ProcessCommunicator(dir, command);
-        processCommunicator.startProcess();
 
+        try {
         processCommunicator.sendMessageToProcess("timeout");
         processCommunicator.getMessageFromProcess();
-
+        } finally {
+            System.out.println(":v");
+            processCommunicator.killProcess();
+        }
     }
 
     @Test
@@ -31,15 +34,18 @@ public class CommunicationTest {
         String[] command = {"java", "-jar", "messenger.jar"};
 
         val processCommunicator = new ProcessCommunicator(dir, command);
-        processCommunicator.startProcess();
         String result = "";
         String message = "move (1;0),(2;0)";
 
-        processCommunicator.sendMessageToProcess(message);
-        result = processCommunicator.getMessageFromProcess();
+        try {
+            processCommunicator.sendMessageToProcess(message);
+            result = processCommunicator.getMessageFromProcess();
 
-        Assert.assertEquals(message.split(" ")[1]
-                .replaceAll("[(]", "{")
-                .replaceAll("[)]", "}"), result);
+            Assert.assertEquals(message.split(" ")[1]
+                    .replaceAll("[(]", "{")
+                    .replaceAll("[)]", "}"), result);
+        } finally {
+            processCommunicator.killProcess();
+        }
     }
 }

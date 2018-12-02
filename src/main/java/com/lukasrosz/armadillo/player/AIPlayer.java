@@ -26,13 +26,6 @@ public class AIPlayer extends AbstractPlayer {
     public MoveResponse askForMove(String freeCells) {
         val moveResponse = new MoveResponse();
 
-        if (!processCommunicator.isActivated()) {
-            if (!processCommunicator.startProcess()) {
-                moveResponse.setResponseType(ResponseType.EXCEPTION);
-                return moveResponse;
-            }
-        }
-
         String stringMove = getMoveFromProcessCommunicator(moveResponse, freeCells);
         if(stringMove == null) return moveResponse;
 
