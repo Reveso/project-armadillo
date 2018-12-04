@@ -25,4 +25,5 @@ public class PlayerDetails implements Comparable<PlayerDetails> {
             } else return o.getName().compareTo(this.getName());
         } else return o.getAlias().compareTo(this.getAlias());
     }
+
 }

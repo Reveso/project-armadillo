@@ -5,46 +5,25 @@ import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
-import lombok.AllArgsConstructor;
-import lombok.NonNull;
+import com.sun.org.apache.regexp.internal.RE;
+import lombok.*;
 
+@EqualsAndHashCode
 public class Game {
 
-    private final AbstractPlayer player1;
-    private final AbstractPlayer player2;
+    private AbstractPlayer player1;
+    private AbstractPlayer player2;
     private Board board;
+    @Getter
+    private GameResult gameResult;
+    @Getter
+    private boolean gameEnded;
 
     public Game(@NonNull AbstractPlayer player1, @NonNull AbstractPlayer player2, @NonNull Board board) {
         this.player1 = player1;
         this.player2 = player2;
         this.board = board;
-    }
-
-    public GameResult playGame() {
-        GameResult gameResult = gameLoop();
-        finishGame();
-        return gameResult;
-    }
-
-    private GameResult gameLoop() {
-        GameResult gameResult = null;
-        while (true) {
-            gameResult = checkIfEndGame(player2, player1);
-            if (gameResult != null) return gameResult;
-
-            MoveResponse moveResponse = player1.askForMove(Mapper.getPointsAsString(board.getFreeCells()));
-
-            gameResult = checkResponse(moveResponse, player2, player1);
-            if (gameResult != null) return gameResult;
-
-            gameResult = checkIfEndGame(player1, player2);
-            if (gameResult != null) return gameResult;
-
-            moveResponse = player2.askForMove(Mapper.getPointsAsString(board.getFreeCells()));
-
-            gameResult = checkResponse(moveResponse, player1, player2);
-            if (gameResult != null) return gameResult;
-        }
+        gameEnded = false;
     }
 
     private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
@@ -69,8 +48,35 @@ public class Game {
     }
 
     private void finishGame() {
+        gameEnded = true;
         player1.killPlayer();
         player2.killPlayer();
+    }
+
+    public Move nextMove() {
+        if (gameEnded) return null;
+        val moveResponse = player1.askForMove(Mapper.getPointsAsString(board.getFreeCells()));
+
+        gameResult = checkResponse(moveResponse, player1, player2);
+        if(gameResult != null) {
+            finishGame();
+            return null;
+        }
+
+        gameResult = checkIfEndGame(player1, player2);
+        if(gameResult != null) {
+            finishGame();
+            return null;
+        }
+
+        swapPlayers();
+        return moveResponse.getMove();
+    }
+
+    private void swapPlayers() {
+        AbstractPlayer temp = player1;
+        player1 = player2;
+        player2 = temp;
     }
 
 }
