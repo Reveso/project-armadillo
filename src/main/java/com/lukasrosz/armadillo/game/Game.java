@@ -3,10 +3,14 @@ package com.lukasrosz.armadillo.game;
 import com.lukasrosz.armadillo.communication.Mapper;
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
+import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.sun.org.apache.regexp.internal.RE;
 import lombok.*;
+
+import java.io.IOException;
+import java.util.Random;
 
 @EqualsAndHashCode
 public class Game {
@@ -17,13 +21,15 @@ public class Game {
     @Getter
     private GameResult gameResult;
     @Getter
-    private boolean gameEnded;
+    private boolean gameEnded = false;
+    private boolean gameStarted = false;
+    @Getter
+    private Move lastMove;
 
     public Game(@NonNull AbstractPlayer player1, @NonNull AbstractPlayer player2, @NonNull Board board) {
         this.player1 = player1;
         this.player2 = player2;
         this.board = board;
-        gameEnded = false;
     }
 
     private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
@@ -53,9 +59,40 @@ public class Game {
         player2.killPlayer();
     }
 
-    public Move nextMove() {
+    private void pickStartingPlayer() {
+        Random random = new Random();
+        if(random.nextInt(2) == 1) {
+            swapPlayers();
+        }
+    }
+
+    private void initializeGame() throws PlayerInitializationException {
+        pickStartingPlayer();
+
+        boolean success1 = player1.initialize(board.getSize(), Mapper.getPointsAsString(board.getOccupiedCells()));
+        boolean success2 = player2.initialize(board.getSize(), Mapper.getPointsAsString(board.getOccupiedCells()));
+        if(!success1) {
+            finishGame();
+            throw new PlayerInitializationException(player1.getPlayerDetails().getAlias()
+                    + " was not properly initialized");
+        } else if (!success2) {
+            finishGame();
+            throw new PlayerInitializationException(player2.getPlayerDetails().getAlias()
+                    + " was not properly initialized");
+        }
+    }
+
+    public Move nextMove() throws PlayerInitializationException {
+        String message;
+        if(!gameStarted) {
+            initializeGame();
+            message = "start";
+        } else {
+            message = Mapper.getMoveAsString(lastMove);
+        }
+
         if (gameEnded) return null;
-        val moveResponse = player1.askForMove(Mapper.getPointsAsString(board.getFreeCells()));
+        val moveResponse = player1.askForMove(message);
 
         gameResult = checkResponse(moveResponse, player1, player2);
         if(gameResult != null) {
@@ -70,6 +107,7 @@ public class Game {
         }
 
         swapPlayers();
+        lastMove = moveResponse.getMove();
         return moveResponse.getMove();
     }
 

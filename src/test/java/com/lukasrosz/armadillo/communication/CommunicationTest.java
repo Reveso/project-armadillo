@@ -21,7 +21,7 @@ public class CommunicationTest {
 
         try {
         processCommunicator.sendMessageToProcess("timeout");
-        processCommunicator.getMessageFromProcess();
+        processCommunicator.getMessageFromProcess(500);
         } finally {
             System.out.println(":v");
             processCommunicator.killProcess();
@@ -39,7 +39,7 @@ public class CommunicationTest {
 
         try {
             processCommunicator.sendMessageToProcess(message);
-            result = processCommunicator.getMessageFromProcess();
+            result = processCommunicator.getMessageFromProcess(500);
 
             Assert.assertEquals(message.split(" ")[1]
                     .replaceAll("[(]", "{")

@@ -1,14 +1,10 @@
-package com.lukasrosz.armadillo.game;
+package base.core;
 
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Arrays;
 import java.util.List;
 
-@Getter
-@Setter
 public class Board {
 
 //    in board true means its occupied
@@ -19,29 +15,13 @@ public class Board {
     private boolean oddSize;
 
     private enum LimesValues {
-        TOP_SIDE, BOTTOM_SIDE, RIGHT_SIDE, LEFT_SIDE, Unexceptable ;
+        TOP_SIDE, BOTTOM_SIDE, RIGHT_SIDE, LEFT_SIDE, UNEXCEPTABLE
     }
-//    UNEXCEPTABLE
 
-    public void init() {
+    private void init() {
         for(int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 freeCells.add(new Point(i,j));
-            }
-        }
-        generateRandomPoints();
-    }
-
-    private void generateRandomPoints() {
-        int pointsToGenerate = (int) (size * size * 0.1);
-        while (pointsToGenerate > 0) {
-            Point randomPoint = Point.generatePoint(0, size - 1);
-            if (freeCells.contains(randomPoint)) {
-                freeCells.remove(randomPoint);
-                pointsToGenerate--;
-                if (!occupiedCells.contains(randomPoint)) {
-                    occupiedCells.add(randomPoint);
-                }
             }
         }
     }
@@ -87,7 +67,7 @@ public class Board {
         } else if (y == 0) {
             return LimesValues.BOTTOM_SIDE;
         }
-        return LimesValues.Unexceptable;
+        return LimesValues.UNEXCEPTABLE;
     }
 
     private boolean checkCellNeighboursIfOccupied(int x, int y) {
@@ -136,7 +116,7 @@ public class Board {
                 Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == 1) {
             return true;
         } else if((Math.abs(p1.getX() - p2.getX()) == size-1 && Math.abs(p1.getY() - p2.getY()) == 0) ||
-                (Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == size-1)){
+        (Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == size-1)){
             return true;
         } else return false;
     }
@@ -146,7 +126,7 @@ public class Board {
             return false;
         } else {
             if (checkIfNeighbours(move.getPoint1(), move.getPoint2())) {
-                updateCells(move.getPoint1(), move.getPoint2());
+                updateCells(Arrays.asList(move.getPoint1(), move.getPoint2()));
                 return true;
             } else {
                 return false;
@@ -155,7 +135,7 @@ public class Board {
     }
 
     public boolean cellOccupied(int x, int y) {
-        if (board[x][y] == false) {
+        if (!board[x][y]) {
             return false;
         } else {
             return true;
@@ -163,7 +143,7 @@ public class Board {
     }
 
     public boolean cellOccupied(Point point) {
-        if (board[point.getX()][point.getY()] == false) {
+        if (!board[point.getX()][point.getY()]) {
             return false;
         } else {
             return true;
@@ -178,7 +158,7 @@ public class Board {
         return occupiedCells;
     }
 
-    private void updateCells(Point... points) {
+    public void updateCells(List<Point> points) {
         for (Point point: points) {
             board[point.getX()][point.getY()] = true;
             freeCells.remove(point);

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="simple-board-fighter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/simple_board_fighter_jar</output-path>
+    <root id="archive" name="simple-board-fighter.jar">
+      <element id="module-output" name="simple-board-fighter" />
+    </root>
+  </artifact>
+</component>

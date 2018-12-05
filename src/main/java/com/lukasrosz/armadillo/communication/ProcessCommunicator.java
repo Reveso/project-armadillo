@@ -30,7 +30,7 @@ public class ProcessCommunicator {
         activated = true;
     }
 
-    public String getMessageFromProcess() throws TimeoutException, InterruptedException,
+    public String getMessageFromProcess(int timeout) throws TimeoutException, InterruptedException,
             ExecutionException, IOException {
         startProcess();
 
@@ -41,7 +41,7 @@ public class ProcessCommunicator {
 //        Future<String> futureCall = executor.submit(new CallableReader(reader));
         Future<String> futureCall = executor.submit(() -> reader.readLine());
 
-        move = futureCall.get(500, TimeUnit.MILLISECONDS);
+        move = futureCall.get(timeout, TimeUnit.MILLISECONDS);
         executor.shutdownNow();
 
         return move;

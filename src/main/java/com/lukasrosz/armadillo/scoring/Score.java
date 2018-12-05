@@ -6,6 +6,7 @@ import lombok.*;
 @Getter @Setter
 @NoArgsConstructor
 @EqualsAndHashCode
+@ToString
 public class Score implements Comparable<Score>{
     private PlayerDetails playerDetails;
     private int victories = 0;

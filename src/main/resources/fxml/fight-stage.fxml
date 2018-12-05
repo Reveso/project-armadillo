@@ -6,14 +6,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.lukasrosz.armadillo.controller.FightStageController"
             prefHeight="400.0" prefWidth="600.0"
             fx:id="borderPane">
-
-
     <left>
-        <Button/>
+
     </left>
+    <right>
+        <TableView fx:id="scoreboardTable" items="${controller.scoreboardList}">
+            <columns>
+                <TableColumn text="alias" sortable="false" resizable="false">
+                    <cellValueFactory><PropertyValueFactory property="alias"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Surname" sortable="false">
+                    <cellValueFactory><PropertyValueFactory property="surname"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Victories" sortable="false">
+                    <cellValueFactory><PropertyValueFactory property="victories"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Defeats" sortable="false">
+                    <cellValueFactory><PropertyValueFactory property="defeats"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Disqualifications" sortable="false">
+                    <cellValueFactory><PropertyValueFactory property="disqualifications"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </right>
 </BorderPane>

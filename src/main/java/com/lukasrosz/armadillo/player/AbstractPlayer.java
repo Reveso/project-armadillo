@@ -15,5 +15,7 @@ public abstract class AbstractPlayer {
         System.out.println(playerDetails.getAlias() + " killed");
     }
 
-
+    public boolean initialize(int boardSize, String occupiedCells) {
+        return true;
+    }
 }

@@ -5,11 +5,13 @@ import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.game.Point;
+import lombok.EqualsAndHashCode;
 import lombok.val;
 
 import java.util.List;
 import java.util.Scanner;
 
+@EqualsAndHashCode
 public class HumanPlayer extends AbstractPlayer {
     private static int count = 1;
     public HumanPlayer() {

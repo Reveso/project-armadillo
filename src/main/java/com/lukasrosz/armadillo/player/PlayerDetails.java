@@ -1,12 +1,11 @@
 package com.lukasrosz.armadillo.player;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class PlayerDetails implements Comparable<PlayerDetails> {
     @Setter @Getter
     private String alias;

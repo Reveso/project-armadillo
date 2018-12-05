@@ -1,0 +1,3 @@
+test-283823
+Lukasz Kek
+java -jar simple-board-fighter.jar
