@@ -18,7 +18,7 @@ public class ProcessCommunicator {
     private boolean activated = false;
 
     public ProcessCommunicator(@NonNull File dir, @NonNull String[] command) {
-        processBuilder = new ProcessBuilder(command);
+        processBuilder = new ProcessBuilder("java", "-jar", "simple-board-fighter.jar");
         processBuilder.directory(dir);
     }
 

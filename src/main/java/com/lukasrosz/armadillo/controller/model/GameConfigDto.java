@@ -16,6 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GameConfigDto {
+    private int boardSize;
     private Set<Score> scores = new LinkedHashSet<>();
     private Set<Game> games = new LinkedHashSet<>();
 }

@@ -56,8 +56,9 @@ public class AIPlayer extends AbstractPlayer {
         String stringMove = null;
         try {
             processCommunicator.sendMessageToProcess(freeCells);
-            stringMove = processCommunicator.getMessageFromProcess(500);
+            stringMove = processCommunicator.getMessageFromProcess(50000);
             if(stringMove == null) {
+                System.out.println("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
                 moveResponse.setResponseType(ResponseType.EXCEPTION);
                 return null;
             }

@@ -6,10 +6,8 @@ import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
-import com.sun.org.apache.regexp.internal.RE;
 import lombok.*;
 
-import java.io.IOException;
 import java.util.Random;
 
 @EqualsAndHashCode
@@ -21,8 +19,8 @@ public class Game {
     @Getter
     private GameResult gameResult;
     @Getter
-    private boolean gameEnded = false;
-    private boolean gameStarted = false;
+    private boolean ended = false;
+    private boolean started = false;
     @Getter
     private Move lastMove;
 
@@ -54,7 +52,7 @@ public class Game {
     }
 
     private void finishGame() {
-        gameEnded = true;
+        ended = true;
         player1.killPlayer();
         player2.killPlayer();
     }
@@ -84,14 +82,15 @@ public class Game {
 
     public Move nextMove() throws PlayerInitializationException {
         String message;
-        if(!gameStarted) {
+        if(!started) {
             initializeGame();
             message = "start";
+            started = true;
         } else {
             message = Mapper.getMoveAsString(lastMove);
         }
 
-        if (gameEnded) return null;
+        if (ended) return null;
         val moveResponse = player1.askForMove(message);
 
         gameResult = checkResponse(moveResponse, player1, player2);

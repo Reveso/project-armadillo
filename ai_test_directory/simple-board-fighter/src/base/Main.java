@@ -27,6 +27,13 @@ public class Main {
         if(firstRead.equals("start")) {
             Move sendingMove = findFirstAvailableMove(board.getFreeCells(), board);
             System.out.println(Mapper.getMoveAsString(sendingMove));
+        } else {
+            List<Point> points = Mapper.getStringAsPoints(firstRead);
+            Move receivingMove = new Move(points.get(0), points.get(1));
+            board.setNewMove(receivingMove);
+
+            Move sendingMove = findFirstAvailableMove(board.getFreeCells(), board);
+            System.out.println(Mapper.getMoveAsString(sendingMove));
         }
 
         while (true) {

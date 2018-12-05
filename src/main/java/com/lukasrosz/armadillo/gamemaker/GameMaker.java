@@ -25,21 +25,22 @@ public class GameMaker {
         val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
         val player2 = new HumanPlayer();
         val game = new Game(player1, player2, new Board(boardSize));
-        val gameConfigDto = new GameConfigDto();
-        return singleGameConfig(player1, player2, game);
+        return singleGameConfig(player1, player2, game, boardSize);
     }
 
     public GameConfigDto newAiVsAiGame(File aiDir1, File aiDir2, int boardSize){
         val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
         val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
         val game = new Game(player1, player2, new Board(boardSize));
-        return singleGameConfig(player1, player2, game);
+        return singleGameConfig(player1, player2, game, boardSize);
     }
 
     public GameConfigDto newBattleGame(File mainDir, int boardSize) {
         Set<AbstractPlayer> players = populatePlayersSet(mainDir);
         Set<Game> games = new LinkedHashSet<>();
         Set<Score> scores = new LinkedHashSet<>();
+
+        //TODO all players now will have 2 games with each other, we want to avoid that
         for(AbstractPlayer player1 : players) {
             for(AbstractPlayer player2 : players) {
                 if(player1.equals(player2)) continue;
@@ -48,7 +49,7 @@ public class GameMaker {
             }
             scores.add(new Score(player1.getPlayerDetails()));
         }
-        return new GameConfigDto(scores, games);
+        return new GameConfigDto(boardSize, scores, games);
     }
 
     private Set<AbstractPlayer> populatePlayersSet(File mainDir) {
@@ -77,11 +78,13 @@ public class GameMaker {
         return playerDetails;
     }
 
-    private GameConfigDto singleGameConfig(AbstractPlayer player1, AbstractPlayer player2, Game game) {
+    private GameConfigDto singleGameConfig(AbstractPlayer player1, AbstractPlayer player2,
+                                           Game game, int boardSize) {
         val gameConfigDto = new GameConfigDto();
         gameConfigDto.getGames().add(game);
         gameConfigDto.getScores().add(new Score(player1.getPlayerDetails()));
         gameConfigDto.getScores().add(new Score(player2.getPlayerDetails()));
+        gameConfigDto.setBoardSize(boardSize);
         return gameConfigDto;
     }
 }

@@ -190,9 +190,11 @@ public class Board {
         if (freeCells == null) {
             return true;
         } else {
-            for (Point point: freeCells) {
-                if(!checkCellNeighboursIfOccupied(point.getX(), point.getY())) {
-                    return false;
+            for(Point p1 : freeCells) {
+                for(Point p2 : freeCells) {
+                    if(checkIfNeighbours(p1, p2)) {
+                        return false;
+                    }
                 }
             }
             return true;
