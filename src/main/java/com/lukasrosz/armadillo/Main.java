@@ -2,6 +2,10 @@ package com.lukasrosz.armadillo;
 
 import com.lukasrosz.armadillo.controller.FightStageController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
+import com.lukasrosz.armadillo.player.AIPlayer;
+import com.lukasrosz.armadillo.player.AbstractPlayer;
+import com.lukasrosz.armadillo.player.HumanPlayer;
+import com.lukasrosz.armadillo.player.PlayerDetails;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -44,4 +48,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

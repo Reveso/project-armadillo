@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.lukasrosz.armadillo.controller.FightStageController"
-            prefHeight="400.0" prefWidth="600.0"
-            fx:id="borderPane">
-    <left>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 
-    </left>
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.FightStageController">
+    <top>
+        <Label fx:id="fightTitleLabel" />
+    </top>
+    <center>
+        <GridPane fx:id="boardGridPane"/>
+    </center>
     <right>
-        <TableView fx:id="scoreboardTable" items="${controller.scoreboardList}">
+        <TableView fx:id="scoreboardTable" editable="true" items="${controller.scoreboardList}">
             <columns>
-                <TableColumn text="alias" sortable="false" resizable="false">
-                    <cellValueFactory><PropertyValueFactory property="alias"/></cellValueFactory>
+                <TableColumn resizable="false" sortable="false" text="alias">
+                    <cellValueFactory><PropertyValueFactory property="alias" /></cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Surname" sortable="false">
-                    <cellValueFactory><PropertyValueFactory property="surname"/></cellValueFactory>
+                <TableColumn sortable="false" text="Surname">
+                    <cellValueFactory><PropertyValueFactory property="surname" /></cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Victories" sortable="false">
-                    <cellValueFactory><PropertyValueFactory property="victories"/></cellValueFactory>
+                <TableColumn sortable="false" text="Victories">
+                    <cellValueFactory><PropertyValueFactory property="victories" /></cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Defeats" sortable="false">
-                    <cellValueFactory><PropertyValueFactory property="defeats"/></cellValueFactory>
+                <TableColumn sortable="false" text="Defeats">
+                    <cellValueFactory><PropertyValueFactory property="defeats" /></cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Disqualifications" sortable="false">
-                    <cellValueFactory><PropertyValueFactory property="disqualifications"/></cellValueFactory>
+                <TableColumn sortable="false" text="Disqualifications">
+                    <cellValueFactory><PropertyValueFactory property="disqualifications" /></cellValueFactory>
                 </TableColumn>
             </columns>
         </TableView>
     </right>
+    <bottom><Button onAction="#onAction" /></bottom>
 </BorderPane>

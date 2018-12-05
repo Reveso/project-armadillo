@@ -28,7 +28,7 @@ public class GameMaker {
         return singleGameConfig(player1, player2, game, boardSize);
     }
 
-    public GameConfigDto newAiVsAiGame(File aiDir1, File aiDir2, int boardSize){
+    public GameConfigDto newAiVsAiGame(File aiDir1, File aiDir2, int boardSize) {
         val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
         val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
         val game = new Game(player1, player2, new Board(boardSize));
@@ -41,9 +41,9 @@ public class GameMaker {
         Set<Score> scores = new LinkedHashSet<>();
 
         //TODO all players now will have 2 games with each other, we want to avoid that
-        for(AbstractPlayer player1 : players) {
-            for(AbstractPlayer player2 : players) {
-                if(player1.equals(player2)) continue;
+        for (AbstractPlayer player1 : players) {
+            for (AbstractPlayer player2 : players) {
+                if (player1.equals(player2)) continue;
                 val game = new Game(player1, player2, new Board(boardSize));
                 games.add(game);
             }
@@ -54,10 +54,10 @@ public class GameMaker {
 
     private Set<AbstractPlayer> populatePlayersSet(File mainDir) {
         final Set<AbstractPlayer> players = new LinkedHashSet<>();
-        for(String relativeDirName : mainDir.list()) {
+        for (String relativeDirName : mainDir.list()) {
             File dir = new File(mainDir.getAbsolutePath() + "/" + relativeDirName);
             val playerDetails = populatePlayerDetails(dir);
-            if(playerDetails == null) continue;
+            if (playerDetails == null) continue;
             players.add(new AIPlayer(dir, playerDetails));
         }
         return players;

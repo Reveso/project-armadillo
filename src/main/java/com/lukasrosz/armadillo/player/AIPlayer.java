@@ -21,7 +21,7 @@ public class AIPlayer extends AbstractPlayer {
 
     public AIPlayer(@NonNull File dir, @NonNull PlayerDetails playerDetails) {
         this.processCommunicator = new ProcessCommunicator(dir,
-                new String[] {playerDetails.getCmd()});
+                playerDetails.getCmd().split(" "));
         this.playerDetails = playerDetails;
     }
 
@@ -31,7 +31,6 @@ public class AIPlayer extends AbstractPlayer {
 
         String stringMove = getMoveFromProcessCommunicator(moveResponse, freeCells);
         if(stringMove == null) return moveResponse;
-
         Move move = resolveMove(moveResponse,stringMove);
         if(move == null) return moveResponse;
 
@@ -56,9 +55,8 @@ public class AIPlayer extends AbstractPlayer {
         String stringMove = null;
         try {
             processCommunicator.sendMessageToProcess(freeCells);
-            stringMove = processCommunicator.getMessageFromProcess(50000);
+            stringMove = processCommunicator.getMessageFromProcess(500);
             if(stringMove == null) {
-                System.out.println("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
                 moveResponse.setResponseType(ResponseType.EXCEPTION);
                 return null;
             }

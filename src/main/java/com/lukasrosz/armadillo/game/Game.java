@@ -8,20 +8,21 @@ import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import lombok.*;
 
+import java.util.Objects;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
 
-@EqualsAndHashCode
+@Getter
 public class Game {
 
     private AbstractPlayer player1;
     private AbstractPlayer player2;
     private Board board;
-    @Getter
     private GameResult gameResult;
-    @Getter
     private boolean ended = false;
     private boolean started = false;
-    @Getter
     private Move lastMove;
 
     public Game(@NonNull AbstractPlayer player1, @NonNull AbstractPlayer player2, @NonNull Board board) {
@@ -91,15 +92,17 @@ public class Game {
         }
 
         if (ended) return null;
-        val moveResponse = player1.askForMove(message);
+        gameResult = checkIfEndGame(player2, player1);
 
-        gameResult = checkResponse(moveResponse, player1, player2);
         if(gameResult != null) {
+            System.out.println("re2");
             finishGame();
             return null;
         }
 
-        gameResult = checkIfEndGame(player1, player2);
+        val moveResponse = player1.askForMove(message);
+
+        gameResult = checkResponse(moveResponse, player1, player2);
         if(gameResult != null) {
             finishGame();
             return null;
@@ -116,4 +119,18 @@ public class Game {
         player2 = temp;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return (Objects.equals(player1, game.player1) &&
+                Objects.equals(player2, game.player2)) || (Objects.equals(player1, game.player2) &&
+                Objects.equals(player2, game.player1));
+    }
+
+    @Override
+    public int hashCode() {
+        return 17;
+    }
 }
