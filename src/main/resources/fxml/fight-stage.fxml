@@ -11,33 +11,56 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.FightStageController">
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.FightStageController"
+            >
     <top>
-        <Label fx:id="fightTitleLabel" />
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="pauseButton" text="Play" onAction="#onPauseButtonAction"/>
+            <Button text="Back to settings"/> <!--onMouseClicked="#onBackButtonMouseClicked"/>-->
+            <!--TODO Label should be styled-->
+            <Label fx:id="fightTitleLabel"/>
+        </HBox>
     </top>
     <center>
-        <GridPane fx:id="boardGridPane"/>
+        <GridPane fx:id="boardGridPane" alignment="CENTER"/>
     </center>
     <right>
-        <TableView fx:id="scoreboardTable" editable="true" items="${controller.scoreboardList}">
-            <columns>
-                <TableColumn resizable="false" sortable="false" text="alias">
-                    <cellValueFactory><PropertyValueFactory property="alias" /></cellValueFactory>
-                </TableColumn>
-                <TableColumn sortable="false" text="Surname">
-                    <cellValueFactory><PropertyValueFactory property="surname" /></cellValueFactory>
-                </TableColumn>
-                <TableColumn sortable="false" text="Victories">
-                    <cellValueFactory><PropertyValueFactory property="victories" /></cellValueFactory>
-                </TableColumn>
-                <TableColumn sortable="false" text="Defeats">
-                    <cellValueFactory><PropertyValueFactory property="defeats" /></cellValueFactory>
-                </TableColumn>
-                <TableColumn sortable="false" text="Disqualifications">
-                    <cellValueFactory><PropertyValueFactory property="disqualifications" /></cellValueFactory>
-                </TableColumn>
-            </columns>
-        </TableView>
+        <ScrollPane>
+            <TableView fx:id="scoreboardTable" editable="true" items="${controller.scoreboardList}">
+                <columns>
+                    <TableColumn resizable="false" sortable="false" text="alias">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="alias"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Surname">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="surname"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Victories">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="victories"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Defeats">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="defeats"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Disqualifications">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="disqualifications"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </ScrollPane>
     </right>
-    <bottom><Button onAction="#onAction" /></bottom>
+
 </BorderPane>

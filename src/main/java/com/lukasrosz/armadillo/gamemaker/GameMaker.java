@@ -3,10 +3,7 @@ package com.lukasrosz.armadillo.gamemaker;
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
 import com.lukasrosz.armadillo.game.Board;
 import com.lukasrosz.armadillo.game.Game;
-import com.lukasrosz.armadillo.player.AIPlayer;
-import com.lukasrosz.armadillo.player.AbstractPlayer;
-import com.lukasrosz.armadillo.player.HumanPlayer;
-import com.lukasrosz.armadillo.player.PlayerDetails;
+import com.lukasrosz.armadillo.player.*;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
 import com.lukasrosz.armadillo.scoring.Scoreboard;
@@ -23,7 +20,7 @@ public class GameMaker {
 
     public GameConfigDto newHumanVsAIGame(File aiDir, int boardSize) {
         val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
-        val player2 = new HumanPlayer();
+        val player2 = new HumanFXPlayer();
         val game = new Game(player1, player2, new Board(boardSize));
         return singleGameConfig(player1, player2, game, boardSize);
     }

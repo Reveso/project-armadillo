@@ -2,10 +2,7 @@ package com.lukasrosz.armadillo;
 
 import com.lukasrosz.armadillo.controller.FightStageController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
-import com.lukasrosz.armadillo.player.AIPlayer;
-import com.lukasrosz.armadillo.player.AbstractPlayer;
-import com.lukasrosz.armadillo.player.HumanPlayer;
-import com.lukasrosz.armadillo.player.PlayerDetails;
+import com.lukasrosz.armadillo.player.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +31,7 @@ public class Main extends Application {
 
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newBattleGame(new File("ai_test_directory"), 16);
+//        val gameConfigDto = gameMaker.newHumanVsAIGame(new File("ai_test_directory/283822"), 16);
         fightStageController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());

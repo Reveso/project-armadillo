@@ -5,6 +5,7 @@ import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
+import com.lukasrosz.armadillo.player.HumanFXPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import lombok.*;
 
@@ -59,6 +60,11 @@ public class Game {
     }
 
     private void pickStartingPlayer() {
+        if(player2 instanceof HumanFXPlayer) {
+            return;
+        } else if (player1 instanceof HumanFXPlayer) {
+            swapPlayers();
+        }
         Random random = new Random();
         if(random.nextInt(2) == 1) {
             swapPlayers();
@@ -92,20 +98,19 @@ public class Game {
         }
 
         if (ended) return null;
-        gameResult = checkIfEndGame(player2, player1);
 
+        val moveResponse = player1.askForMove(message);
+
+        gameResult = checkResponse(moveResponse, player2, player1);
         if(gameResult != null) {
-            System.out.println("re2");
             finishGame();
             return null;
         }
 
-        val moveResponse = player1.askForMove(message);
-
-        gameResult = checkResponse(moveResponse, player1, player2);
+        gameResult = checkIfEndGame(player1, player2);
         if(gameResult != null) {
             finishGame();
-            return null;
+            return moveResponse.getMove();
         }
 
         swapPlayers();
