@@ -24,6 +24,13 @@ public class Mapper {
         return stringBuilder.toString();
     }
 
+    public static Point getStringAsPoint(String point) {
+        point = point.replaceAll("[{]", "")
+                .replaceAll("[}]", "");
+        String[] xy = point.split(";");
+        return new Point(Integer.parseInt(xy[0]), Integer.parseInt(xy[1]));
+    }
+
     public static List<Point> getStringAsPoints(String stringPoints) {
 //        if (!stringPoints.matches(STRING_MATCHER)) {
 //            System.err.println("something is wrong in string received");

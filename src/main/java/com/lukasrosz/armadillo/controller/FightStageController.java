@@ -1,5 +1,6 @@
 package com.lukasrosz.armadillo.controller;
 
+import com.lukasrosz.armadillo.communication.Mapper;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
 import com.lukasrosz.armadillo.game.Game;
@@ -25,9 +26,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 public class FightStageController {
 
@@ -76,15 +75,16 @@ public class FightStageController {
                 boardGridPane.add(pane, i, j);
                 fieldMap.put(new Point(i, j), pane);
                 pane.setId("{" + i + ";" + j + "}");
-                pane.setOnMouseClicked(event -> onPaneClicked(event));
+                pane.setOnMouseClicked(this::onPaneClicked);
                 currentColor = currentColor.equals(color1) ? color2 : color1;
             }
         }
     }
 
     //TODO Toggle ready CSS class would be better
-    private void setFieldColorOnPoint(Point point, String blockColor, String borderColor) {
+    private void setFieldOccupied(Point point, String blockColor, String borderColor) {
         fieldMap.get(point).setStyle("-fx-background-color: " + blockColor + "; -fx-border-color: "+ borderColor + "; -fx-border-width: 2");
+        fieldMap.get(point).setDisable(true);
     }
 
     private void populateScoreboard() {
@@ -115,7 +115,7 @@ public class FightStageController {
         if(!game.isStarted()) {
             fightTitleLabel.setText(game.getPlayer1().getPlayerDetails().getAlias() + " vs "
                     + game.getPlayer2().getPlayerDetails().getAlias());
-            game.getBoard().getOccupiedCells().forEach(point -> setFieldColorOnPoint(point, "#420000", "#3d0101"));
+            game.getBoard().getOccupiedCells().forEach(point -> setFieldOccupied(point, "#420000", "#3d0101"));
         }
         if (!game.isEnded()) {
             try {
@@ -125,8 +125,8 @@ public class FightStageController {
                 Move move = game.nextMove();
                 System.out.println(move);
                 if(move != null) {
-                    setFieldColorOnPoint(move.getPoint1(), "#872443", "#4c1325");
-                    setFieldColorOnPoint(move.getPoint2(), "#872443", "#4c1325");
+                    setFieldOccupied(move.getPoint1(), "#872443", "#4c1325");
+                    setFieldOccupied(move.getPoint2(), "#872443", "#4c1325");
                 }
                 if(game.getPlayer1() instanceof HumanFXPlayer && !game.isEnded()) {
                     getNextMoveFromGui();
@@ -138,27 +138,49 @@ public class FightStageController {
             saveGameResult(game.getGameResult());
             Collections.sort(scoreboardList);
             scoreboardTable.refresh();
+            fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
+                    + game.getGameResult().getLoser().getAlias());
             timeline.stop();
             playGame();
         }
     }
 
-    private String nextHumanMove;
+    private List<Point> nextHumanMovePoints = new ArrayList<>();
+    private Move nextHumanMove;
     private void onPaneClicked(Event event) {
         //TODO the best way would be to evaluate if move is correct here, and send Move object to HumanFXPlayer
         String targetId = ((Pane) event.getTarget()).getId();
-        if(nextHumanMove == null || nextHumanMove.length() > 10) {
-            nextHumanMove = targetId + ",";
+        System.out.println(nextHumanMovePoints.size());
+        if(nextHumanMovePoints.size() != 1) {
+            nextHumanMovePoints.add(Mapper.getStringAsPoint(targetId));
+            //TODO get a Pane from Map and toggle "selected" class
         } else {
-            nextHumanMove += targetId;
-            timeline.play();
+            nextHumanMovePoints.add(Mapper.getStringAsPoint(targetId));
+            //TODO get a Pane from Map and toggle "selected" class
+            if(checkIfNeighbours(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1))) {
+                nextHumanMove = new Move(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1));
+                timeline.play();
+            } else {
+                //TODO toggle off classes in both Panes
+                nextHumanMovePoints.clear();
+            }
         }
-        System.out.println(nextHumanMove);
+    }
+
+    private boolean checkIfNeighbours(Point p1, Point p2) {
+        int size = gameConfigDto.getBoardSize();
+        if(Math.abs(p1.getX() - p2.getX()) == 1 && Math.abs(p1.getY() - p2.getY()) == 0 ||
+                Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == 1) {
+            return true;
+        } else if((Math.abs(p1.getX() - p2.getX()) == size-1 && Math.abs(p1.getY() - p2.getY()) == 0) ||
+                (Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == size-1)){
+            return true;
+        } else return false;
     }
 
     private void getNextMoveFromGui() {
         timeline.pause();
-        nextHumanMove = null;
+        nextHumanMovePoints.clear();
     }
 
     private void playGame() {
