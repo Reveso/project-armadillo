@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e205681d-2039-4506-bc3f-b849a03c449a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AIvsAI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AIvsP.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/PvP.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/CallableReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/PointsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/MoveResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/MoveResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/MapUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Scoreboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/MapperTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/PointsMapperTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/fxml/borderForfxml.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/fxml/fxml.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/fxml/fxml.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fxml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fxml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/fxml.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/fxml.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,10 +75,9 @@
     <session id="-2049699306">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.107" value="1" />
-          <entry key="project.open.time.115" value="1" />
-          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.210" value="1" />
           <entry key="project.open.time.35" value="1" />
@@ -102,11 +87,10 @@
           <entry key="project.open.time.65" value="1" />
           <entry key="project.open.time.67" value="1" />
           <entry key="project.open.time.79" value="1" />
-          <entry key="project.open.time.81" value="1" />
           <entry key="project.open.time.87" value="1" />
           <entry key="project.open.time.89" value="1" />
           <entry key="project.open.time.92" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -117,34 +101,172 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="172" />
-          <entry key="XML" value="16" />
+          <entry key="JAVA" value="117" />
+          <entry key="XML" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="46" />
           <entry key="fxml" value="815" />
-          <entry key="java" value="12367" />
+          <entry key="java" value="12289" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13604" />
+          <entry key="JAVA" value="12289" />
           <entry key="PLAIN_TEXT" value="46" />
-          <entry key="XML" value="818" />
+          <entry key="XML" value="815" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1811141524">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="fxml" value="8" />
+          <entry key="java" value="3" />
+          <entry key="jpg" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="2" />
+          <entry key="JAVA" value="3" />
+          <entry key="XML" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="fxml" value="298" />
+          <entry key="java" value="471" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="471" />
+          <entry key="XML" value="298" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="40" column="26" selection-start-line="26" selection-start-column="7" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Fx.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#211#212#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fxml.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="38" column="68" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/sample.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/test.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="23" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/PvP.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/AIvsP.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="23" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/AIvsAI.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fxml.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="84" lean-forward="true" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/border.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -161,7 +283,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Lukas\.gradle\wrapper\dists\gradle-4.8-all\41c9mvq2w0645xx6nsenaerjl\gradle-4.8" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\Krzysztof\.gradle\wrapper\dists\gradle-4.8-all\41c9mvq2w0645xx6nsenaerjl\gradle-4.8" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -336,7 +458,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6175152643870" />
+        <entry key="$PROJECT_DIR$" value="6171320254088" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="1217496267" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
@@ -525,37 +647,38 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/MapperTestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/sample.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MainWindowController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/exception/PlayerInitializationException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/FightWindowConfigDto.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/CommunicationTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/css.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/asd.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/MoveResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/PlayerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/Mapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/PointsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/CommunicationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/Mapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Fx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/border.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml3.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml2.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/PvP.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/fxml.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/fxml.java" />
       </list>
     </option>
   </component>
@@ -584,14 +707,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
               <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="frontend templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
@@ -751,13 +877,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="LombokPluginEnabledInProject" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544748230604" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544750902850" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ai_test_directory/simple-board-fighter" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -767,12 +894,12 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\GitHub\project-armadillo\src\main\java\com\lukasrosz\armadillo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\GitHub\project-armadillo\src\main\resources\fxml" />
       <recent name="F:\GitHub\project-armadillo\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GitHub\project-armadillo\src\main\java\com\lukasrosz\armadillo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -787,7 +914,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Fx">
+    <configuration name="Fx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.Fx" />
+      <module name="armadillo_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lukasrosz.armadillo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.Main" />
       <module name="armadillo_main" />
@@ -797,22 +937,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardTestSuite.move" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="armadillo_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lukasrosz.armadillo.game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lukasrosz.armadillo.game" />
-      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.game.BoardTestSuite" />
-      <option name="METHOD_NAME" value="move" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -831,7 +955,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MapperTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="armadillo_test" />
       <extension name="coverage">
         <pattern>
@@ -840,14 +964,12 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.lukasrosz.armadillo.communication" />
-      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.communication.PlayerTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.communication.MapperTestSuite" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PointsMapperTestSuite.getStringAsCellsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MapperTestSuite.getStringAsCellsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="armadillo_test" />
       <extension name="coverage">
         <pattern>
@@ -856,7 +978,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.lukasrosz.armadillo.communication" />
-      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.communication.PointsMapperTestSuite" />
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.communication.MapperTestSuite" />
       <option name="METHOD_NAME" value="getStringAsCellsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -865,18 +987,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CommunicationTest" />
-      <item itemvalue="JUnit.PointsMapperTestSuite.getStringAsCellsTest" />
+      <item itemvalue="JUnit.MapperTestSuite" />
+      <item itemvalue="JUnit.MapperTestSuite.getStringAsCellsTest" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.BoardTestSuite.move" />
-      <item itemvalue="JUnit.PlayerTest.test" />
+      <item itemvalue="Application.Fx" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Fx" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.PlayerTest.test" />
-        <item itemvalue="JUnit.BoardTestSuite.move" />
         <item itemvalue="JUnit.CommunicationTest" />
-        <item itemvalue="JUnit.PointsMapperTestSuite.getStringAsCellsTest" />
+        <item itemvalue="JUnit.MapperTestSuite.getStringAsCellsTest" />
+        <item itemvalue="JUnit.MapperTestSuite" />
       </list>
     </recent_temporary>
   </component>
@@ -907,13 +1029,20 @@
       <workItem from="1544034031489" duration="7251000" />
       <workItem from="1544046218883" duration="11233000" />
       <workItem from="1544064046630" duration="1674000" />
-      <workItem from="1544101290834" duration="816000" />
-      <workItem from="1544738188672" duration="81000" />
-      <workItem from="1544738538490" duration="8265000" />
+      <workItem from="1544745410092" duration="5487000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="CommunicationTest - 2018.12.02 at 04h 21m 58s.xml">
+      <configuration name="CommunicationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommunicationTest - 2018.12.02 at 04h 24m 02s.xml">
+      <configuration name="CommunicationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommunicationTest - 2018.12.02 at 04h 25m 50s.xml">
+      <configuration name="CommunicationTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="CommunicationTest - 2018.12.02 at 04h 27m 59s.xml">
       <configuration name="CommunicationTest" configurationId="JUnit" />
     </history-entry>
@@ -935,32 +1064,15 @@
     <history-entry file="CommunicationTest - 2018.12.02 at 14h 34m 12s.xml">
       <configuration name="CommunicationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTestSuite_move - 2018.12.14 at 00h 43m 11s.xml">
-      <configuration name="BoardTestSuite.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BoardTestSuite_move - 2018.12.14 at 00h 46m 17s.xml">
-      <configuration name="BoardTestSuite.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PlayerTest_test - 2018.12.14 at 01h 23m 42s.xml">
-      <configuration name="PlayerTest.test" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73464000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="69789000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18084261" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -968,12 +1080,44 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19812793" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23101953" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39625585" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3275488" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.32954547" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.3298307" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17607313" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20904836" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39625585" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -990,7 +1134,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.3298307" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -999,13 +1143,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/application/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/MapperTestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3179">
-          <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
+        <state relative-caret-position="221">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/application/Application.java" />
     <entry file="file://$PROJECT_DIR$/messenger/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1013,233 +1158,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/BufferedReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/BufferedWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/CommunicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/animation/Animation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="906" selection-start-line="906" selection-end-line="906" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
-          <folding>
-            <element signature="e#66921#66922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="8411" selection-start-line="8411" selection-end-line="8411" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/animation/AnimationAccessorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/animation/Timeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-          <folding>
-            <element signature="e#66572#66573#0" expanded="true" />
-            <element signature="e#66618#66619#0" expanded="true" />
-            <element signature="e#221315#221316#0" expanded="true" />
-            <element signature="e#221373#221374#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/asd.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/BufferedReader.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/BufferedWriter.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/CallableReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Scoreboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/MapUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="32" column="47" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/MoveResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ResponseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -1250,52 +1181,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/exception/PlayerInitializationException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="e#4699#4700#0" expanded="true" />
-            <element signature="e#4724#4725#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.4/ff45275b27cd70c701abed8e53e3b9f20806345b/lombok-1.18.4-sources.jar!/lombok/EqualsAndHashCode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/MapUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/PlayerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Scoreboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/CommunicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        <state relative-caret-position="408">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ResponseType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/MoveResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/animation/Animation.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Node.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/Button.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/animation/AnimationAccessorImpl.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/animation/Timeline.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Iterator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/event/Event.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/Scene.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1304,71 +1315,138 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="136">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/exception/PlayerInitializationException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        <state relative-caret-position="2176">
+          <caret line="133" column="12" selection-start-line="133" selection-start-column="12" selection-end-line="133" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#5175#5176#0" expanded="true" />
+            <element signature="e#5211#5212#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/PointsMapperTestSuite.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/Mapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="323">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/PointsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1807#1814#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding>
-            <element signature="e#3488#3489#0" expanded="true" />
-            <element signature="e#3537#3538#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3009">
-          <caret line="199" column="3" selection-start-line="199" selection-start-column="3" selection-end-line="199" selection-end-column="3" />
+        <state relative-caret-position="272">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend templates/main - battle center.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend templates/main global.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/test.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/PvP.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/border.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/sample.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/AIvsP.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/AIvsAI.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fxml.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="84" lean-forward="true" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="40" column="26" selection-start-line="26" selection-start-column="7" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Fx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#211#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fxml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="38" column="68" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

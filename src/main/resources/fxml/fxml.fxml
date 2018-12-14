@@ -11,10 +11,10 @@
    <left>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20" BorderPane.alignment="CENTER">
          <children>
-            <RadioButton fx:id="solo" mnemonicParsing="false" onAction="#method" text="solo" />
-            <RadioButton mnemonicParsing="false" text="AI" />
-            <RadioButton mnemonicParsing="false" text="PvP" />
-            <RadioButton mnemonicParsing="false" text="other" />
+            <!--<RadioButton fx:id="solo" mnemonicParsing="false" onAction="#method" text="solo" />-->
+            <Button mnemonicParsing="false" onAction="#AIvsAI" text="AIvsAI" fx:id="AIvsAI" />
+            <Button mnemonicParsing="false" text="PvP" fx:id="PvP" onAction="#callPvP"/>
+            <Button mnemonicParsing="false" text="AIvsP" fx:id="AIvsP" onAction="#callAIvsP"/>
          </children>
       </VBox>
    </left>
