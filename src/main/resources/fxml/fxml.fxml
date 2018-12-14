@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml">
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="solo" mnemonicParsing="false" onAction="#method" text="solo" />
+            <RadioButton mnemonicParsing="false" text="AI" />
+            <RadioButton mnemonicParsing="false" text="PvP" />
+            <RadioButton mnemonicParsing="false" text="other" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="34.0" prefWidth="600.0" spacing="20" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="26.0" prefWidth="371.0" />
+            <Button mnemonicParsing="false" text="Start" />
+            <Button mnemonicParsing="false" text="Clear" />
+            <Button mnemonicParsing="false" text="Exit" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="332.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <BorderPane prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
