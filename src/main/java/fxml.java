@@ -23,7 +23,7 @@ public class fxml {
 
     private FXMLLoader loader;
     //    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/test.fxml"));
-    private BorderPane subPain;git
+    private BorderPane subPain;
 
     public void AIvsAI(ActionEvent actionEvent) throws IOException {
         loader = new FXMLLoader(getClass().getResource("/fxml/AIvsAI.fxml"));
