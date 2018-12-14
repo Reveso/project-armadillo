@@ -1,12 +1,11 @@
 package com.lukasrosz.armadillo.player;
 
-import com.lukasrosz.armadillo.communication.Mapper;
+import com.lukasrosz.armadillo.communication.PointsMapper;
 import com.lukasrosz.armadillo.communication.ProcessCommunicator;
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.game.Point;
-import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.val;
 
@@ -14,7 +13,6 @@ import java.io.*;
 import java.util.List;
 import java.util.concurrent.*;
 
-@EqualsAndHashCode
 public class AIPlayer extends AbstractPlayer {
 
     private ProcessCommunicator processCommunicator;
@@ -40,19 +38,15 @@ public class AIPlayer extends AbstractPlayer {
     }
 
     private Move resolveMove(MoveResponse moveResponse, String stringMove) {
-        Move move = null;
-        List<Point> points = Mapper.getStringAsPoints(stringMove);
-        if(points != null && points.size() == 2) {
-            move = new Move(points.get(0), points.get(1)); //TODO this should be logged
-        } else {
+        Move move = PointsMapper.getStringAsMove(stringMove);
+        if(move == null) {
             moveResponse.setResponseType(ResponseType.EXCEPTION);
-            return null;
         }
         return move;
     }
 
     private String getMoveFromProcessCommunicator(MoveResponse moveResponse, String freeCells) {
-        String stringMove = null;
+        String stringMove;
         try {
             processCommunicator.sendMessageToProcess(freeCells);
             stringMove = processCommunicator.getMessageFromProcess(500);

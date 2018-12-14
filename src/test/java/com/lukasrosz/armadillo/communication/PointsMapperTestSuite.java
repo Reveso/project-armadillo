@@ -10,11 +10,11 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
-public class MapperTestSuite {
+public class PointsMapperTestSuite {
     @Test
     public void getStringAsCellsTest() {
         String test = "{2;1},{3;3}";
-        List<Point> points = Mapper.getStringAsPoints(test);
+        List<Point> points = PointsMapper.getStringAsPoints(test);
 //        System.out.println(points);
         List<Point> asserPoints = new ArrayList<>();
         asserPoints.add(new Point(2, 1));
@@ -32,7 +32,7 @@ public class MapperTestSuite {
         cells.add(new Point(1,1));
         cells.add(new Point(7,1));
 
-        String score = Mapper.getPointsAsString(cells);
+        String score = PointsMapper.getPointsAsString(cells);
         assertEquals("{3;1},{2;1},{1;1},{7;1}", score);
 
     }

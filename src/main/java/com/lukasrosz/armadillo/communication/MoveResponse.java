@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
+@Getter
+@Setter
 public class MoveResponse {
-    @Getter @Setter private Move move;
-    @Getter @Setter private ResponseType responseType;
+    private Move move;
+    private ResponseType responseType;
 }

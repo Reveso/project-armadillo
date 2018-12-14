@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -16,7 +15,16 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GameConfigDto {
-    private int boardSize;
+
+    public GameConfigDto(int boardSize, Set<Score> scores, Set<Game> games) {
+        this.scores = scores;
+        this.games = games;
+        this.boardSize = boardSize;
+    }
+
     private Set<Score> scores = new LinkedHashSet<>();
     private Set<Game> games = new LinkedHashSet<>();
+    private int refreshDelay;
+    private int boardSize;
+
 }

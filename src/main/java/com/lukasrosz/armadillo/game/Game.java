@@ -1,6 +1,6 @@
 package com.lukasrosz.armadillo.game;
 
-import com.lukasrosz.armadillo.communication.Mapper;
+import com.lukasrosz.armadillo.communication.PointsMapper;
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
@@ -10,25 +10,22 @@ import com.lukasrosz.armadillo.scoring.GameResult;
 import lombok.*;
 
 import java.util.Objects;
-import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.LinkedBlockingQueue;
 
 @Getter
 public class Game {
 
-    private AbstractPlayer player1;
-    private AbstractPlayer player2;
+    private AbstractPlayer movingPlayer;
+    private AbstractPlayer waitingPlayer;
     private Board board;
     private GameResult gameResult;
     private boolean ended = false;
     private boolean started = false;
     private Move lastMove;
 
-    public Game(@NonNull AbstractPlayer player1, @NonNull AbstractPlayer player2, @NonNull Board board) {
-        this.player1 = player1;
-        this.player2 = player2;
+    public Game(@NonNull AbstractPlayer movingPlayer, @NonNull AbstractPlayer waitingPlayer, @NonNull Board board) {
+        this.movingPlayer = movingPlayer;
+        this.waitingPlayer = waitingPlayer;
         this.board = board;
     }
 
@@ -55,14 +52,14 @@ public class Game {
 
     private void finishGame() {
         ended = true;
-        player1.killPlayer();
-        player2.killPlayer();
+        movingPlayer.killPlayer();
+        waitingPlayer.killPlayer();
     }
 
     private void pickStartingPlayer() {
-        if(player2 instanceof HumanFXPlayer) {
+        if(waitingPlayer instanceof HumanFXPlayer) {
             return;
-        } else if (player1 instanceof HumanFXPlayer) {
+        } else if (movingPlayer instanceof HumanFXPlayer) {
             swapPlayers();
         }
         Random random = new Random();
@@ -74,15 +71,15 @@ public class Game {
     private void initializeGame() throws PlayerInitializationException {
         pickStartingPlayer();
 
-        boolean success1 = player1.initialize(board.getSize(), Mapper.getPointsAsString(board.getOccupiedCells()));
-        boolean success2 = player2.initialize(board.getSize(), Mapper.getPointsAsString(board.getOccupiedCells()));
+        boolean success1 = movingPlayer.initialize(board.getSize(), PointsMapper.getPointsAsString(board.getOccupiedFields()));
+        boolean success2 = waitingPlayer.initialize(board.getSize(), PointsMapper.getPointsAsString(board.getOccupiedFields()));
         if(!success1) {
             finishGame();
-            throw new PlayerInitializationException(player1.getPlayerDetails().getAlias()
+            throw new PlayerInitializationException(movingPlayer.getPlayerDetails().getAlias()
                     + " was not properly initialized");
         } else if (!success2) {
             finishGame();
-            throw new PlayerInitializationException(player2.getPlayerDetails().getAlias()
+            throw new PlayerInitializationException(waitingPlayer.getPlayerDetails().getAlias()
                     + " was not properly initialized");
         }
     }
@@ -94,20 +91,20 @@ public class Game {
             message = "start";
             started = true;
         } else {
-            message = Mapper.getMoveAsString(lastMove);
+            message = PointsMapper.getMoveAsString(lastMove);
         }
 
         if (ended) return null;
 
-        val moveResponse = player1.askForMove(message);
+        val moveResponse = movingPlayer.askForMove(message);
 
-        gameResult = checkResponse(moveResponse, player2, player1);
+        gameResult = checkResponse(moveResponse, waitingPlayer, movingPlayer);
         if(gameResult != null) {
             finishGame();
             return null;
         }
 
-        gameResult = checkIfEndGame(player1, player2);
+        gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
         if(gameResult != null) {
             finishGame();
             return moveResponse.getMove();
@@ -119,9 +116,9 @@ public class Game {
     }
 
     private void swapPlayers() {
-        AbstractPlayer temp = player1;
-        player1 = player2;
-        player2 = temp;
+        AbstractPlayer temp = movingPlayer;
+        movingPlayer = waitingPlayer;
+        waitingPlayer = temp;
     }
 
     @Override
@@ -129,9 +126,9 @@ public class Game {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return (Objects.equals(player1, game.player1) &&
-                Objects.equals(player2, game.player2)) || (Objects.equals(player1, game.player2) &&
-                Objects.equals(player2, game.player1));
+        return (Objects.equals(movingPlayer, game.movingPlayer) &&
+                Objects.equals(waitingPlayer, game.waitingPlayer)) || (Objects.equals(movingPlayer, game.waitingPlayer) &&
+                Objects.equals(waitingPlayer, game.movingPlayer));
     }
 
     @Override

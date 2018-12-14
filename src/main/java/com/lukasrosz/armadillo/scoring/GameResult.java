@@ -9,8 +9,10 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class GameResult {
-    @Getter @Setter private PlayerDetails winner;
-    @Getter @Setter private PlayerDetails loser;
-    @Getter @Setter private boolean disqualified;
+    private PlayerDetails winner;
+    private PlayerDetails loser;
+    private boolean disqualified;
 }

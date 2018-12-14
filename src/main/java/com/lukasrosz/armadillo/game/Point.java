@@ -7,10 +7,11 @@ import java.util.Random;
 @EqualsAndHashCode
 @AllArgsConstructor
 @ToString
+@Getter
+@Setter
 public class Point {
-    @Getter @Setter
+
     private int x;
-    @Getter @Setter
     private int y;
 
     public static Point generatePoint(int minIndex, int maxIndex) {

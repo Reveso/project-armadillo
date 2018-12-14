@@ -1,6 +1,6 @@
 package com.lukasrosz.armadillo.game;
 
-import org.junit.Assert;
+import lombok.val;
 import org.junit.Test;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class BoardTestSuite {
 
-    Board board;
+    private Board board;
 
     @Test
     public void boardTest() {
@@ -28,15 +28,18 @@ public class BoardTestSuite {
     @Test
     public void move() {
         board = new Board(5);
-        List<Point> pointsOnStart = board.getFreeCells();
-        Move move = new Move(new Point(2,3), new Point(3,3));
-        if (board.cellOccupied(2,3) && board.cellOccupied(3,3)) {
+        List<Point> pointsOnStart = board.getFreeFields();
+        val p1 = new Point(2, 3);
+        val p2 = new Point(3, 3);
+
+        Move move = new Move(p1, p2);
+        if (board.cellOccupied(p1) && board.cellOccupied(p2)) {
             assertTrue(board.setNewMove(move));
-            assertNotEquals(pointsOnStart, board.getFreeCells());
-            assertTrue(board.getOccupiedCells().contains(new Point(3,3)));
-            assertTrue(board.getOccupiedCells().contains(new Point(2,3)));
+            assertNotEquals(pointsOnStart, board.getFreeFields());
+            assertTrue(board.getOccupiedFields().contains(new Point(3,3)));
+            assertTrue(board.getOccupiedFields().contains(new Point(2,3)));
         } else {
-            assertEquals(pointsOnStart, board.getFreeCells());
+            assertEquals(pointsOnStart, board.getFreeFields());
         }
 
     }

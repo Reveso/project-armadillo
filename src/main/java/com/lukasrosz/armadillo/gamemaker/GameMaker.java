@@ -4,35 +4,33 @@ import com.lukasrosz.armadillo.controller.model.GameConfigDto;
 import com.lukasrosz.armadillo.game.Board;
 import com.lukasrosz.armadillo.game.Game;
 import com.lukasrosz.armadillo.player.*;
-import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
-import com.lukasrosz.armadillo.scoring.Scoreboard;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.val;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
 @NoArgsConstructor()
 public class GameMaker {
 
-    public GameConfigDto newHumanVsAIGame(File aiDir, int boardSize) {
+    public GameConfigDto newHumanVsAIGame(@NonNull File aiDir, int boardSize) {
         val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
         val player2 = new HumanFXPlayer();
         val game = new Game(player1, player2, new Board(boardSize));
         return singleGameConfig(player1, player2, game, boardSize);
     }
 
-    public GameConfigDto newAiVsAiGame(File aiDir1, File aiDir2, int boardSize) {
+    public GameConfigDto newAiVsAiGame(@NonNull File aiDir1, @NonNull File aiDir2, int boardSize) {
         val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
         val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
         val game = new Game(player1, player2, new Board(boardSize));
         return singleGameConfig(player1, player2, game, boardSize);
     }
 
-    public GameConfigDto newBattleGame(File mainDir, int boardSize) {
+    public GameConfigDto newBattleGame(@NonNull File mainDir, int boardSize) {
         Set<AbstractPlayer> players = populatePlayersSet(mainDir);
         Set<Game> games = new LinkedHashSet<>();
         Set<Score> scores = new LinkedHashSet<>();
@@ -49,7 +47,7 @@ public class GameMaker {
         return new GameConfigDto(boardSize, scores, games);
     }
 
-    private Set<AbstractPlayer> populatePlayersSet(File mainDir) {
+    private Set<AbstractPlayer> populatePlayersSet(@NonNull File mainDir) {
         final Set<AbstractPlayer> players = new LinkedHashSet<>();
         for (String relativeDirName : mainDir.list()) {
             File dir = new File(mainDir.getAbsolutePath() + "/" + relativeDirName);
@@ -60,7 +58,7 @@ public class GameMaker {
         return players;
     }
 
-    private PlayerDetails populatePlayerDetails(File dir) {
+    private PlayerDetails populatePlayerDetails(@NonNull File dir) {
         val playerDetails = new PlayerDetails();
         try (val scanner = new Scanner(new File(dir.getAbsolutePath() + "/info.txt"))) {
             playerDetails.setAlias(scanner.nextLine());

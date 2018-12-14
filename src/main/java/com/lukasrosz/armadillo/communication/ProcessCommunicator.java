@@ -38,7 +38,6 @@ public class ProcessCommunicator {
 
         executor = Executors.newCachedThreadPool();
 
-//        Future<String> futureCall = executor.submit(new CallableReader(reader));
         Future<String> futureCall = executor.submit(() -> reader.readLine());
 
         move = futureCall.get(timeout, TimeUnit.MILLISECONDS);

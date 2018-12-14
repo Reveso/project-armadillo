@@ -4,10 +4,11 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @ToString
 public class Move {
-    @Getter @Setter
+
     private Point point1;
-    @Getter @Setter
     private Point point2;
 }

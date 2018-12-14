@@ -1,8 +1,9 @@
 package com.lukasrosz.armadillo.controller;
 
-import com.lukasrosz.armadillo.communication.Mapper;
+import com.lukasrosz.armadillo.communication.PointsMapper;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
+import com.lukasrosz.armadillo.game.Board;
 import com.lukasrosz.armadillo.game.Game;
 import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.game.Point;
@@ -18,7 +19,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -30,8 +30,10 @@ import java.util.*;
 
 public class FightStageController {
 
-    @FXML
-    private BorderPane borderPane;
+    @Getter
+    @Setter
+    private GameConfigDto gameConfigDto;
+
     @FXML
     private TableView<Score> scoreboardTable;
     @FXML
@@ -43,10 +45,7 @@ public class FightStageController {
 
     @Getter
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
-    @Getter
-    @Setter
-    private GameConfigDto gameConfigDto;
-    private Timeline timeline;
+    private Timeline gameAnimationTimeline;
     private Iterator<Game> gameIterator;
     private HashMap<Point, Pane> fieldMap;
 
@@ -103,46 +102,60 @@ public class FightStageController {
     }
 
     private void makeTimeline(Game game) {
-        timeline = new Timeline(
+        gameAnimationTimeline = new Timeline(
                 new KeyFrame(
-                        Duration.millis(100),
+                        Duration.millis(gameConfigDto.getRefreshDelay()),
                         event -> setupTimelineEvent(game)
                 ));
-        timeline.setCycleCount(Timeline.INDEFINITE);
+        gameAnimationTimeline.setCycleCount(Timeline.INDEFINITE);
+    }
+
+    private void setupNewGame(Game game) {
+        fightTitleLabel.setText(game.getMovingPlayer().getPlayerDetails().getAlias() + " vs "
+                + game.getWaitingPlayer().getPlayerDetails().getAlias());
+        game.getBoard().getOccupiedFields().forEach(point -> setFieldOccupied(point, "#420000", "#3d0101"));
     }
 
     private void setupTimelineEvent(Game game) {
         if(!game.isStarted()) {
-            fightTitleLabel.setText(game.getPlayer1().getPlayerDetails().getAlias() + " vs "
-                    + game.getPlayer2().getPlayerDetails().getAlias());
-            game.getBoard().getOccupiedCells().forEach(point -> setFieldOccupied(point, "#420000", "#3d0101"));
+            setupNewGame(game);
         }
+        
         if (!game.isEnded()) {
             try {
-                if(game.getPlayer1() instanceof HumanFXPlayer) {
-                    ((HumanFXPlayer) game.getPlayer1()).setNextMove(nextHumanMove);
-                }
-                Move move = game.nextMove();
-                System.out.println(move);
-                if(move != null) {
-                    setFieldOccupied(move.getPoint1(), "#872443", "#4c1325");
-                    setFieldOccupied(move.getPoint2(), "#872443", "#4c1325");
-                }
-                if(game.getPlayer1() instanceof HumanFXPlayer && !game.isEnded()) {
-                    getNextMoveFromGui();
-                }
+                playRound(game);
             } catch (PlayerInitializationException e) {
                 System.err.println(e);
             }
         } else {
-            saveGameResult(game.getGameResult());
-            Collections.sort(scoreboardList);
-            scoreboardTable.refresh();
-            fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
-                    + game.getGameResult().getLoser().getAlias());
-            timeline.stop();
-            playGame();
+            sumUpGame(game);
         }
+    }
+    
+    private void playRound(Game game) throws PlayerInitializationException {
+        if(game.getMovingPlayer() instanceof HumanFXPlayer) {
+            ((HumanFXPlayer) game.getMovingPlayer()).setNextMove(nextHumanMove);
+        }
+
+        Move move = game.nextMove();
+        System.out.println(move);
+        if(move != null) {
+            setFieldOccupied(move.getPoint1(), "#872443", "#4c1325");
+            setFieldOccupied(move.getPoint2(), "#872443", "#4c1325");
+        }
+        if(game.getMovingPlayer() instanceof HumanFXPlayer && !game.isEnded()) {
+            getNextMoveFromGui();
+        }
+    }
+    
+    private void sumUpGame(Game game) {
+        saveGameResult(game.getGameResult());
+        Collections.sort(scoreboardList);
+        scoreboardTable.refresh();
+        fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
+                + game.getGameResult().getLoser().getAlias());
+        gameAnimationTimeline.stop();
+        playGame();
     }
 
     private List<Point> nextHumanMovePoints = new ArrayList<>();
@@ -152,14 +165,15 @@ public class FightStageController {
         String targetId = ((Pane) event.getTarget()).getId();
         System.out.println(nextHumanMovePoints.size());
         if(nextHumanMovePoints.size() != 1) {
-            nextHumanMovePoints.add(Mapper.getStringAsPoint(targetId));
+            nextHumanMovePoints.add(PointsMapper.getStringAsPoint(targetId));
             //TODO get a Pane from Map and toggle "selected" class
         } else {
-            nextHumanMovePoints.add(Mapper.getStringAsPoint(targetId));
+            nextHumanMovePoints.add(PointsMapper.getStringAsPoint(targetId));
             //TODO get a Pane from Map and toggle "selected" class
-            if(checkIfNeighbours(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1))) {
+            if(Board.checkIfNeighbours(gameConfigDto.getBoardSize(),
+                    nextHumanMovePoints.get(0), nextHumanMovePoints.get(1))) {
                 nextHumanMove = new Move(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1));
-                timeline.play();
+                gameAnimationTimeline.play();
             } else {
                 //TODO toggle off classes in both Panes
                 nextHumanMovePoints.clear();
@@ -167,26 +181,15 @@ public class FightStageController {
         }
     }
 
-    private boolean checkIfNeighbours(Point p1, Point p2) {
-        int size = gameConfigDto.getBoardSize();
-        if(Math.abs(p1.getX() - p2.getX()) == 1 && Math.abs(p1.getY() - p2.getY()) == 0 ||
-                Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == 1) {
-            return true;
-        } else if((Math.abs(p1.getX() - p2.getX()) == size-1 && Math.abs(p1.getY() - p2.getY()) == 0) ||
-                (Math.abs(p1.getX() - p2.getX()) == 0 && Math.abs(p1.getY() - p2.getY()) == size-1)){
-            return true;
-        } else return false;
-    }
-
     private void getNextMoveFromGui() {
-        timeline.pause();
+        gameAnimationTimeline.pause();
         nextHumanMovePoints.clear();
     }
 
     private void playGame() {
         if(makeTimeline()) {
             makeBoard();
-            timeline.play();
+            gameAnimationTimeline.play();
         }
     }
 
@@ -205,11 +208,11 @@ public class FightStageController {
     @FXML
     private void onPauseButtonAction() {
         if (pauseButton.getText().toLowerCase().equals("pause")) {
-            timeline.pause();
+            gameAnimationTimeline.pause();
             pauseButton.setText("Play");
         } else {
-            if(timeline != null) {
-                timeline.play();
+            if(gameAnimationTimeline != null) {
+                gameAnimationTimeline.play();
             } else {
                 playGame();
             }

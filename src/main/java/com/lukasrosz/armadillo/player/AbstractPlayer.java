@@ -4,10 +4,13 @@ import com.lukasrosz.armadillo.communication.MoveResponse;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+import java.util.Objects;
+
+@Getter
 @EqualsAndHashCode
 public abstract class AbstractPlayer {
 
-    @Getter protected PlayerDetails playerDetails;
+    protected PlayerDetails playerDetails;
 
     public abstract MoveResponse askForMove(String freeCells);
 

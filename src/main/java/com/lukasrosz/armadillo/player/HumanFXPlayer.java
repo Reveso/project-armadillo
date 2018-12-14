@@ -1,20 +1,18 @@
 package com.lukasrosz.armadillo.player;
 
-import com.lukasrosz.armadillo.communication.Mapper;
 import com.lukasrosz.armadillo.communication.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.game.Move;
-import com.lukasrosz.armadillo.game.Point;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 
-import java.util.List;
-import java.util.Scanner;
 
+@Getter
+@Setter
 public class HumanFXPlayer extends HumanPlayer {
-    @Getter
-    @Setter
+
     private Move nextMove;
 
     @Override
