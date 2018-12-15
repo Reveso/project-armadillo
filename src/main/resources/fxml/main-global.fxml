@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.MainController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="367.0" prefWidth="116.0" spacing="20" BorderPane.alignment="CENTER">
+         <fx:define>
+            <ToggleGroup fx:id="mode" />
+         </fx:define>
+         <children>
+
+            <RadioButton mnemonicParsing="false" onAction="#loadBitwa" text="bitwa">
+                <toggleGroup>
+                    <ToggleGroup fx:id="modeRadioButtons" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" onAction="#loadSolo" text="solo" toggleGroup="$modeRadioButtons" />
+            <RadioButton mnemonicParsing="false" onAction="#loadAIvP" text="player vs AI" toggleGroup="$modeRadioButtons" />
+            <RadioButton mnemonicParsing="false" onAction="#loadPvP" text="PvP" toggleGroup="$modeRadioButtons" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="33.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="33.0" prefWidth="426.0" />
+            <Button mnemonicParsing="false" text="Start" fx:id="startButton" onAction="#startClicked"/>
+            <Button mnemonicParsing="false" text="Clear" />
+            <Button mnemonicParsing="false" text="Exit" onAction="#onExitClicked"/>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

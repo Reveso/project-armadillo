@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="bitwaPane" prefHeight="221.0" prefWidth="446.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.subcontrollers.bitwaController">
+    <bottom>
+        <HBox prefHeight="45.0" prefWidth="484.0" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="45.0" prefWidth="278.0" />
+                <TextField prefHeight="25.0" prefWidth="71.0" />
+                <Label prefHeight="17.0" prefWidth="82.0" text="boardsize field" fx:id="sizeText"/>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="51.0" prefWidth="446.0">
+                    <children>
+                        <Pane prefHeight="31.0" prefWidth="200.0" />
+                        <TextField fx:id="bitwText"/>
+                        <Button fx:id="bitwaFileChooser" onAction="#bitwaFileChooser" mnemonicParsing="false" text="Pick a path" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+   <top>
+      <Label text="Bitwa" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>

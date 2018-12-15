@@ -1,19 +1,15 @@
 package com.lukasrosz.armadillo;
 
-import com.lukasrosz.armadillo.controller.FightStageController;
-import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import lombok.val;
 
-import java.io.File;
 import java.io.IOException;
 
-public class Fx extends Application {
+public class MainWithGlobal extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -22,12 +18,17 @@ public class Fx extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        Stage fightStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fxml.fxml"));
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main-global.fxml"));
         BorderPane fightStageRoot = fxmlLoader.load();
 
-        fightStage.setScene(new Scene(fightStageRoot));
+        stage.setScene(new Scene(fightStageRoot));
+        stage.setOnCloseRequest(event -> onExitClicked());
+        stage.show();
+    }
 
-        fightStage.show();
+    private void onExitClicked() {
+        Platform.exit();
+        System.exit(0);
     }
 }
