@@ -13,6 +13,7 @@ public class AIvsPController {
     public Button AIvsPFileChooser;
     @FXML
     public TextField AIvsPText;
+    @FXML
     public TextField sizeText;
 
     private File selectedFile;

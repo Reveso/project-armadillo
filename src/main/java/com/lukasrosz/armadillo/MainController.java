@@ -9,12 +9,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
 public class MainController {
+    @FXML
     public Button startButton;
+    @FXML
+    public RadioButton bitwaRadioButton;
+    @FXML
+    public RadioButton soloRadioButton;
+    @FXML
+    public RadioButton PvAIRadioButton;
+    @FXML
+    public RadioButton PvPRadioButton;
     //    @FXML
 //    private RadioButton solo;
     @FXML
@@ -72,5 +82,16 @@ public class MainController {
 
     public void startClicked(ActionEvent actionEvent) {
 
+        int size;
+
+        if (bitwaRadioButton.isArmed()) {
+            size = Integer.parseInt(bitwaController.sizeText.getCharacters().toString());
+        } else if (soloRadioButton.isArmed()) {
+            size = Integer.parseInt(soloController.sizeText.getCharacters().toString());
+        } else if (PvPRadioButton.isArmed()) {
+            size = Integer.parseInt(pvPController.sizeText.getCharacters().toString());
+        } else if (PvAIRadioButton.isArmed()) {
+            size = Integer.parseInt(aIvsPController.sizeText.getCharacters().toString());
+        }
     }
 }

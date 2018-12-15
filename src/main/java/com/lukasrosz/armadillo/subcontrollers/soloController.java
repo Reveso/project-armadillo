@@ -18,7 +18,8 @@ public class soloController {
     public TextField soloText1;
     @FXML
     public TextField soloText2;
-    public Label sizeText;
+    @FXML
+    public TextField sizeText;
 
     private File selectedFile;
 

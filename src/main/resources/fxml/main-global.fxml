@@ -16,14 +16,14 @@
          </fx:define>
          <children>
 
-            <RadioButton mnemonicParsing="false" onAction="#loadBitwa" text="bitwa">
+            <RadioButton mnemonicParsing="false" onAction="#loadBitwa" text="bitwa" fx:id="bitwaRadioButton">
                 <toggleGroup>
                     <ToggleGroup fx:id="modeRadioButtons" />
                 </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" onAction="#loadSolo" text="solo" toggleGroup="$modeRadioButtons" />
-            <RadioButton mnemonicParsing="false" onAction="#loadAIvP" text="player vs AI" toggleGroup="$modeRadioButtons" />
-            <RadioButton mnemonicParsing="false" onAction="#loadPvP" text="PvP" toggleGroup="$modeRadioButtons" />
+            <RadioButton fx:id="soloRadioButton" mnemonicParsing="false" onAction="#loadSolo" text="solo" toggleGroup="$modeRadioButtons" />
+            <RadioButton fx:id="PvAIRadioButton" mnemonicParsing="false" onAction="#loadAIvP" text="player vs AI" toggleGroup="$modeRadioButtons" />
+            <RadioButton fx:id="PvPRadioButton" mnemonicParsing="false" onAction="#loadPvP" text="PvP" toggleGroup="$modeRadioButtons" />
          </children>
       </VBox>
    </left>

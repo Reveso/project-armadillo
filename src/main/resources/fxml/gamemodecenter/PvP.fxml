@@ -11,8 +11,8 @@
         <HBox prefHeight="45.0" prefWidth="484.0" BorderPane.alignment="CENTER">
             <children>
                 <Pane prefHeight="45.0" prefWidth="278.0" />
-                <TextField prefHeight="25.0" prefWidth="71.0" />
-                <Label prefHeight="17.0" prefWidth="82.0" text="boardsize field" fx:id="sizeText"/>
+                <TextField prefHeight="25.0" prefWidth="71.0" fx:id="sizeText"/>
+                <Label prefHeight="17.0" prefWidth="82.0" text="boardsize field" />
             </children>
         </HBox>
     </bottom>

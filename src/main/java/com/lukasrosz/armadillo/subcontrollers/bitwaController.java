@@ -12,8 +12,10 @@ import java.io.File;
 public class bitwaController {
     @FXML
     public Button bitwaFileChooser;
+    @FXML
     public TextField bitwText;
-    public Label sizeText;
+    @FXML
+    public TextField sizeText;
 
     private File selectedFile;
 
