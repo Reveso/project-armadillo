@@ -22,6 +22,7 @@ public class bitwaController {
 
     public void bitwaFileChooser(ActionEvent actionEvent) {
         DirectoryChooser dc = new DirectoryChooser();
+        dc.setInitialDirectory(new File("./"));
         File selectedFile = dc.showDialog(null);
 
         if (selectedFile != null) {

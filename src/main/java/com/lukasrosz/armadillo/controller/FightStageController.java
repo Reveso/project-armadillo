@@ -19,8 +19,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,7 +50,17 @@ public class FightStageController {
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
     private Timeline gameAnimationTimeline;
     private Iterator<Game> gameIterator;
-    private HashMap<Point, Pane> fieldMap;
+    private Map<Point, Pane> fieldMap = new HashMap<>();
+
+    //for human moves
+    private List<Point> nextHumanMovePoints = new ArrayList<>();
+    private Move nextHumanMove;
+    private Pane selectedPane;
+
+    public void initialize() {
+        boardGridPane.getStylesheets().add("/css/styles.css");
+        fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 32));
+    }
 
     public void setup(GameConfigDto gameConfigDto) {
         this.gameConfigDto = gameConfigDto;
@@ -59,30 +72,41 @@ public class FightStageController {
     private void makeBoard() {
         boardGridPane.getChildren().clear();
         boardGridPane.setPrefSize(1000, 1000);
-        fieldMap = new HashMap<>();
+        fieldMap.clear();
 
-        String color1 = "#995f49";
-        String color2 = "#ECCEA6";
-        String currentColor = color1;
+        String paneClass1 = "pane1";
+        String paneClass2 = "pane2";
+        String currentPaneClass = paneClass1;
         for (int i = 0; i < gameConfigDto.getBoardSize(); i++) {
-            currentColor = currentColor.equals(color1) ? color2 : color1;
+            if(gameConfigDto.getBoardSize() % 2 == 0) {
+                currentPaneClass = currentPaneClass.equals(paneClass1) ?
+                        paneClass2 : paneClass1;
+            }
 
             for (int j = 0; j < gameConfigDto.getBoardSize(); j++) {
-                val pane = new Pane();
-                pane.setPrefSize(50, 50);
-                pane.setStyle("-fx-background-color: " + currentColor + "; ");
-                boardGridPane.add(pane, i, j);
+                val pane = newBoardPane(currentPaneClass, i, j);
                 fieldMap.put(new Point(i, j), pane);
-                pane.setId("{" + i + ";" + j + "}");
-                pane.setOnMouseClicked(this::onPaneClicked);
-                currentColor = currentColor.equals(color1) ? color2 : color1;
+                boardGridPane.add(pane, i, j);
+
+                currentPaneClass = currentPaneClass.equals(paneClass1) ?
+                        paneClass2 : paneClass1;
             }
         }
     }
 
-    //TODO Toggle ready CSS class would be better
-    private void setFieldOccupied(Point point, String blockColor, String borderColor) {
-        fieldMap.get(point).setStyle("-fx-background-color: " + blockColor + "; -fx-border-color: "+ borderColor + "; -fx-border-width: 2");
+    private Pane newBoardPane(String paneClass, int x, int y) {
+        val pane = new Pane();
+
+        pane.setPrefSize(50, 50);
+        pane.getStyleClass().add(paneClass);
+        pane.setId("{" + x + ";" + y + "}");
+        pane.setOnMouseClicked(this::onPaneClicked);
+
+        return pane;
+    }
+
+    private void setFieldOccupied(Point point, String cssClass) {
+        fieldMap.get(point).getStyleClass().add(cssClass);
         fieldMap.get(point).setDisable(true);
     }
 
@@ -113,7 +137,8 @@ public class FightStageController {
     private void setupNewGame(Game game) {
         fightTitleLabel.setText(game.getMovingPlayer().getPlayerDetails().getAlias() + " vs "
                 + game.getWaitingPlayer().getPlayerDetails().getAlias());
-        game.getBoard().getOccupiedFields().forEach(point -> setFieldOccupied(point, "#420000", "#3d0101"));
+        game.getBoard().getOccupiedFields()
+                .forEach(point -> setFieldOccupied(point, "pane-occupied-from-start"));
     }
 
     private void setupTimelineEvent(Game game) {
@@ -140,8 +165,8 @@ public class FightStageController {
         Move move = game.nextMove();
         System.out.println(move);
         if(move != null) {
-            setFieldOccupied(move.getPoint1(), "#872443", "#4c1325");
-            setFieldOccupied(move.getPoint2(), "#872443", "#4c1325");
+            setFieldOccupied(move.getPoint1(), "pane-occupied-by-player");
+            setFieldOccupied(move.getPoint2(), "pane-occupied-by-player");
         }
         if(game.getMovingPlayer() instanceof HumanFXPlayer && !game.isEnded()) {
             getNextMoveFromGui();
@@ -158,24 +183,24 @@ public class FightStageController {
         playGame();
     }
 
-    private List<Point> nextHumanMovePoints = new ArrayList<>();
-    private Move nextHumanMove;
     private void onPaneClicked(Event event) {
-        //TODO the best way would be to evaluate if move is correct here, and send Move object to HumanFXPlayer
         String targetId = ((Pane) event.getTarget()).getId();
         System.out.println(nextHumanMovePoints.size());
+        Point point = PointsMapper.getStringAsPoint(targetId);
+
         if(nextHumanMovePoints.size() != 1) {
-            nextHumanMovePoints.add(PointsMapper.getStringAsPoint(targetId));
-            //TODO get a Pane from Map and toggle "selected" class
+            nextHumanMovePoints.add(point);
+            selectedPane = (Pane) event.getTarget();
+            selectedPane.getStyleClass().add("selected-pane");
         } else {
-            nextHumanMovePoints.add(PointsMapper.getStringAsPoint(targetId));
-            //TODO get a Pane from Map and toggle "selected" class
+            nextHumanMovePoints.add(point);
+            selectedPane.getStyleClass().remove("selected-pane");
+
             if(Board.checkIfNeighbours(gameConfigDto.getBoardSize(),
                     nextHumanMovePoints.get(0), nextHumanMovePoints.get(1))) {
                 nextHumanMove = new Move(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1));
                 gameAnimationTimeline.play();
             } else {
-                //TODO toggle off classes in both Panes
                 nextHumanMovePoints.clear();
             }
         }

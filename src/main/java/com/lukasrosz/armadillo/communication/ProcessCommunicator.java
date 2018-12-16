@@ -62,7 +62,7 @@ public class ProcessCommunicator {
 
     private void performCleanup() {
         if (process != null) process.destroy();
-        if (process != null) executor.shutdownNow();
+        if (executor != null) executor.shutdownNow();
         try {
             reader.close();
         } catch (IOException e) {

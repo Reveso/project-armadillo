@@ -92,7 +92,7 @@ public class MainController {
         if (bitwaRadioButton.isSelected()) {
             size = Integer.parseInt(bitwaController.sizeText.getCharacters().toString());
             File file = new File(String.valueOf(Paths.get(String.valueOf((bitwaController.bitwText.getText())))));
-            startBattleGame(size, file, 1);
+            startBattleGame(size, file, 100);
         } else if (soloRadioButton.isSelected()) {
             size = Integer.parseInt(soloController.sizeText.getCharacters().toString());
             File file1 = new File(String.valueOf(Paths.get(String.valueOf((soloController.soloText1.getText())))));

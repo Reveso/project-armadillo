@@ -2,15 +2,13 @@ package com.lukasrosz.armadillo.player;
 
 import com.lukasrosz.armadillo.communication.PointsMapper;
 import com.lukasrosz.armadillo.communication.ProcessCommunicator;
-import com.lukasrosz.armadillo.communication.MoveResponse;
+import com.lukasrosz.armadillo.communication.model.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.game.Move;
-import com.lukasrosz.armadillo.game.Point;
 import lombok.NonNull;
 import lombok.val;
 
 import java.io.*;
-import java.util.List;
 import java.util.concurrent.*;
 
 public class AIPlayer extends AbstractPlayer {
@@ -70,7 +68,7 @@ public class AIPlayer extends AbstractPlayer {
     public boolean initialize(int boardSize, String occupiedCells) {
         try {
             processCommunicator.sendMessageToProcess(String.valueOf(boardSize));
-            String response = processCommunicator.getMessageFromProcess(2000); //TODO initial timeout longer?
+            String response = processCommunicator.getMessageFromProcess(2000); //initial timeout longer
             if(!response.toLowerCase().equals("ok")) return false;
 
             processCommunicator.sendMessageToProcess(occupiedCells);

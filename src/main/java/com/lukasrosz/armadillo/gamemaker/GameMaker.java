@@ -16,19 +16,21 @@ import java.util.*;
 @NoArgsConstructor()
 public class GameMaker {
 
-//    public GameConfigDto newHumanVsAIGame(@NonNull File aiDir, int boardSize) {
-//        val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
-//        val player2 = new HumanFXPlayer();
-//        val game = new Game(player1, player2, new Board(boardSize));
-//        return singleGameConfig(player1, player2, game, boardSize);
-//    }
-//
-//    public GameConfigDto newAiVsAiGame(@NonNull File aiDir1, @NonNull File aiDir2, int boardSize) {
-//        val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
-//        val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
-//        val game = new Game(player1, player2, new Board(boardSize));
-//        return singleGameConfig(player1, player2, game, boardSize);
-//    }
+    @Deprecated
+    public GameConfigDto newHumanVsAIGame(@NonNull File aiDir, int boardSize) {
+        val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
+        val player2 = new HumanFXPlayer();
+        val game = new Game(player1, player2, new Board(boardSize));
+        return singleGameConfig(player1, player2, game, boardSize);
+    }
+
+    @Deprecated
+    public GameConfigDto newAiVsAiGame(@NonNull File aiDir1, @NonNull File aiDir2, int boardSize) {
+        val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
+        val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
+        val game = new Game(player1, player2, new Board(boardSize));
+        return singleGameConfig(player1, player2, game, boardSize);
+    }
 
     public GameConfigDto newBattleGame(@NonNull File mainDir, int boardSize) {
         Set<AbstractPlayer> players = populatePlayersSet(mainDir);

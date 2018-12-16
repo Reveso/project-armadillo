@@ -1,10 +1,8 @@
 package com.lukasrosz.armadillo.player;
 
-import com.lukasrosz.armadillo.communication.MoveResponse;
+import com.lukasrosz.armadillo.communication.model.MoveResponse;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-
-import java.util.Objects;
 
 @Getter
 @EqualsAndHashCode

@@ -1,5 +1,6 @@
-package com.lukasrosz.armadillo.communication;
+package com.lukasrosz.armadillo.communication.model;
 
+import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.game.Move;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

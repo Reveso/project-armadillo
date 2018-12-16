@@ -1,0 +1,25 @@
+.pane1 {
+    -fx-background-color: white;
+    /*-fx-background-color: #995f49;*/
+}
+
+.pane2 {
+    -fx-background-color: gray;
+    /*-fx-background-color: #995f49;*/
+}
+
+.pane-occupied-by-player{
+    -fx-background-color: #872443;
+    -fx-border-color: #4c1325;
+    -fx-border-width: 2;
+}
+
+.pane-occupied-from-start {
+    -fx-background-color: #420000;
+    -fx-border-color: #3d0101;
+    -fx-border-width: 2;
+}
+
+.selected-pane {
+    -fx-background-color: #3fef09;
+}

@@ -1,7 +1,7 @@
 package com.lukasrosz.armadillo.game;
 
 import com.lukasrosz.armadillo.communication.PointsMapper;
-import com.lukasrosz.armadillo.communication.MoveResponse;
+import com.lukasrosz.armadillo.communication.model.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
@@ -50,7 +50,7 @@ public class Game {
                 responseType.equals(ResponseType.TIMEOUT);
     }
 
-    private void finishGame() {
+    public void finishGame() {
         ended = true;
         movingPlayer.killPlayer();
         waitingPlayer.killPlayer();
