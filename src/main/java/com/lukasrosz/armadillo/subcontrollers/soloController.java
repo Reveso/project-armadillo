@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -24,8 +25,8 @@ public class soloController {
     private File selectedFile;
 
     public void soloFileChooser1(ActionEvent actionEvent) {
-        FileChooser fc = new FileChooser();
-        File selectedFile = fc.showOpenDialog(null);
+        DirectoryChooser dc = new DirectoryChooser();
+        File selectedFile = dc.showDialog(null);
 
         if (selectedFile != null) {
             this.selectedFile = selectedFile;
@@ -37,8 +38,8 @@ public class soloController {
     }
 
     public void soloFileChooser2(ActionEvent actionEvent) {
-        FileChooser fc = new FileChooser();
-        File selectedFile = fc.showOpenDialog(null);
+        DirectoryChooser dc = new DirectoryChooser();
+        File selectedFile = dc.showDialog(null);
 
         if (selectedFile != null) {
             this.selectedFile = selectedFile;

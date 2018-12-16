@@ -24,6 +24,7 @@ public class MainWithGlobal extends Application {
 
         stage.setScene(new Scene(fightStageRoot));
         stage.setOnCloseRequest(event -> onExitClicked());
+
         stage.show();
     }
 

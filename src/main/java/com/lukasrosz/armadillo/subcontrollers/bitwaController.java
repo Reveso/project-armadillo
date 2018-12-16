@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -20,8 +21,8 @@ public class bitwaController {
     private File selectedFile;
 
     public void bitwaFileChooser(ActionEvent actionEvent) {
-        FileChooser fc = new FileChooser();
-        File selectedFile = fc.showOpenDialog(null);
+        DirectoryChooser dc = new DirectoryChooser();
+        File selectedFile = dc.showDialog(null);
 
         if (selectedFile != null) {
             this.selectedFile = selectedFile;

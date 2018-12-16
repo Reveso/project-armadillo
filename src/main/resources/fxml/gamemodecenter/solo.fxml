@@ -8,37 +8,78 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:controller="com.lukasrosz.armadillo.subcontrollers.soloController" fx:id="soloPane" prefHeight="221.0" prefWidth="446.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.geometry.Insets?>
+<BorderPane fx:controller="com.lukasrosz.armadillo.subcontrollers.soloController"
+            fx:id="soloPane"
+            prefHeight="221.0"
+            prefWidth="446.0"
+            BorderPane.alignment="CENTER"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1">
     <bottom>
-        <HBox prefHeight="45.0" prefWidth="484.0" BorderPane.alignment="CENTER">
+        <HBox prefHeight="45.0"
+              prefWidth="484.0"
+              BorderPane.alignment="TOP_CENTER">
             <children>
-                <Pane prefHeight="45.0" prefWidth="278.0" />
-                <TextField prefHeight="25.0" prefWidth="71.0" fx:id="sizeText"/>
-                <Label prefHeight="17.0" prefWidth="82.0" text="boardsize field" />
+                <Pane prefHeight="45.0"
+                      prefWidth="278.0" />
+                <TextField prefHeight="25.0"
+                           prefWidth="71.0"
+                           fx:id="sizeText"/>
+                <Label prefHeight="17.0"
+                       prefWidth="82.0"
+                       text="boardsize field">
+                    <HBox.margin>
+                        <Insets left="10"
+                                right="10"></Insets>
+                    </HBox.margin>
+                </Label>
             </children>
         </HBox>
     </bottom>
     <center>
-        <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER_RIGHT"
+              prefHeight="200.0"
+              prefWidth="100.0"
+              BorderPane.alignment="CENTER">
             <children>
-                <HBox prefHeight="51.0" prefWidth="446.0">
+                <HBox prefHeight="51.0"
+                      prefWidth="446.0">
                     <children>
-                        <Pane prefHeight="31.0" prefWidth="200.0" />
+                        <Pane prefHeight="31.0"
+                              prefWidth="200.0" />
                         <TextField fx:id="soloText1"/>
-                        <Button mnemonicParsing="false" text="Pick a path" onAction="#soloFileChooser1" fx:id="soloFileChooser1"/>
+                        <Button mnemonicParsing="false"
+                                text="Pick a path"
+                                onAction="#soloFileChooser1"
+                                fx:id="soloFileChooser1">
+                            <HBox.margin>
+                                <Insets left="10" right="10"></Insets>
+                            </HBox.margin>
+                        </Button>
                     </children>
                 </HBox>
-                <HBox prefHeight="45.0" prefWidth="446.0">
+                <HBox prefHeight="45.0"
+                      prefWidth="446.0">
                     <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Pane prefHeight="200.0"
+                              prefWidth="200.0" />
                         <TextField fx:id="soloText2"/>
-                        <Button mnemonicParsing="false" text="Pick a path" onAction="#soloFileChooser2" fx:id="soloFileChooser2"/>
+                        <Button mnemonicParsing="false"
+                                text="Pick a path"
+                                onAction="#soloFileChooser2"
+                                fx:id="soloFileChooser2">
+                            <HBox.margin>
+                                <Insets left="10" right="10"></Insets>
+                            </HBox.margin>
+                        </Button>
                     </children>
                 </HBox>
             </children>
         </VBox>
     </center>
    <top>
-      <Label text="solo game" BorderPane.alignment="CENTER" />
+      <Label text="solo game"
+             BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>

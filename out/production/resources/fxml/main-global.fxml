@@ -1,43 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.MainController">
+<BorderPane fx:id="mainPain"
+            maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lukasrosz.armadillo.MainController">
+   <BorderPane.margin>
+   </BorderPane.margin>
    <left>
-      <VBox alignment="CENTER" prefHeight="367.0" prefWidth="116.0" spacing="20" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER"
+            prefHeight="367.0"
+            prefWidth="116.0"
+            spacing="20"
+            style="-fx-background-color: #444444"
+            BorderPane.alignment="CENTER">
          <fx:define>
             <ToggleGroup fx:id="mode" />
          </fx:define>
          <children>
 
-            <RadioButton mnemonicParsing="false" onAction="#loadBitwa" text="bitwa">
+            <RadioButton fx:id="bitwaRadioButton"
+                         mnemonicParsing="false"
+                         onAction="#loadBitwa"
+                         text="bitwa"
+                         textFill="#ebe1e1">
                 <toggleGroup>
                     <ToggleGroup fx:id="modeRadioButtons" />
                 </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" onAction="#loadSolo" text="solo" toggleGroup="$modeRadioButtons" />
-            <RadioButton mnemonicParsing="false" onAction="#loadAIvP" text="player vs AI" toggleGroup="$modeRadioButtons" />
-            <RadioButton mnemonicParsing="false" onAction="#loadPvP" text="PvP" toggleGroup="$modeRadioButtons" />
+            <RadioButton fx:id="soloRadioButton"
+                         mnemonicParsing="false"
+                         onAction="#loadSolo"
+                         text="solo"
+                         textFill="#ebe1e1"
+                         toggleGroup="$modeRadioButtons" />
+            <RadioButton fx:id="PvAIRadioButton"
+                         mnemonicParsing="false"
+                         onAction="#loadAIvP"
+                         text="player vs AI"
+                         textFill="#ebe1e1"
+                         toggleGroup="$modeRadioButtons" />
+            <RadioButton fx:id="PvPRadioButton"
+                         mnemonicParsing="false"
+                         onAction="#loadPvP"
+                         text="PvP"
+                         textFill="#ebe1e1"
+                         toggleGroup="$modeRadioButtons" />
          </children>
       </VBox>
    </left>
    <bottom>
-      <HBox prefHeight="33.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_RIGHT"
+            prefHeight="33.0"
+            prefWidth="600.0"
+            style="-fx-background-color: #666666"
+            BorderPane.alignment="CENTER">
+
          <children>
-            <Pane prefHeight="33.0" prefWidth="426.0" />
-            <Button mnemonicParsing="false" text="Start" fx:id="startButton" onAction="#startClicked"/>
-            <Button mnemonicParsing="false" text="Clear" />
-            <Button mnemonicParsing="false" text="Exit" onAction="#onExitClicked"/>
+
+            <Button fx:id="startButton"
+                    mnemonicParsing="false"
+                    onAction="#startClicked" text="Start">
+               <HBox.margin>
+                  <Insets bottom="5.0"
+                          left="5.0"
+                          right="5.0"
+                          top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false"
+                    text="Clear">
+               <HBox.margin>
+                  <Insets bottom="5.0"
+                          left="5.0"
+                          right="5.0"
+                          top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false"
+                    onAction="#onExitClicked"
+                    text="Exit">
+               <HBox.margin>
+                  <Insets bottom="5.0"
+                          left="5.0"
+                          right="20.0"
+                          top="5.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </bottom>
    <center>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <BorderPane prefHeight="200.0"
+                  prefWidth="200.0"
+                  style="-fx-background-color: #444444"
+                  BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
