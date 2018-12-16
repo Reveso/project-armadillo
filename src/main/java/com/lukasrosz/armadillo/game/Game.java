@@ -4,6 +4,7 @@ import com.lukasrosz.armadillo.communication.PointsMapper;
 import com.lukasrosz.armadillo.communication.model.MoveResponse;
 import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
+import com.lukasrosz.armadillo.controller.FightStageController;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.player.HumanFXPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
@@ -87,6 +88,11 @@ public class Game {
     public Move nextMove() throws PlayerInitializationException {
         String message;
         if(!started) {
+            FightStageController.logger.info("Initialization");
+            FightStageController.logger.info("Occupied Fields");
+            String occupiedFields = PointsMapper.getPointsAsString(board.getOccupiedFields());
+            FightStageController.logger.info(occupiedFields);
+
             initializeGame();
             message = "start";
             started = true;

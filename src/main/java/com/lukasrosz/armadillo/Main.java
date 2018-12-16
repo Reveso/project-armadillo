@@ -30,10 +30,10 @@ public class Main extends Application {
         FightStageController fightStageController = fxmlLoader.getController();
 
         val gameMaker = new GameMaker();
-//        val gameConfigDto = gameMaker.newBattleGame(new File("ai_test_directory"), 16);
+        val gameConfigDto = gameMaker.newBattleGame(new File("ai_test_directory"), 16);
 //        val gameConfigDto = gameMaker.newHumanVsAIGame(new File("ai_test_directory/283822"), 16);
 //        val gameConfigDto = gameMaker.newAiVsAiGame(new File("ai_test_directory/283822"), new File("ai_test_directory/283823"), 16);
-        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/283822"), 16);
+//        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/283822"), 16);
         gameConfigDto.setRefreshDelay(1);
 
         fightStageController.setup(gameConfigDto);

@@ -30,9 +30,18 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class FightStageController {
+
+    public static Logger logger;
+    private FileHandler fileHandler;
 
     @Getter
     @Setter
@@ -49,7 +58,6 @@ public class FightStageController {
 
     @Getter
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
-    //    private Timeline gameAnimationTimeline;
     private AnimationTimer animationTimer;
     private Iterator<Game> gameIterator;
     private Map<Point, Pane> fieldMap = new HashMap<>();
@@ -62,6 +70,9 @@ public class FightStageController {
     public void initialize() {
         boardGridPane.getStylesheets().add("/css/styles.css");
         fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 32));
+        new File("referee_files/scoreboard").mkdirs();
+        new File("referee_files/logs").mkdirs();
+
     }
 
     public void setup(GameConfigDto gameConfigDto) {
@@ -123,24 +134,50 @@ public class FightStageController {
             return true;
         } else {
             pauseButton.setDisable(true);
+            saveScoreboardToFile();
             return false;
         }
     }
 
+    private String getShortDate() {
+        DateFormat df = new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss");
+        Date today = Calendar.getInstance().getTime();
+        return df.format(today);
+    }
+    private void saveScoreboardToFile() {
+        String shortDate = getShortDate();
+        String filename = shortDate + "_scoreboard.txt";
+
+        try (PrintStream  bf = new PrintStream("referee_files/scoreboard/" + filename)) {
+            bf.println("Alias, Surname, Victories, Defeats, Disqualifications");
+            for (Score score : scoreboardList) {
+                bf.println(score.getAlias() + ", " + score.getSurname() + ", " + score.getVictories()
+                        + ", " + score.getDefeats() + ", " + score.getDisqualifications());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void makeTimeline(Game game) {
+        logger = Logger.getLogger("GameLog");
+        try {
+            fileHandler = new FileHandler("referee_files/logs/" + "LOG_" + getShortDate() + "_"
+                    + game.getMovingPlayer().getPlayerDetails().getAlias() + "_"
+                    + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".txt");
+            logger.addHandler(fileHandler);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fileHandler.setFormatter(formatter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         animationTimer = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 setupTimelineEvent(game);
             }
         };
-//
-//        gameAnimationTimeline = new Timeline(
-//                new KeyFrame(
-//                        Duration.millis(gameConfigDto.getRefreshDelay()),
-//                        event -> setupTimelineEvent(game)
-//                ));
-//        gameAnimationTimeline.setCycleCount(Timeline.INDEFINITE);
     }
 
     private void setupNewGame(Game game) {
@@ -177,6 +214,9 @@ public class FightStageController {
             setFieldOccupied(move.getPoint1(), "pane-occupied-by-player");
             setFieldOccupied(move.getPoint2(), "pane-occupied-by-player");
         }
+        logger.info(game.getWaitingPlayer().getPlayerDetails().getAlias());
+        logger.info(PointsMapper.getMoveAsString(move));
+
         if (game.getMovingPlayer() instanceof HumanFXPlayer && !game.isEnded()) {
             getNextMoveFromGui();
         }
@@ -188,7 +228,6 @@ public class FightStageController {
         scoreboardTable.refresh();
         fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
                 + game.getGameResult().getLoser().getAlias());
-//        gameAnimationTimeline.stop();
         animationTimer.stop();
         playGame();
     }
@@ -209,7 +248,6 @@ public class FightStageController {
             if (Board.checkIfNeighbours(gameConfigDto.getBoardSize(),
                     nextHumanMovePoints.get(0), nextHumanMovePoints.get(1))) {
                 nextHumanMove = new Move(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1));
-//                gameAnimationTimeline.play();
                 animationTimer.start();
             } else {
                 nextHumanMovePoints.clear();
@@ -218,7 +256,6 @@ public class FightStageController {
     }
 
     private void getNextMoveFromGui() {
-//        gameAnimationTimeline.pause();
         animationTimer.stop();
         nextHumanMovePoints.clear();
     }
@@ -227,7 +264,6 @@ public class FightStageController {
         if (makeTimeline()) {
             makeBoard();
             animationTimer.start();
-//            gameAnimationTimeline.play();
         }
     }
 
@@ -246,13 +282,10 @@ public class FightStageController {
     @FXML
     private void onPauseButtonAction() {
         if (pauseButton.getText().toLowerCase().equals("pause")) {
-//            gameAnimationTimeline.pause();
             animationTimer.stop();
             pauseButton.setText("Play");
 
         } else {
-//            if(gameAnimationTimeline != null) {
-//                gameAnimationTimeline.play();
             if (animationTimer != null) {
                 animationTimer.start();
             } else {

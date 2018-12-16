@@ -24,7 +24,7 @@
         <ScrollPane>
             <TableView fx:id="scoreboardTable" editable="true" items="${controller.scoreboardList}">
                 <columns>
-                    <TableColumn resizable="false" sortable="false" text="alias">
+                    <TableColumn sortable="false" text="alias">
                         <cellValueFactory>
                             <PropertyValueFactory property="alias" />
                         </cellValueFactory>
