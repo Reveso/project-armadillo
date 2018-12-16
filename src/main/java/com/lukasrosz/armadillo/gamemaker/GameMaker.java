@@ -16,19 +16,19 @@ import java.util.*;
 @NoArgsConstructor()
 public class GameMaker {
 
-    public GameConfigDto newHumanVsAIGame(@NonNull File aiDir, int boardSize) {
-        val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
-        val player2 = new HumanFXPlayer();
-        val game = new Game(player1, player2, new Board(boardSize));
-        return singleGameConfig(player1, player2, game, boardSize);
-    }
-
-    public GameConfigDto newAiVsAiGame(@NonNull File aiDir1, @NonNull File aiDir2, int boardSize) {
-        val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
-        val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
-        val game = new Game(player1, player2, new Board(boardSize));
-        return singleGameConfig(player1, player2, game, boardSize);
-    }
+//    public GameConfigDto newHumanVsAIGame(@NonNull File aiDir, int boardSize) {
+//        val player1 = new AIPlayer(aiDir, populatePlayerDetails(aiDir));
+//        val player2 = new HumanFXPlayer();
+//        val game = new Game(player1, player2, new Board(boardSize));
+//        return singleGameConfig(player1, player2, game, boardSize);
+//    }
+//
+//    public GameConfigDto newAiVsAiGame(@NonNull File aiDir1, @NonNull File aiDir2, int boardSize) {
+//        val player1 = new AIPlayer(aiDir1, populatePlayerDetails(aiDir1));
+//        val player2 = new AIPlayer(aiDir2, populatePlayerDetails(aiDir2));
+//        val game = new Game(player1, player2, new Board(boardSize));
+//        return singleGameConfig(player1, player2, game, boardSize);
+//    }
 
     public GameConfigDto newBattleGame(@NonNull File mainDir, int boardSize) {
         Set<AbstractPlayer> players = populatePlayersSet(mainDir);
@@ -45,6 +45,15 @@ public class GameMaker {
             scores.add(new Score(player1.getPlayerDetails()));
         }
         return new GameConfigDto(boardSize, scores, games);
+    }
+
+    public GameConfigDto newSoloGame(File playerDir1, File playerDir2, int boardSize) {
+        AbstractPlayer player1 = playerDir1 == null ? new HumanFXPlayer() :
+                new AIPlayer(playerDir1, populatePlayerDetails(playerDir1));
+        AbstractPlayer player2 = playerDir2 == null ? new HumanFXPlayer() :
+                new AIPlayer(playerDir2, populatePlayerDetails(playerDir2));
+        val game = new Game(player1, player2, new Board(boardSize));
+        return singleGameConfig(player1, player2, game, boardSize);
     }
 
     private Set<AbstractPlayer> populatePlayersSet(@NonNull File mainDir) {
