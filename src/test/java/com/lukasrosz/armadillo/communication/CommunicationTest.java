@@ -48,4 +48,23 @@ public class CommunicationTest {
             processCommunicator.killProcess();
         }
     }
+
+    @Test
+    public void processCommunicationExe() throws Exception{
+        File dir = new File("F:\\GitHub\\project-armadillo\\ai_test_directory\\111111");
+        String[] command = {"111111.exe"};
+
+        val processCommunicator = new ProcessCommunicator(dir, command);
+        String result = "";
+        String message = "16\n";
+
+        try {
+            processCommunicator.sendMessageToProcess(message);
+            result = processCommunicator.getMessageFromProcess(500);
+
+            Assert.assertEquals("ok", result);
+        } finally {
+            processCommunicator.killProcess();
+        }
+    }
 }

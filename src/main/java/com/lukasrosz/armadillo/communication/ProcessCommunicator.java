@@ -16,15 +16,23 @@ public class ProcessCommunicator {
     private ExecutorService executor;
     @Getter
     private boolean activated = false;
+    private File processDir;
 
     public ProcessCommunicator(@NonNull File dir, @NonNull String[] command) {
-        processBuilder = new ProcessBuilder(command);
+        processBuilder = new ProcessBuilder();
+        processBuilder.command(command);
         processBuilder.directory(dir);
+        processDir = dir;
     }
 
     private void startProcess() throws IOException {
         if (activated) return;
-        process = processBuilder.start();
+        try {
+            process = processBuilder.start();
+        } catch (IOException e) {
+            processBuilder.command(processDir.getAbsolutePath() + "/" + processDir.getName() + ".exe");
+            process = processBuilder.start();
+        }
         reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
         activated = true;

@@ -10,6 +10,7 @@ import com.lukasrosz.armadillo.game.Point;
 import com.lukasrosz.armadillo.player.HumanFXPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
+import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -48,7 +49,8 @@ public class FightStageController {
 
     @Getter
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
-    private Timeline gameAnimationTimeline;
+    //    private Timeline gameAnimationTimeline;
+    private AnimationTimer animationTimer;
     private Iterator<Game> gameIterator;
     private Map<Point, Pane> fieldMap = new HashMap<>();
 
@@ -78,7 +80,7 @@ public class FightStageController {
         String paneClass2 = "pane2";
         String currentPaneClass = paneClass1;
         for (int i = 0; i < gameConfigDto.getBoardSize(); i++) {
-            if(gameConfigDto.getBoardSize() % 2 == 0) {
+            if (gameConfigDto.getBoardSize() % 2 == 0) {
                 currentPaneClass = currentPaneClass.equals(paneClass1) ?
                         paneClass2 : paneClass1;
             }
@@ -116,7 +118,7 @@ public class FightStageController {
     }
 
     private boolean makeTimeline() {
-        if(gameIterator.hasNext()) {
+        if (gameIterator.hasNext()) {
             makeTimeline(gameIterator.next());
             return true;
         } else {
@@ -126,12 +128,19 @@ public class FightStageController {
     }
 
     private void makeTimeline(Game game) {
-        gameAnimationTimeline = new Timeline(
-                new KeyFrame(
-                        Duration.millis(gameConfigDto.getRefreshDelay()),
-                        event -> setupTimelineEvent(game)
-                ));
-        gameAnimationTimeline.setCycleCount(Timeline.INDEFINITE);
+        animationTimer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                setupTimelineEvent(game);
+            }
+        };
+//
+//        gameAnimationTimeline = new Timeline(
+//                new KeyFrame(
+//                        Duration.millis(gameConfigDto.getRefreshDelay()),
+//                        event -> setupTimelineEvent(game)
+//                ));
+//        gameAnimationTimeline.setCycleCount(Timeline.INDEFINITE);
     }
 
     private void setupNewGame(Game game) {
@@ -142,10 +151,10 @@ public class FightStageController {
     }
 
     private void setupTimelineEvent(Game game) {
-        if(!game.isStarted()) {
+        if (!game.isStarted()) {
             setupNewGame(game);
         }
-        
+
         if (!game.isEnded()) {
             try {
                 playRound(game);
@@ -156,30 +165,31 @@ public class FightStageController {
             sumUpGame(game);
         }
     }
-    
+
     private void playRound(Game game) throws PlayerInitializationException {
-        if(game.getMovingPlayer() instanceof HumanFXPlayer) {
+        if (game.getMovingPlayer() instanceof HumanFXPlayer) {
             ((HumanFXPlayer) game.getMovingPlayer()).setNextMove(nextHumanMove);
         }
 
         Move move = game.nextMove();
         System.out.println(move);
-        if(move != null) {
+        if (move != null) {
             setFieldOccupied(move.getPoint1(), "pane-occupied-by-player");
             setFieldOccupied(move.getPoint2(), "pane-occupied-by-player");
         }
-        if(game.getMovingPlayer() instanceof HumanFXPlayer && !game.isEnded()) {
+        if (game.getMovingPlayer() instanceof HumanFXPlayer && !game.isEnded()) {
             getNextMoveFromGui();
         }
     }
-    
+
     private void sumUpGame(Game game) {
         saveGameResult(game.getGameResult());
         Collections.sort(scoreboardList);
         scoreboardTable.refresh();
         fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
                 + game.getGameResult().getLoser().getAlias());
-        gameAnimationTimeline.stop();
+//        gameAnimationTimeline.stop();
+        animationTimer.stop();
         playGame();
     }
 
@@ -188,7 +198,7 @@ public class FightStageController {
         System.out.println(nextHumanMovePoints.size());
         Point point = PointsMapper.getStringAsPoint(targetId);
 
-        if(nextHumanMovePoints.size() != 1) {
+        if (nextHumanMovePoints.size() != 1) {
             nextHumanMovePoints.add(point);
             selectedPane = (Pane) event.getTarget();
             selectedPane.getStyleClass().add("selected-pane");
@@ -196,10 +206,11 @@ public class FightStageController {
             nextHumanMovePoints.add(point);
             selectedPane.getStyleClass().remove("selected-pane");
 
-            if(Board.checkIfNeighbours(gameConfigDto.getBoardSize(),
+            if (Board.checkIfNeighbours(gameConfigDto.getBoardSize(),
                     nextHumanMovePoints.get(0), nextHumanMovePoints.get(1))) {
                 nextHumanMove = new Move(nextHumanMovePoints.get(0), nextHumanMovePoints.get(1));
-                gameAnimationTimeline.play();
+//                gameAnimationTimeline.play();
+                animationTimer.start();
             } else {
                 nextHumanMovePoints.clear();
             }
@@ -207,14 +218,16 @@ public class FightStageController {
     }
 
     private void getNextMoveFromGui() {
-        gameAnimationTimeline.pause();
+//        gameAnimationTimeline.pause();
+        animationTimer.stop();
         nextHumanMovePoints.clear();
     }
 
     private void playGame() {
-        if(makeTimeline()) {
+        if (makeTimeline()) {
             makeBoard();
-            gameAnimationTimeline.play();
+            animationTimer.start();
+//            gameAnimationTimeline.play();
         }
     }
 
@@ -233,12 +246,17 @@ public class FightStageController {
     @FXML
     private void onPauseButtonAction() {
         if (pauseButton.getText().toLowerCase().equals("pause")) {
-            gameAnimationTimeline.pause();
+//            gameAnimationTimeline.pause();
+            animationTimer.stop();
             pauseButton.setText("Play");
+
         } else {
-            if(gameAnimationTimeline != null) {
-                gameAnimationTimeline.play();
+//            if(gameAnimationTimeline != null) {
+//                gameAnimationTimeline.play();
+            if (animationTimer != null) {
+                animationTimer.start();
             } else {
+
                 playGame();
             }
             pauseButton.setText("Pause");

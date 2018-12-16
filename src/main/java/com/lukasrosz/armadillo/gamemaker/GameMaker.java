@@ -77,6 +77,7 @@ public class GameMaker {
             playerDetails.setName(fullName.split(" ")[0]);
             playerDetails.setSurname(fullName.split(" ")[1]);
             playerDetails.setCmd(scanner.nextLine());
+            System.out.println(playerDetails.getCmd());
         } catch (IOException e) {
             System.err.println(e);
             return null;
