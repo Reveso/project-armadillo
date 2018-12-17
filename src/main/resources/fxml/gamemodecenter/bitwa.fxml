@@ -41,6 +41,6 @@
         </VBox>
     </center>
    <top>
-      <Label text="Tournament" BorderPane.alignment="CENTER" />
+      <Label text="Bitwa" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>

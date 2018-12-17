@@ -75,6 +75,7 @@ public class MainController {
             File file2 = getFile(soloController.soloText2);
             gameHandler.startSoloGame(file1, file2, size, 1);
         } else if (PvPRadioButton.isSelected()) {
+            size = getSize(pvPController);
             gameHandler.startPreviousGame(); //replay
         }
     }

@@ -31,7 +31,7 @@
                     <children>
                         <TextField fx:id="soloText1">
                             <HBox.margin>
-                                <Insets left="70" />
+                                <Insets left="70"></Insets>
                             </HBox.margin>
                         </TextField>
                         <Button fx:id="soloFileChooser1" mnemonicParsing="false" onAction="#soloFileChooser1" style="-fx-background-radius: 20;" text="Pick a path">
@@ -45,7 +45,7 @@
                     <children>
                         <TextField fx:id="soloText2">
                             <HBox.margin>
-                                <Insets left="70" />
+                                <Insets left="70"></Insets>
                             </HBox.margin>
                         </TextField>
                         <Button fx:id="soloFileChooser2" mnemonicParsing="false" onAction="#soloFileChooser2" style="-fx-background-radius: 20;" text="Pick a path">
@@ -64,6 +64,6 @@
         </VBox>
     </center>
    <top>
-      <Label text="Solo game" BorderPane.alignment="CENTER" />
+      <Label text="solo game" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>

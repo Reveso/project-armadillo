@@ -21,12 +21,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,8 +47,6 @@ public class FightStageController {
     @Setter
     private GameConfigDto gameConfigDto;
 
-    @FXML
-    public Button backToSettingsButton;
     @FXML
     private TableView<Score> scoreboardTable;
     @FXML
@@ -300,8 +296,4 @@ public class FightStageController {
         }
     }
 
-    public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
-        Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
-        stage.close();
-    }
 }
