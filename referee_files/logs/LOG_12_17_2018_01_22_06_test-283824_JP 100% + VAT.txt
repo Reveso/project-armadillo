@@ -1,0 +1,478 @@
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.game.Game nextMove
+INFO: Initialization
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.game.Game nextMove
+INFO: Occupied Fields
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.game.Game nextMove
+INFO: {10;3},{10;1},{8;2},{5;3},{1;0},{5;4},{7;4},{2;9},{4;9},{6;11},{7;10},{11;3},{7;1},{9;3}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;1},{6;1}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;0},{0;1}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {10;5},{11;5}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;2},{0;3}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;10},{10;10}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;4},{0;5}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;4},{4;4}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;6},{0;7}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;6},{8;6}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;8},{0;9}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {8;10},{8;11}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;10},{0;11}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;1},{3;1}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;1},{1;2}
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:06 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;4},{10;4}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;3},{1;4}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;8},{2;8}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;5},{1;6}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;8},{8;8}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;7},{2;7}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;6},{6;6}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;9},{1;10}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;3},{8;3}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;11},{2;11}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;11},{10;11}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;0},{2;1}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;2},{10;2}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;2},{2;3}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;4},{8;4}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;4},{2;5}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;6},{10;6}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;6},{3;6}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;1},{11;2}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;10},{3;10}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {10;8},{11;8}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;0},{3;11}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;0},{6;0}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;2},{3;3}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;7},{10;7}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;5},{4;5}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {10;9},{11;9}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;7},{3;8}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;11},{5;11}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;2},{4;3}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;9},{8;9}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;6},{4;7}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;0},{8;0}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;8},{5;8}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {8;7},{7;7}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;10},{5;10}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {10;0},{11;0}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;2},{6;2}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;5},{8;5}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;5},{6;5}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;7},{6;7}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;9},{6;9}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;0},{9;1}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;3},{6;4}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283824
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.game.Game nextMove
+INFO: Initialization
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.game.Game nextMove
+INFO: Occupied Fields
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.game.Game nextMove
+INFO: {7;10},{8;10},{5;8},{6;7},{10;5},{4;11},{1;8},{2;6},{4;8},{6;9},{10;2},{8;2},{2;1},{9;4}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;6},{10;6}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;0},{0;1}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;2},{1;2}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;3},{0;4}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;0},{6;0}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;5},{0;6}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;3},{7;3}
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:07 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;7},{0;8}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {8;3},{9;3}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;9},{0;10}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;9},{8;9}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {0;11},{1;11}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;7},{4;7}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;0},{1;1}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;6},{6;6}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;3},{1;4}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;5},{5;5}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;5},{1;6}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;1},{7;1}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;7},{2;7}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;11},{2;11}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {1;9},{1;10}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;5},{8;5}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;0},{3;0}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;8},{10;8}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;2},{2;3}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;11},{10;11}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;4},{2;5}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;11},{7;11}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;8},{2;9}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;0},{4;1}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {2;10},{3;10}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;8},{3;9}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;1},{3;2}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;0},{8;0}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;3},{3;4}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;2},{11;3}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {3;5},{3;6}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;10},{10;10}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;2},{4;3}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;9},{10;9}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;4},{5;4}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;10},{9;11}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {4;9},{4;10}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;2},{9;1}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;1},{5;2}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {5;10},{6;10}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;2},{7;2}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {9;0},{10;0}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;4},{6;5}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;7},{10;7}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {6;8},{7;8}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {8;8},{8;7}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;4},{7;5}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {10;1},{11;1}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: test-283825
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {7;6},{7;7}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {11;6},{11;5}
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: JP 100% + VAT
+gru 17, 2018 1:22:08 AM com.lukasrosz.armadillo.controller.FightStageController playRound
+INFO: {10;3},{10;4}

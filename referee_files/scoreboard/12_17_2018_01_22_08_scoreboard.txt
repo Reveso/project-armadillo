@@ -1,0 +1,7 @@
+Alias, Surname, Victories, Defeats, Disqualifications
+test-283822, Roszkiewicz, 4, 1, 0
+test-283823, Kek, 4, 1, 0
+test-283824, Rogowsky, 3, 2, 0
+test-283825, Rogowsky-III, 3, 2, 0
+JP 100% + VAT, Pawlacz, 1, 4, 1
+JP 100%, Pawlacz, 0, 5, 5

@@ -59,7 +59,7 @@
                 <Insets topRightBottomLeft="10" />
             </padding>
             <Button fx:id="pauseButton" onAction="#onPauseButtonAction" prefHeight="29.0" prefWidth="112.0" text="Play" />
-            <Button prefHeight="29.0" prefWidth="112.0" text="Back to settings" /> <!--onMouseClicked="#onBackButtonMouseClicked"/>-->
+            <Button fx:id="backToSettingsButton" prefHeight="29.0" prefWidth="112.0" text="Back to settings"  onMouseClicked="#onBackButtonMouseClicked"/>
         </HBox>
     </bottom>
 
