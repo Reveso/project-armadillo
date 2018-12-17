@@ -38,7 +38,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Clear">
+                <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Clear" fx:id="clearButton" onAction="#clearClicked">
                     <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </HBox.margin>

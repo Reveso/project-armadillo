@@ -89,4 +89,14 @@ public class MainController {
         return new File(String.valueOf(Paths.get(String.valueOf((textField.getText())))));
     }
 
+    public void clearClicked(ActionEvent actionEvent) {
+        if (bitwaRadioButton.isSelected()) {
+            bitwaController.bitwText.clear();
+            bitwaController.sizeText.clear();
+        } else if (soloRadioButton.isSelected()) {
+            soloController.soloText1.clear();
+            soloController.soloText2.clear();
+            soloController.sizeText.clear();
+        }
+    }
 }
