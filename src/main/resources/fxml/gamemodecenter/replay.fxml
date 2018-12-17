@@ -4,43 +4,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 
-<?import javafx.geometry.Insets?>
-<BorderPane fx:controller="com.lukasrosz.armadillo.subcontrollers.PvPController"
-            fx:id="PvPPane"
-            prefHeight="221.0"
-            prefWidth="446.0"
-            BorderPane.alignment="CENTER"
-            xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="PvPPane" prefHeight="221.0" prefWidth="446.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.subcontrollers.PvPController">
     <bottom>
-        <HBox prefHeight="45.0"
-              prefWidth="484.0"
-              BorderPane.alignment="CENTER"
-              alignment="TOP_RIGHT">
-            <children>
-                <TextField prefHeight="25.0"
-                           prefWidth="71.0"
-                           fx:id="sizeText"/>
-                <Label prefHeight="17.0"
-                       prefWidth="82.0"
-                       text="boardsize field">
-                    <HBox.margin>
-                        <Insets left="10" right="10"></Insets>
-                    </HBox.margin>
-                </Label>
-            </children>
-        </HBox>
+        <HBox alignment="TOP_RIGHT" prefHeight="45.0" prefWidth="484.0" BorderPane.alignment="CENTER" />
     </bottom>
    <center>
-      <TextField text="Human Game"
-                 disable="true"
-                 BorderPane.alignment="CENTER">
+      <TextField alignment="CENTER" disable="true" text="Replay starts previous game" BorderPane.alignment="CENTER">
       </TextField>
    </center>
    <top>
-      <Label text="PvP"
-             BorderPane.alignment="CENTER" />
+      <Label text="Replay" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>
