@@ -1,3 +1,0 @@
-test-283822
-Lukasz Roszkiewicz
-java -jar simple-board-fighter.jar

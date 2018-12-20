@@ -24,7 +24,7 @@
                     </toggleGroup>
                 </RadioButton>
                 <RadioButton fx:id="soloRadioButton" mnemonicParsing="false" onAction="#loadSolo" text="solo" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" />
-                <RadioButton fx:id="PvPRadioButton" mnemonicParsing="false" onAction="#loadPvP" text="replay" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" />
+                <RadioButton fx:id="PvPRadioButton" mnemonicParsing="false" onAction="#loadPvP" text="replay" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" disable="true"/>
             </children>
         </VBox>
     </left>
