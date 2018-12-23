@@ -51,8 +51,8 @@ public class CommunicationTest {
 
     @Test
     public void processCommunicationExe() throws Exception{
-        File dir = new File("F:\\GitHub\\project-armadillo\\ai_test_directory\\111111");
-        String[] command = {"111111.exe"};
+        File dir = new File("F:\\GitHub\\project-armadillo\\ai_test_directory\\777777");
+        String[] command = {"777777.exe"};
 
         val processCommunicator = new ProcessCommunicator(dir, command);
         String result = "";

@@ -88,10 +88,10 @@ public class Game {
     public Move nextMove() throws PlayerInitializationException {
         String message;
         if(!started) {
-            FightStageController.logger.info("Initialization");
-            FightStageController.logger.info("Occupied Fields");
-            String occupiedFields = PointsMapper.getPointsAsString(board.getOccupiedFields());
-            FightStageController.logger.info(occupiedFields);
+//            FightStageController.logger.info("Initialization");
+//            FightStageController.logger.info("Occupied Fields");
+//            String occupiedFields = PointsMapper.getPointsAsString(board.getOccupiedFields());
+//            FightStageController.logger.info(occupiedFields);
 
             initializeGame();
             message = "start";

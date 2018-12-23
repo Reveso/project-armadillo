@@ -1,0 +1,4 @@
+Alias, Surname, Victories, Defeats, Disqualifications
+test-555555, Rogowsky-III, 2, 0, 0
+﻿JP, 100%, 1, 1, 0
+test-444444, Rogowsky, 0, 2, 0
