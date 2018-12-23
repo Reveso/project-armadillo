@@ -217,8 +217,8 @@ public class FightStageController {
             setFieldOccupied(move.getPoint1(), "pane-occupied-by-player");
             setFieldOccupied(move.getPoint2(), "pane-occupied-by-player");
         }
-        logger.info(game.getWaitingPlayer().getPlayerDetails().getAlias());
-        logger.info(PointsMapper.getMoveAsString(move));
+//        logger.info(game.getWaitingPlayer().getPlayerDetails().getAlias());
+//        logger.info(PointsMapper.getMoveAsString(move));
 
         if (game.getMovingPlayer() instanceof HumanFXPlayer && !game.isEnded()) {
             getNextMoveFromGui();

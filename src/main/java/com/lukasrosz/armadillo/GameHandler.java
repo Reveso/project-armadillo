@@ -2,7 +2,6 @@ package com.lukasrosz.armadillo;
 
 import com.lukasrosz.armadillo.controller.FightStageController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
-import com.sun.istack.internal.Nullable;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +16,6 @@ import java.io.IOException;
 public class GameHandler {
 
     private enum GameGenre{ BATTLE, SOLO};
-    @Nullable
     private static GameGenre previousGame = null;
 
     private static File dir1, dir2;
