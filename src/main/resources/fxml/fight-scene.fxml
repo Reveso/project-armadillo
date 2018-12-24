@@ -3,25 +3,23 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.FightStageController">
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.FightSceneController">
     <top>
-        <HBox alignment="CENTER" spacing="10">
-            <Label fx:id="fightTitleLabel"/>
-        </HBox>
+        <VBox alignment="CENTER" spacing="10">
+            <Label fx:id="fightTitleLabel" />
+            <ProgressBar fx:id="gameProgressBar" maxWidth="1.7976931348623157E308" progress="0" />
+        </VBox>
     </top>
     <center>
-        <GridPane fx:id="boardGridPane" alignment="CENTER" />
-    </center>
-    <right>
-        <ScrollPane>
+        <!--<ScrollPane>-->
             <TableView fx:id="scoreboardTable" editable="true" items="${controller.scoreboardList}">
                 <columns>
                     <TableColumn sortable="false" text="alias">
@@ -51,15 +49,15 @@
                     </TableColumn>
                 </columns>
             </TableView>
-        </ScrollPane>
-    </right>
+        <!--</ScrollPane>-->
+    </center>
     <bottom>
-        <HBox alignment="BOTTOM_LEFT" spacing="10">
+        <HBox alignment="CENTER" spacing="10">
             <padding>
                 <Insets topRightBottomLeft="10" />
             </padding>
             <Button fx:id="pauseButton" onAction="#onPauseButtonAction" prefHeight="29.0" prefWidth="112.0" text="Play" />
-            <Button fx:id="backToSettingsButton" prefHeight="29.0" prefWidth="112.0" text="Back to settings"  onMouseClicked="#onBackButtonMouseClicked"/>
+            <Button fx:id="backToSettingsButton" onMouseClicked="#onBackButtonMouseClicked" prefHeight="29.0" prefWidth="112.0" text="Back to settings" />
         </HBox>
     </bottom>
 

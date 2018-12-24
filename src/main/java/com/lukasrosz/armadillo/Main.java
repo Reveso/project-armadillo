@@ -1,8 +1,7 @@
 package com.lukasrosz.armadillo;
 
-import com.lukasrosz.armadillo.controller.FightStageController;
+import com.lukasrosz.armadillo.controller.FightSceneController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
-import com.lukasrosz.armadillo.player.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +11,6 @@ import javafx.stage.Stage;
 import lombok.val;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Main extends Application {
     @Override
@@ -25,9 +21,9 @@ public class Main extends Application {
 //        primaryStage.show();
 
         Stage fightStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-stage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
-        FightStageController fightStageController = fxmlLoader.getController();
+        FightSceneController fightSceneController = fxmlLoader.getController();
 
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newBattleGame(new File("ai_test_directory"), 16);
@@ -36,7 +32,7 @@ public class Main extends Application {
 //        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/283822"), 16);
         gameConfigDto.setRefreshDelay(1);
 
-        fightStageController.setup(gameConfigDto);
+        fightSceneController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
         fightStage.show();
