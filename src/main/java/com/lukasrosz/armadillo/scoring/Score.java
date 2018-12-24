@@ -37,6 +37,10 @@ public class Score implements Comparable<Score>{
         return playerDetails.getSurname();
     }
 
+    public String getName() {
+        return playerDetails.getName();
+    }
+
     @Override
     public int compareTo(Score o) {
         if(this.getPlayerDetails().equals(o.getPlayerDetails())) {

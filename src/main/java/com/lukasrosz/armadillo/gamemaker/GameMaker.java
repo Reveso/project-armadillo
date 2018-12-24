@@ -32,12 +32,11 @@ public class GameMaker {
         return singleGameConfig(player1, player2, game, boardSize);
     }
 
-    public GameConfigDto newBattleGame(@NonNull File mainDir, int boardSize) {
+    public GameConfigDto newTournament(@NonNull File mainDir, int boardSize) {
         Set<AbstractPlayer> players = populatePlayersSet(mainDir);
         Set<Game> games = new LinkedHashSet<>();
         Set<Score> scores = new LinkedHashSet<>();
 
-        //TODO all players now will have 2 games with each other, we want to avoid that
         for (AbstractPlayer player1 : players) {
             for (AbstractPlayer player2 : players) {
                 if (player1.equals(player2)) continue;
@@ -75,14 +74,31 @@ public class GameMaker {
             playerDetails.setAlias(scanner.nextLine());
             val fullName = scanner.nextLine();
             playerDetails.setName(fullName.split(" ")[0]);
-            playerDetails.setSurname(fullName.split(" ")[1]);
+
+            val surname = new StringBuilder(" ");
+            Arrays.stream(fullName.split(" ")).skip(1)
+                    .forEach(s -> surname.append(s + " "));
+            playerDetails.setSurname(surname.toString());
+
             playerDetails.setCmd(scanner.nextLine());
             System.out.println(playerDetails.getCmd());
+
+            replacePlayerDetailsSemicolons(playerDetails);
         } catch (IOException e) {
             System.err.println(e);
             return null;
         }
         return playerDetails;
+    }
+
+    private void replacePlayerDetailsSemicolons(PlayerDetails playerDetails) {
+        playerDetails.setAlias(replaceSemicolons(playerDetails.getAlias()));
+        playerDetails.setName(replaceSemicolons(playerDetails.getName()));
+        playerDetails.setSurname(replaceSemicolons(playerDetails.getSurname()));
+    }
+
+    private String replaceSemicolons(String string) {
+        return string.replaceAll(";", ".");
     }
 
     private GameConfigDto singleGameConfig(AbstractPlayer player1, AbstractPlayer player2,

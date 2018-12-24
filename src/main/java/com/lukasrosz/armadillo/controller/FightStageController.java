@@ -3,10 +3,7 @@ package com.lukasrosz.armadillo.controller;
 import com.lukasrosz.armadillo.communication.PointsMapper;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
-import com.lukasrosz.armadillo.game.Board;
-import com.lukasrosz.armadillo.game.Game;
-import com.lukasrosz.armadillo.game.Move;
-import com.lukasrosz.armadillo.game.Point;
+import com.lukasrosz.armadillo.game.*;
 import com.lukasrosz.armadillo.player.HumanFXPlayer;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
@@ -212,11 +209,11 @@ public class FightStageController {
             ((HumanFXPlayer) game.getMovingPlayer()).setNextMove(nextHumanMove);
         }
 
-        Move move = game.nextMove();
+        GameResponse move = game.nextMove();
         System.out.println(move);
         if (move != null) {
-            setFieldOccupied(move.getPoint1(), "pane-occupied-by-player");
-            setFieldOccupied(move.getPoint2(), "pane-occupied-by-player");
+            setFieldOccupied(move.getMove().getPoint1(), "pane-occupied-by-player");
+            setFieldOccupied(move.getMove().getPoint2(), "pane-occupied-by-player");
         }
 //        logger.info(game.getWaitingPlayer().getPlayerDetails().getAlias());
 //        logger.info(PointsMapper.getMoveAsString(move));

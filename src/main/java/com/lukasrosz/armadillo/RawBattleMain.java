@@ -12,14 +12,14 @@ public class RawBattleMain {
 
     public static void main(String[] args) throws Exception {
         val gameMaker = new GameMaker();
-        GameConfigDto gameConfigDto = gameMaker.newBattleGame(new File("ai_test_directory"), 16);
+        GameConfigDto gameConfigDto = gameMaker.newTournament(new File("ai_test_directory"), 51);
 
         for (Game game : gameConfigDto.getGames()) {
             System.out.println(game);
             while (!game.isEnded()) {
                 try {
-                    Move move = game.nextMove();
-                    System.out.println(move);
+//                    Move move = game.nextMove();
+//                    System.out.println(move);
                 } catch (Exception e) {
                     System.out.println(e);
                 }

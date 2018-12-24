@@ -22,11 +22,14 @@ public class Game {
     private boolean ended = false;
     private boolean started = false;
     private Move lastMove;
+    private long allfields;
+
 
     public Game(@NonNull AbstractPlayer movingPlayer, @NonNull AbstractPlayer waitingPlayer, @NonNull Board board) {
         this.movingPlayer = movingPlayer;
         this.waitingPlayer = waitingPlayer;
         this.board = board;
+        allfields = board.getSize()*board.getSize();
     }
 
     private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
@@ -84,7 +87,7 @@ public class Game {
         }
     }
 
-    public Move nextMove() throws PlayerInitializationException {
+    public GameResponse nextMove() throws PlayerInitializationException {
         String message;
         if(!started) {
 //            FightStageController.logger.info("Initialization");
@@ -112,12 +115,21 @@ public class Game {
         gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
         if(gameResult != null) {
             finishGame();
-            return moveResponse.getMove();
+            return new GameResponse(moveResponse.getMove(), 1.0);
         }
 
         swapPlayers();
         lastMove = moveResponse.getMove();
-        return moveResponse.getMove();
+        val gameResponse = new GameResponse();
+        gameResponse.setMove(lastMove);
+        System.out.println("===============");
+        System.out.println(board.getOccupiedFields().size());
+        gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / allfields);
+        System.out.println(gameResponse.getOccupiedFields());
+
+        return gameResponse;
+
+
     }
 
     private void swapPlayers() {

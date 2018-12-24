@@ -3,6 +3,7 @@ package com.lukasrosz.armadillo.controller;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
 import com.lukasrosz.armadillo.game.Game;
+import com.lukasrosz.armadillo.game.GameResponse;
 import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
@@ -11,10 +12,7 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -49,15 +47,17 @@ public class FightSceneController {
     @FXML
     private Button pauseButton;
     @FXML
-    private ProgressBar gameProgressBar;
+    private ProgressIndicator gameProgressBar;
+    @FXML
+    private ProgressIndicator roundProgressBar;
+
 
     @Getter
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
+
     private Iterator<Game> gameIterator;
     private Timeline animationTimeline;
     private double singleProgress;
-
-
 
     public void initialize() {
         fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
@@ -69,10 +69,8 @@ public class FightSceneController {
     public void setup(GameConfigDto gameConfigDto) {
         this.gameConfigDto = gameConfigDto;
         gameIterator = gameConfigDto.getGames().iterator();
-        populateScoreboard();
         singleProgress = 1.0 / gameConfigDto.getGames().size();
-        System.out.println(singleProgress);
-        System.out.println(gameConfigDto.getGames().size());
+        populateScoreboard();
     }
 
     private void populateScoreboard() {
@@ -91,10 +89,15 @@ public class FightSceneController {
         String filename = shortDate + "_scoreboard.txt";
 
         try (PrintStream bf = new PrintStream("referee_files/scoreboard/" + filename)) {
-            bf.println("Alias, Surname, Victories, Defeats, Disqualifications");
+            bf.println("Alias; Name; Surname; Victories; Defeats; Disqualifications");
             for (Score score : scoreboardList) {
-                bf.println(score.getAlias() + ", " + score.getSurname() + ", " + score.getVictories()
-                        + ", " + score.getDefeats() + ", " + score.getDisqualifications());
+                bf.println(
+                        score.getAlias()
+                        + "; " + score.getName()
+                        + "; " + score.getSurname()
+                        + "; " + score.getVictories()
+                        + "; " + score.getDefeats()
+                        + "; " + score.getDisqualifications());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,7 +107,7 @@ public class FightSceneController {
     private void sumUpGame(Game game) {
         saveGameResult(game.getGameResult());
         Collections.sort(scoreboardList);
-        scoreboardTable.refresh();
+//        scoreboardTable.refresh();
         fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
                 + game.getGameResult().getLoser().getAlias());
         animationTimeline.stop();
@@ -129,13 +132,6 @@ public class FightSceneController {
     }
 
     private void makeTimeline(Game game) {
-//        animationTimeline = new AnimationTimer() {
-//            @Override
-//            public void handle(long now) {
-//                setupTimelineEvent(game);
-//            }
-//        };
-
         animationTimeline = new Timeline(
                 new KeyFrame(
                         Duration.millis(1),
@@ -154,8 +150,24 @@ public class FightSceneController {
 
        if (!game.isEnded()) {
             try {
-                Move move = game.nextMove();
-                System.out.println(move);
+//                Move move = game.nextMove();
+//                System.out.println(move);
+                GameResponse gameResponse = game.nextMove();
+//                System.out.println(gameResponse.getMove());
+                if(gameResponse != null) {
+                    if(gameResponse.getOccupiedFields() >= 1) {
+                        roundProgressBar.setProgress(1.0);
+                    } if(gameResponse.getOccupiedFields() > 0.75) {
+                        roundProgressBar.setProgress(0.75);
+                    } if(gameResponse.getOccupiedFields() > 0.5) {
+                        roundProgressBar.setProgress(0.5);
+                    } if(gameResponse.getOccupiedFields() > 0.25) {
+                        roundProgressBar.setProgress(0.25);
+                    }
+
+                } else {
+                    roundProgressBar.setProgress(1.0);
+                }
             } catch (PlayerInitializationException e) {
                 System.err.println(e);
             }
@@ -170,23 +182,6 @@ public class FightSceneController {
         if (makeTimeline()) {
             animationTimeline.play();
         }
-
-//        for (Game game : gameConfigDto.getGames()) {
-//            System.out.println(game);
-//            while (!game.isEnded()) {
-//                try {
-//                    Move move = game.nextMove();
-//                    System.out.println(move);
-//                } catch (Exception e) {
-//                    System.out.println(e);
-//                }
-////                Thread.sleep(1000);
-//            }
-//            sumUpGame(game);
-//            gameProgressBar.setProgress(gameProgressBar.getProgress() + 0.25);
-//            System.out.println("=========================================");
-//        }
-//        saveScoreboardToFile();
     }
 
     private void saveGameResult(GameResult gameResult) {

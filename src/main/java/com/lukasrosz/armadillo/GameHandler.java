@@ -28,7 +28,7 @@ public class GameHandler {
         this.size = size;
         this.delay = delay;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-stage.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
         FightStageController fightStageController = fxmlLoader.getController();
 
@@ -52,13 +52,13 @@ public class GameHandler {
         this.size = size;
         this.delay = delay;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-stage.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
         FightStageController fightStageController = fxmlLoader.getController();
 
 
         val gameMaker = new GameMaker();
-        val gameConfigDto = gameMaker.newBattleGame(mainDir, size);
+        val gameConfigDto = gameMaker.newTournament(mainDir, size);
         gameConfigDto.setRefreshDelay(delay);
         fightStageController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
@@ -75,7 +75,7 @@ public class GameHandler {
         this.size = size;
         this.delay = delay;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-stage.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
         FightStageController fightStageController = fxmlLoader.getController();
         val gameMaker = new GameMaker();
