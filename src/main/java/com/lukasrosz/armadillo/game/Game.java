@@ -37,7 +37,7 @@ public class Game {
         if (response.getMove() == null || !board.setNewMove(response.getMove())) {
             return new GameResult(potentialWinner.getPlayerDetails(),
                     potentialLoser.getPlayerDetails(),
-                    checkIfDisqualified(response.getResponseType()));
+                    checkIfDisqualified(ResponseType.EXCEPTION));
         } else return null;
     }
 
@@ -107,14 +107,24 @@ public class Game {
         val moveResponse = movingPlayer.askForMove(message);
 
         gameResult = checkResponse(moveResponse, waitingPlayer, movingPlayer);
+
+        //TODO UNSAFE
         if(gameResult != null) {
             finishGame();
-            return null;
+            System.out.println("END GAME: " + board.checkIfEndGame());
+            System.out.println("DSQ: " + gameResult.isDisqualified());
+            System.out.println("Free fields: " + board.getFreeFields());
+            System.out.println("Moved: " + movingPlayer.getPlayerDetails().getAlias());
+            return new GameResponse(null,1.0);
         }
 
         gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
         if(gameResult != null) {
             finishGame();
+            System.out.println("END GAME: " + board.checkIfEndGame());
+            System.out.println("DSQ: " + gameResult.isDisqualified());
+            System.out.println("Free fields: " + board.getFreeFields());
+            System.out.println("Moved: " + movingPlayer.getPlayerDetails().getAlias());
             return new GameResponse(moveResponse.getMove(), 1.0);
         }
 
@@ -123,7 +133,6 @@ public class Game {
         val gameResponse = new GameResponse();
         gameResponse.setMove(lastMove);
         System.out.println("===============");
-        System.out.println(board.getOccupiedFields().size());
         gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / allfields);
         System.out.println(gameResponse.getOccupiedFields());
 

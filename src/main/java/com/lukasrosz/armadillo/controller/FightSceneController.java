@@ -9,8 +9,10 @@ import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -45,7 +47,7 @@ public class FightSceneController {
     @FXML
     private Label fightTitleLabel;
     @FXML
-    private Button pauseButton;
+    private Button playButton;
     @FXML
     private ProgressIndicator gameProgressBar;
     @FXML
@@ -93,11 +95,11 @@ public class FightSceneController {
             for (Score score : scoreboardList) {
                 bf.println(
                         score.getAlias()
-                        + "; " + score.getName()
-                        + "; " + score.getSurname()
-                        + "; " + score.getVictories()
-                        + "; " + score.getDefeats()
-                        + "; " + score.getDisqualifications());
+                                + "; " + score.getName()
+                                + "; " + score.getSurname()
+                                + "; " + score.getVictories()
+                                + "; " + score.getDefeats()
+                                + "; " + score.getDisqualifications());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -107,81 +109,77 @@ public class FightSceneController {
     private void sumUpGame(Game game) {
         saveGameResult(game.getGameResult());
         Collections.sort(scoreboardList);
-//        scoreboardTable.refresh();
+        scoreboardTable.refresh();
         fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
                 + game.getGameResult().getLoser().getAlias());
         animationTimeline.stop();
         playGame();
     }
 
-    private void setupNewGame(Game game) {
-        fightTitleLabel.setText(game.getMovingPlayer().getPlayerDetails().getAlias() + " vs "
-                + game.getWaitingPlayer().getPlayerDetails().getAlias());
-    }
-
-
-    private boolean makeTimeline() {
-        if (gameIterator.hasNext()) {
-            makeTimeline(gameIterator.next());
-            return true;
-        } else {
-            pauseButton.setDisable(true);
-            saveScoreboardToFile();
-            return false;
-        }
-    }
-
-    private void makeTimeline(Game game) {
-        animationTimeline = new Timeline(
-                new KeyFrame(
-                        Duration.millis(1),
-                        event -> {
-                            setupTimelineEvent(game);
-
-                        })
-        );
-        animationTimeline.setCycleCount(Timeline.INDEFINITE);
-    }
-
-    private void setupTimelineEvent(Game game) {
-        if (!game.isStarted()) {
-            setupNewGame(game);
-        }
-
-       if (!game.isEnded()) {
-            try {
-//                Move move = game.nextMove();
-//                System.out.println(move);
-                GameResponse gameResponse = game.nextMove();
-//                System.out.println(gameResponse.getMove());
-                if(gameResponse != null) {
-                    if(gameResponse.getOccupiedFields() >= 1) {
-                        roundProgressBar.setProgress(1.0);
-                    } if(gameResponse.getOccupiedFields() > 0.75) {
-                        roundProgressBar.setProgress(0.75);
-                    } if(gameResponse.getOccupiedFields() > 0.5) {
-                        roundProgressBar.setProgress(0.5);
-                    } if(gameResponse.getOccupiedFields() > 0.25) {
-                        roundProgressBar.setProgress(0.25);
+    private Thread assembleGameThread(Game game) {
+        Task task = new Task<Void>() {
+            @Override
+            protected Void call() {
+                while (!game.isEnded()) {
+                    try {
+                        GameResponse gameResponse = game.nextMove();
+                        updateProgress(gameResponse.getOccupiedFields(), 1.0);
+                    } catch (PlayerInitializationException e) {
+                        e.printStackTrace();
                     }
-
-                } else {
-                    roundProgressBar.setProgress(1.0);
                 }
-            } catch (PlayerInitializationException e) {
-                System.err.println(e);
+                System.out.println(game.isEnded());
+                updateProgress(1.0, 1.0);
+                return null;
             }
-        } else {
-            sumUpGame(game);
-            gameProgressBar.setProgress(gameProgressBar.getProgress() + singleProgress);
-        }
+        };
+        roundProgressBar.progressProperty().bind(task.progressProperty());
+        return new Thread(task);
     }
-
 
     private void playGame() {
-        if (makeTimeline()) {
-            animationTimeline.play();
-        }
+        Task<Double> task = new Task<Double>() {
+            @Override
+            protected Double call() {
+                int progress = 0;
+                updateProgress(progress, gameConfigDto.getGames().size());
+                while(gameIterator.hasNext()) {
+                    Game game = gameIterator.next();
+
+                    updateTitle(game.getMovingPlayer().getPlayerDetails().getAlias() + " vs "
+                            + game.getWaitingPlayer().getPlayerDetails().getAlias());
+
+                    while (!game.isEnded()) {
+                        try {
+                            GameResponse gameResponse = game.nextMove();
+                            //TODO null check might be safer
+                            updateValue(gameResponse.getOccupiedFields());
+
+                        } catch (PlayerInitializationException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println("============================================================================");
+                    System.out.println(game.isEnded());
+                    updateValue(1.0);
+
+                    saveGameResult(game.getGameResult());
+                    Collections.sort(scoreboardList);
+                    scoreboardTable.refresh();
+                    updateTitle("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
+                            + game.getGameResult().getLoser().getAlias());
+
+                    updateProgress(++progress, gameConfigDto.getGames().size());
+                }
+                saveScoreboardToFile();
+                return null;
+            }
+        };
+        roundProgressBar.progressProperty().bind(task.valueProperty());
+        gameProgressBar.progressProperty().bind(task.progressProperty());
+        fightTitleLabel.textProperty().bind(task.titleProperty());
+
+        new Thread(task).start();
     }
 
     private void saveGameResult(GameResult gameResult) {
@@ -196,22 +194,21 @@ public class FightSceneController {
                 });
     }
 
-    @FXML
-    private void onPauseButtonAction() {
-        if (pauseButton.getText().toLowerCase().equals("pause")) {
-            animationTimeline.stop();
-            pauseButton.setText("Play");
+    private void restartGame() {
 
-        } else {
-            if (animationTimeline != null) {
-                animationTimeline.play();
-            } else {
-
-                playGame();
-            }
-            pauseButton.setText("Pause");
-        }
     }
+    
+    @FXML
+    private void onPlayButtonAction() {
+        if (playButton.getText().toLowerCase().equals("play")) {
+            playGame();
+            playButton.setText("Restart");
+        } else {
+
+        }
+
+    }
+
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
         Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
         stage.close();

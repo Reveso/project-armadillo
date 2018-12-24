@@ -1,6 +1,7 @@
 package com.lukasrosz.armadillo;
 
 import com.lukasrosz.armadillo.controller.FightSceneController;
+import com.lukasrosz.armadillo.game.Game;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -31,6 +32,8 @@ public class Main extends Application {
 //        val gameConfigDto = gameMaker.newAiVsAiGame(new File("ai_test_directory/283822"), new File("ai_test_directory/283823"), 16);
 //        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/283822"), 16);
         gameConfigDto.setRefreshDelay(1);
+
+        gameConfigDto.getGames().forEach(game -> System.out.println(game.getMovingPlayer().getPlayerDetails().getAlias() + " " + game.getWaitingPlayer().getPlayerDetails().getAlias()));
 
         fightSceneController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
