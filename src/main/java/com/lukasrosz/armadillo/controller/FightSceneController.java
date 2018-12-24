@@ -49,13 +49,9 @@ public class FightSceneController {
     @FXML
     private ProgressIndicator roundProgressBar;
 
-
     @Getter
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
-
-    private Iterator<Game> gameIterator;
-    private Timeline animationTimeline;
-    private double singleProgress;
+    private boolean stopGame = false;
 
     public void initialize() {
         fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
@@ -66,8 +62,6 @@ public class FightSceneController {
 
     public void setup(GameConfigDto gameConfigDto) {
         this.gameConfigDto = gameConfigDto;
-        gameIterator = gameConfigDto.getGames().iterator();
-        singleProgress = 1.0 / gameConfigDto.getGames().size();
         populateScoreboard();
     }
 
@@ -108,8 +102,7 @@ public class FightSceneController {
             protected Double call() {
                 int progress = 0;
                 updateProgress(progress, gameConfigDto.getGames().size());
-                while(gameIterator.hasNext()) {
-                    Game game = gameIterator.next();
+                for (Game game : gameConfigDto.getGames()) {
 
                     updateTitle(game.getMovingPlayer().getPlayerDetails().getAlias() + " vs "
                             + game.getWaitingPlayer().getPlayerDetails().getAlias());
@@ -151,8 +144,7 @@ public class FightSceneController {
         gameProgressBar.progressProperty().bind(task.progressProperty());
         fightTitleLabel.textProperty().bind(task.titleProperty());
 
-        gameThread = new Thread(task);
-        gameThread.start();
+        new Thread(task).start();
     }
 
     private void saveGameResult(GameResult gameResult) {
@@ -171,28 +163,37 @@ public class FightSceneController {
         stopGame = true;
         try {
             Thread.sleep(1000);
-        }catch (InterruptedException e) {
-
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         gameConfigDto.getGames().forEach(Game::reset);
         scoreboardList.forEach(Score::reset);
         scoreboardTable.refresh();
-        gameIterator = gameConfigDto.getGames().iterator();
-        System.out.println("==============================   RESET   ========================================");
+        System.out.println("================================   RESET   ========================================");
     }
-
-    private Thread gameThread;
-    private boolean stopGame = false;
-
     @FXML
     private void onPlayButtonAction() {
         if (playButton.getText().toLowerCase().equals("play")) {
+            stopGame = false;
             playGame();
             playButton.setText("Restart");
         } else {
-            reset();
-            playButton.setText("Play");
+            String message = "Do you want to reset the game and lose all the progress?";
+            ButtonType result = showAlert("Game Reset", message);
+
+            if(result.equals(ButtonType.OK)) {
+                reset();
+                playButton.setText("Play");
+            }
         }
+    }
+
+    private ButtonType showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+        return alert.getResult();
     }
 
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
