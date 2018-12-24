@@ -41,6 +41,12 @@ public class Score implements Comparable<Score>{
         return playerDetails.getName();
     }
 
+    public void reset() {
+        setDefeats(0);
+        setDisqualifications(0);
+        setVictories(0);
+    }
+
     @Override
     public int compareTo(Score o) {
         if(this.getPlayerDetails().equals(o.getPlayerDetails())) {

@@ -4,12 +4,9 @@ import com.lukasrosz.armadillo.communication.exception.PlayerInitializationExcep
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
 import com.lukasrosz.armadillo.game.Game;
 import com.lukasrosz.armadillo.game.GameResponse;
-import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -19,7 +16,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -106,37 +102,6 @@ public class FightSceneController {
         }
     }
 
-    private void sumUpGame(Game game) {
-        saveGameResult(game.getGameResult());
-        Collections.sort(scoreboardList);
-        scoreboardTable.refresh();
-        fightTitleLabel.setText("Winner: " + game.getGameResult().getWinner().getAlias() + " Looser: "
-                + game.getGameResult().getLoser().getAlias());
-        animationTimeline.stop();
-        playGame();
-    }
-
-    private Thread assembleGameThread(Game game) {
-        Task task = new Task<Void>() {
-            @Override
-            protected Void call() {
-                while (!game.isEnded()) {
-                    try {
-                        GameResponse gameResponse = game.nextMove();
-                        updateProgress(gameResponse.getOccupiedFields(), 1.0);
-                    } catch (PlayerInitializationException e) {
-                        e.printStackTrace();
-                    }
-                }
-                System.out.println(game.isEnded());
-                updateProgress(1.0, 1.0);
-                return null;
-            }
-        };
-        roundProgressBar.progressProperty().bind(task.progressProperty());
-        return new Thread(task);
-    }
-
     private void playGame() {
         Task<Double> task = new Task<Double>() {
             @Override
@@ -150,6 +115,13 @@ public class FightSceneController {
                             + game.getWaitingPlayer().getPlayerDetails().getAlias());
 
                     while (!game.isEnded()) {
+                        if(stopGame) {
+                            game.finishGame();
+                            updateProgress(0.0, 1.0);
+                            updateValue(0.0);
+                            return null;
+                        }
+
                         try {
                             GameResponse gameResponse = game.nextMove();
                             //TODO null check might be safer
@@ -179,7 +151,8 @@ public class FightSceneController {
         gameProgressBar.progressProperty().bind(task.progressProperty());
         fightTitleLabel.textProperty().bind(task.titleProperty());
 
-        new Thread(task).start();
+        gameThread = new Thread(task);
+        gameThread.start();
     }
 
     private void saveGameResult(GameResult gameResult) {
@@ -194,19 +167,32 @@ public class FightSceneController {
                 });
     }
 
-    private void restartGame() {
+    private void reset() {
+        stopGame = true;
+        try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e) {
 
+        }
+        gameConfigDto.getGames().forEach(Game::reset);
+        scoreboardList.forEach(Score::reset);
+        scoreboardTable.refresh();
+        gameIterator = gameConfigDto.getGames().iterator();
+        System.out.println("==============================   RESET   ========================================");
     }
-    
+
+    private Thread gameThread;
+    private boolean stopGame = false;
+
     @FXML
     private void onPlayButtonAction() {
         if (playButton.getText().toLowerCase().equals("play")) {
             playGame();
             playButton.setText("Restart");
         } else {
-
+            reset();
+            playButton.setText("Play");
         }
-
     }
 
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {

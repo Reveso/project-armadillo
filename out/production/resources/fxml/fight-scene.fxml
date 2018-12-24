@@ -74,7 +74,7 @@
             <padding>
                 <Insets topRightBottomLeft="10"/>
             </padding>
-            <Button fx:id="pauseButton" onAction="#onPauseButtonAction" prefHeight="29.0" prefWidth="112.0"
+            <Button fx:id="playButton" onAction="#onPlayButtonAction" prefHeight="29.0" prefWidth="112.0"
                     text="Play"/>
             <Button fx:id="backToSettingsButton" onMouseClicked="#onBackButtonMouseClicked" prefHeight="29.0"
                     prefWidth="112.0" text="Back to settings"/>

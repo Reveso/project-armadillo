@@ -22,14 +22,22 @@ public class Game {
     private boolean ended = false;
     private boolean started = false;
     private Move lastMove;
-    private long allfields;
+    private long fieldsNumber;
 
+    public void reset() {
+        int size = board.getSize();
+        board = new Board(size);
+        gameResult = null;
+        ended = false;
+        started = false;
+        lastMove = null;
+    }
 
     public Game(@NonNull AbstractPlayer movingPlayer, @NonNull AbstractPlayer waitingPlayer, @NonNull Board board) {
         this.movingPlayer = movingPlayer;
         this.waitingPlayer = waitingPlayer;
         this.board = board;
-        allfields = board.getSize()*board.getSize();
+        fieldsNumber = board.getSize()*board.getSize();
     }
 
     private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
@@ -133,13 +141,15 @@ public class Game {
         val gameResponse = new GameResponse();
         gameResponse.setMove(lastMove);
         System.out.println("===============");
-        gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / allfields);
+        gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / fieldsNumber);
         System.out.println(gameResponse.getOccupiedFields());
 
         return gameResponse;
 
 
     }
+
+
 
     private void swapPlayers() {
         AbstractPlayer temp = movingPlayer;
