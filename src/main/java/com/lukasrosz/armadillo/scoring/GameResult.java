@@ -1,5 +1,6 @@
 package com.lukasrosz.armadillo.scoring;
 
+import com.lukasrosz.armadillo.game.GameFinishType;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.player.PlayerDetails;
 import lombok.AllArgsConstructor;
@@ -15,4 +16,5 @@ public class GameResult {
     private PlayerDetails winner;
     private PlayerDetails loser;
     private boolean disqualified;
+    private GameFinishType gameFinishType;
 }

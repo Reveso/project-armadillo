@@ -27,7 +27,7 @@ public class Main extends Application {
         FightSceneController fightSceneController = fxmlLoader.getController();
 
         val gameMaker = new GameMaker();
-        val gameConfigDto = gameMaker.newTournament(new File("ai_test_directory"), 45);
+        val gameConfigDto = gameMaker.newTournament(new File("ai_test_directory"), 20);
 //        val gameConfigDto = gameMaker.newHumanVsAIGame(new File("ai_test_directory/283822"), 16);
 //        val gameConfigDto = gameMaker.newAiVsAiGame(new File("ai_test_directory/283822"), new File("ai_test_directory/283823"), 16);
 //        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/283822"), 16);

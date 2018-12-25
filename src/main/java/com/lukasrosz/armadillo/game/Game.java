@@ -45,14 +45,16 @@ public class Game {
         if (response.getMove() == null || !board.setNewMove(response.getMove())) {
             return new GameResult(potentialWinner.getPlayerDetails(),
                     potentialLoser.getPlayerDetails(),
-                    checkIfDisqualified(ResponseType.EXCEPTION));
+                    checkIfDisqualified(ResponseType.EXCEPTION),
+                    GameFinishType.INVALID_MOVE);
+            //TODO Different game finish types depending on situation
         } else return null;
     }
 
     private GameResult checkIfEndGame(AbstractPlayer winner, AbstractPlayer loser) {
         if(board.checkIfEndGame()) {
             return new GameResult(winner.getPlayerDetails(),
-                    loser.getPlayerDetails(), false);
+                    loser.getPlayerDetails(), false, GameFinishType.NORMAL);
         } else return null;
     }
 
@@ -84,12 +86,21 @@ public class Game {
 
         boolean success1 = movingPlayer.initialize(board.getSize(), PointsMapper.getPointsAsString(board.getOccupiedFields()));
         boolean success2 = waitingPlayer.initialize(board.getSize(), PointsMapper.getPointsAsString(board.getOccupiedFields()));
+
         if(!success1) {
             finishGame();
+
+            gameResult = new GameResult(waitingPlayer.getPlayerDetails(), movingPlayer.getPlayerDetails(),
+                    true, GameFinishType.INITIALIZATION_EXCEPTION);
+
             throw new PlayerInitializationException(movingPlayer.getPlayerDetails().getAlias()
                     + " was not properly initialized");
         } else if (!success2) {
             finishGame();
+
+            gameResult = new GameResult(movingPlayer.getPlayerDetails(), waitingPlayer.getPlayerDetails(),
+                    true, GameFinishType.INITIALIZATION_EXCEPTION);
+
             throw new PlayerInitializationException(waitingPlayer.getPlayerDetails().getAlias()
                     + " was not properly initialized");
         }

@@ -16,7 +16,7 @@
     <top>
         <VBox alignment="CENTER" spacing="10">
             <Label fx:id="fightTitleLabel"/>
-            <HBox spacing="10">
+            <HBox spacing="10" alignment="CENTER">
                 <VBox alignment="CENTER">
                     <Label text="Game Progress"/>
                     <ProgressIndicator fx:id="gameProgressBar" maxWidth="1.7976931348623157E308" prefHeight="70.0"
