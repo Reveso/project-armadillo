@@ -7,22 +7,21 @@ import com.lukasrosz.armadillo.game.Point;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.player.PlayerDetails;
 import com.lukasrosz.armadillo.scoring.GameResult;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.*;
 
 @Getter
 @Setter
+@XmlRootElement
+@ToString
 public class GameReplay {
     private int moveCounter = 0;
-
     private int boardSize;
     private List<Point> initiallyOccupiedFields = new ArrayList<>();
     private Map<Integer, ReplayMove> moveMap = new HashMap<>();
-
     private GameResult gameResult;
 
     public void addNewMove(ReplayMove replayMove) {

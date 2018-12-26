@@ -8,6 +8,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.val;
 
@@ -22,6 +23,7 @@ public class Main extends Application {
 //        primaryStage.show();
 
         Stage fightStage = new Stage();
+        fightStage.setTitle("Tournament");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
         FightSceneController fightSceneController = fxmlLoader.getController();

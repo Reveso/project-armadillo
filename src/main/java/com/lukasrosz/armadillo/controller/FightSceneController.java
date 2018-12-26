@@ -7,6 +7,7 @@ import com.lukasrosz.armadillo.game.GameFinishType;
 import com.lukasrosz.armadillo.game.GameResponse;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
+import com.lukasrosz.armadillo.player.PlayerDetails;
 import com.lukasrosz.armadillo.replay.GameReplay;
 import com.lukasrosz.armadillo.replay.ReplayMove;
 import com.lukasrosz.armadillo.scoring.GameResult;
@@ -28,6 +29,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -56,6 +60,7 @@ public class FightSceneController {
     @FXML
     private ProgressIndicator roundProgressBar;
 
+
     @Getter
     private final ObservableList<Score> scoreboardList = FXCollections.observableArrayList();
     private boolean stopGame = false;
@@ -67,7 +72,7 @@ public class FightSceneController {
     public void initialize() {
         fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
         new File("referee_files/scoreboard").mkdirs();
-        new File("referee_files/logs").mkdirs();
+        new File("referee_files/replays").mkdirs();
         scoreboardTable.setRowFactory(this::scoreTableRowFactory);
     }
 
@@ -85,14 +90,15 @@ public class FightSceneController {
                         .filter(gameReplay ->
                                 gameReplay.containsPlayer(score.getPlayerDetails())).collect(Collectors.toList());
 
-                showMatchHistoryStage(playerReplays);
+                showMatchHistoryStage(playerReplays, score.getPlayerDetails());
             }
         });
         return row;
     }
 
-    private void showMatchHistoryStage(List<GameReplay> playerReplays) {
+    private void showMatchHistoryStage(List<GameReplay> playerReplays, PlayerDetails player) {
         Stage stage = new Stage();
+        stage.setTitle(player.getAlias() + " history");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/match-history.fxml"));
         try {
             Parent stageRoot = fxmlLoader.load();
@@ -138,6 +144,12 @@ public class FightSceneController {
         }
     }
 
+    private String createFileName(Game game) {
+        return getShortDate() + "_"
+                + game.getMovingPlayer().getPlayerDetails().getAlias() + "_"
+                + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".rep";
+
+    }
     private void playGame() {
         Task<Double> task = new Task<Double>() {
             @Override
@@ -188,6 +200,20 @@ public class FightSceneController {
                             + game.getGameResult().getLoser().getAlias());
 
                     updateProgress(++progress, gameConfigDto.getGames().size());
+
+
+                    try {
+                        File file = new File("referee_files/replays/" + createFileName(game));
+                        JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
+                        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+                        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+                        jaxbMarshaller.marshal(gameReplay, file);
+                        jaxbMarshaller.marshal(gameReplay, System.out);
+                    } catch (JAXBException e) {
+                        e.printStackTrace();
+                    }
                 }
                 saveScoreboardToFile();
                 gameStarted = false;

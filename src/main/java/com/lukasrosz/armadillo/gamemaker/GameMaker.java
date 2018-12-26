@@ -78,7 +78,7 @@ public class GameMaker {
             val surname = new StringBuilder(" ");
             Arrays.stream(fullName.split(" ")).skip(1)
                     .forEach(s -> surname.append(s + " "));
-            playerDetails.setSurname(surname.toString());
+            playerDetails.setSurname(surname.toString().trim());
 
             playerDetails.setCmd(scanner.nextLine());
             System.out.println(playerDetails.getCmd());

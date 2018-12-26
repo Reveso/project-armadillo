@@ -8,17 +8,20 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class ReplayController {
 
     private Scene previousScene;
+    private String previousTitle;
     private final int FIELD_SIZE = 30;
+    private final Color BOARD_COLOR = Color.LIGHTGRAY;
+    private final Color WINNER_COLOR = Color.GREEN;
+    private final Color LOSER_COLOR = Color.MEDIUMBLUE;
 
     @FXML
     private TextField refreshDelayTextField;
@@ -30,6 +33,14 @@ public class ReplayController {
     private Button previousMoveButton;
     @FXML
     private Canvas animationCanvas;
+    @FXML
+    private Label player1AliasLabel;
+    @FXML
+    private Label player2AliasLabel;
+    @FXML
+    private Label player1ColorLabel;
+    @FXML
+    private Label player2ColorLabel;
 
     private GraphicsContext graphicsContext;
     private GameReplay gameReplay;
@@ -40,12 +51,25 @@ public class ReplayController {
     public void initialize() {
         Platform.runLater(() -> playButton.requestFocus());
         graphicsContext = animationCanvas.getGraphicsContext2D();
+
+        player1AliasLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
+        player2AliasLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
+        player1ColorLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
+        player2ColorLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
+
+        player1ColorLabel.setTextFill(WINNER_COLOR);
+        player2ColorLabel.setTextFill(LOSER_COLOR);
+
+        player1ColorLabel.setText("green");
+        player2ColorLabel.setText("blue");
     }
 
-    public void setup(GameReplay gameReplay, Scene previousScene) {
+    public void setup(GameReplay gameReplay, Scene previousScene, String previousTitle) {
         this.gameReplay = gameReplay;
         this.previousScene = previousScene;
-
+        this.previousTitle = previousTitle;
+        player1AliasLabel.setText(gameReplay.getWinner() + ": ");
+        player2AliasLabel.setText(gameReplay.getLoser() + ": ");
         initializeCanvas(gameReplay.getBoardSize());
     }
 
@@ -54,7 +78,7 @@ public class ReplayController {
         animationCanvas.setHeight(canvasSize);
         animationCanvas.setWidth(canvasSize);
 
-        graphicsContext.setFill(Color.LIGHTGRAY);
+        graphicsContext.setFill(BOARD_COLOR);
         graphicsContext.fillRect(0, 0, canvasSize, canvasSize);
         for(int i=1; i <= canvasSize; i+= FIELD_SIZE) {
             graphicsContext.strokeLine(i, 0, i, canvasSize);
@@ -113,12 +137,10 @@ public class ReplayController {
 
     private void stopAnimation() {
         stopAnimation = true;
-        if(animationDelay <= 1000) {
-            try {
-                Thread.sleep(animationDelay + 100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         nextMoveButton.setDisable(false);
         previousMoveButton.setDisable(false);
@@ -139,9 +161,9 @@ public class ReplayController {
 
         Color color;
         if(move.getMovingPlayer().equals(gameReplay.getGameResult().getWinner())) {
-            color = Color.GREEN;
+            color = WINNER_COLOR;
         } else {
-            color = Color.MEDIUMBLUE;
+            color = LOSER_COLOR;
         }
 
         int x1 = move.getMove().getPoint1().getX();
@@ -167,7 +189,7 @@ public class ReplayController {
         int x2 = move.getMove().getPoint2().getX();
         int y2 = move.getMove().getPoint2().getY();
 
-        Color color = Color.WHITE;
+        Color color = BOARD_COLOR;
         fillFieldOnPos(x1, y1, color);
         fillFieldOnPos(x2, y2, color);
 
@@ -187,8 +209,15 @@ public class ReplayController {
         ButtonType result = showAlert("Go back", message);
 
         if(result.equals(ButtonType.OK)) {
-            ((Stage) playButton.getScene().getWindow()).setScene(previousScene);
+            Stage stage = (Stage) playButton.getScene().getWindow();
+            stage.setScene(previousScene);
+            stage.setTitle(previousTitle);
         }
+    }
+
+    //TODO replay info implementation
+    public void onInfoButtonAction() {
+        showAlert("Error", "Not implemented yet");
     }
 
     private ButtonType showAlert(String title, String content) {

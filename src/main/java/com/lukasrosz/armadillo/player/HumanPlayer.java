@@ -29,7 +29,7 @@ public class HumanPlayer extends AbstractPlayer {
 
             move = PointsMapper.getStringAsMove(stringMove);
             if(move != null) {
-                exit = true; //TODO this should be logged
+                exit = true;
             }
 
         } while(!exit);
