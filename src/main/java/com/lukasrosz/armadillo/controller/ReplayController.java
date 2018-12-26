@@ -73,6 +73,12 @@ public class ReplayController {
 
     public void onPlayButtonAction() {
         if(playButton.getText().toLowerCase().equals("play")) {
+            try {
+                animationDelay = Integer.parseInt(refreshDelayTextField.getText());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return;
+            }
             playButton.setText("Stop");
             setupAnimationThread();
         } else {
@@ -82,13 +88,6 @@ public class ReplayController {
     }
 
     private void setupAnimationThread() {
-        try {
-            animationDelay = Integer.parseInt(refreshDelayTextField.getText());
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
-
         startAnimation();
 
         Task<Void> task = new Task<Void>() {
@@ -111,7 +110,6 @@ public class ReplayController {
         stopAnimation = false;
         nextMoveButton.setDisable(true);
         previousMoveButton.setDisable(true);
-
     }
 
     private void stopAnimation() {
