@@ -50,7 +50,7 @@
                 <Insets topRightBottomLeft="10"/>
             </padding>
             <Button onMouseClicked="#onBackButtonMouseClicked" prefHeight="29.0"
-                    prefWidth="112.0" text="Exit"/>
+                    prefWidth="112.0" text="Close"/>
         </HBox>
     </bottom>
 </BorderPane>

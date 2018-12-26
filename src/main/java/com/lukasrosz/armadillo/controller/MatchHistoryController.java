@@ -6,6 +6,9 @@ import com.lukasrosz.armadillo.scoring.Score;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
@@ -15,10 +18,12 @@ import javafx.stage.Stage;
 import lombok.Getter;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class MatchHistoryController {
+
 
     @FXML
     private TableView<GameReplay> gameReplaysTable;
@@ -40,9 +45,18 @@ public class MatchHistoryController {
             if (event.getClickCount() == 2 && (! row.isEmpty())) {
                 GameReplay gameReplay = row.getItem();
 
-                System.out.println(gameReplay.getGameResult().getLoser());
-                System.out.println(gameReplay.getGameResult().getWinner());
-                //TODO open replay window (change Scene, whatever)
+                Stage stage = (Stage) gameReplaysTable.getScene().getWindow();
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/replay-scene.fxml"));
+                try {
+                    Parent stageRoot = fxmlLoader.load();
+                    ReplayController controller = fxmlLoader.getController();
+                    controller.setup(gameReplay, stage.getScene());
+                    stage.setScene(new Scene(stageRoot));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
         return row;

@@ -140,6 +140,7 @@ public class Game {
         gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
         if(gameResult != null) {
             finishGame();
+            lastMove = moveResponse.getMove();
             System.out.println("END GAME: " + board.checkIfEndGame());
             System.out.println("DSQ: " + gameResult.isDisqualified());
             System.out.println("Free fields: " + board.getFreeFields());
@@ -151,13 +152,12 @@ public class Game {
         lastMove = moveResponse.getMove();
         val gameResponse = new GameResponse();
         gameResponse.setMove(lastMove);
+
         System.out.println("===============");
         gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / fieldsNumber);
         System.out.println(gameResponse.getOccupiedFields());
 
         return gameResponse;
-
-
     }
 
 

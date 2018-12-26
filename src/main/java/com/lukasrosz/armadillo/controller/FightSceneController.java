@@ -173,6 +173,7 @@ public class FightSceneController {
 
                             gameReplay.addNewMove(new ReplayMove(
                                     game.getWaitingPlayer().getPlayerDetails(), game.getLastMove()));
+
                         } catch (PlayerInitializationException e) {
                             e.printStackTrace();
                         }

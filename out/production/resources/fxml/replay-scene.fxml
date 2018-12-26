@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.ReplayController">
+
+    <center>
+        <Canvas fx:id="animationCanvas"/>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+
+            <TextField fx:id="refreshDelayTextField" prefHeight="25.0" prefWidth="48.0" promptText="Delay"/>
+
+            <Button fx:id="playButton" onAction="#onPlayButtonAction" prefHeight="29.0" prefWidth="96.0" text="Play"/>
+
+            <Button fx:id="previousMoveButton" onAction="#onPreviousMoveButtonAction" prefHeight="29.0" prefWidth="96.0"
+                    text="Previous Move"/>
+
+            <Button fx:id="nextMoveButton" onAction="#onNextMoveButtonAction" prefHeight="29.0" prefWidth="96.0"
+                    text="Next Move"/>
+
+            <Button onMouseClicked="#onBackButtonMouseClicked" prefHeight="29.0" prefWidth="96.0"
+                    text="Back to history"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
