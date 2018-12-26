@@ -1,6 +1,5 @@
 package com.lukasrosz.armadillo.controller;
 
-import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.replay.GameReplay;
 import com.lukasrosz.armadillo.replay.ReplayMove;
 import javafx.application.Platform;
@@ -55,7 +54,7 @@ public class ReplayController {
         animationCanvas.setHeight(canvasSize);
         animationCanvas.setWidth(canvasSize);
 
-        graphicsContext.setFill(Color.WHITE);
+        graphicsContext.setFill(Color.LIGHTGRAY);
         graphicsContext.fillRect(0, 0, canvasSize, canvasSize);
         for(int i=1; i <= canvasSize; i+= FIELD_SIZE) {
             graphicsContext.strokeLine(i, 0, i, canvasSize);
@@ -63,10 +62,10 @@ public class ReplayController {
         }
 
         gameReplay.getInitiallyOccupiedFields().forEach(point ->
-                fillRectOnPos(point.getX(), point.getY(), Color.DARKRED));
+                fillFieldOnPos(point.getX(), point.getY(), Color.DARKRED));
     }
 
-    private void fillRectOnPos(int x, int y, Color color) {
+    private void fillFieldOnPos(int x, int y, Color color) {
         graphicsContext.setFill(color);
         graphicsContext.fillRect(x*FIELD_SIZE+2, y*FIELD_SIZE+2, FIELD_SIZE - 2, FIELD_SIZE - 2);
     }
@@ -140,9 +139,9 @@ public class ReplayController {
 
         Color color;
         if(move.getMovingPlayer().equals(gameReplay.getGameResult().getWinner())) {
-            color = Color.YELLOWGREEN;
+            color = Color.GREEN;
         } else {
-            color = Color.DARKTURQUOISE;
+            color = Color.MEDIUMBLUE;
         }
 
         int x1 = move.getMove().getPoint1().getX();
@@ -150,8 +149,8 @@ public class ReplayController {
         int x2 = move.getMove().getPoint2().getX();
         int y2 = move.getMove().getPoint2().getY();
 
-        fillRectOnPos(x1, y1, color);
-        fillRectOnPos(x2, y2, color);
+        fillFieldOnPos(x1, y1, color);
+        fillFieldOnPos(x2, y2, color);
 
         return true;
     }
@@ -169,8 +168,8 @@ public class ReplayController {
         int y2 = move.getMove().getPoint2().getY();
 
         Color color = Color.WHITE;
-        fillRectOnPos(x1, y1, color);
-        fillRectOnPos(x2, y2, color);
+        fillFieldOnPos(x1, y1, color);
+        fillFieldOnPos(x2, y2, color);
 
     }
 

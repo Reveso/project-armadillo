@@ -8,9 +8,15 @@
     /*-fx-background-color: #995f49;*/
 }
 
-.pane-occupied-by-player{
+.pane-occupied-by-ai-player {
     -fx-background-color: #872443;
     -fx-border-color: #4c1325;
+    -fx-border-width: 2;
+}
+
+.pane-occupied-by-human-player {
+    -fx-background-color: #d6970e;
+    -fx-border-color: #af7903;
     -fx-border-width: 2;
 }
 

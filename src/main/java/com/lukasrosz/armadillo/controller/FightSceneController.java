@@ -40,9 +40,6 @@ import java.util.stream.Collectors;
 
 public class FightSceneController {
 
-    public static Logger logger;
-    private FileHandler fileHandler;
-
     @Getter
     @Setter
     private GameConfigDto gameConfigDto;
@@ -64,7 +61,8 @@ public class FightSceneController {
     private boolean stopGame = false;
     private boolean gameStarted = false;
 
-    List<Stage> historyStages = new ArrayList<>();
+    private List<Stage> historyStages = new ArrayList<>();
+    private List<GameReplay> gameReplays = new ArrayList<>();
 
     public void initialize() {
         fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
@@ -101,7 +99,7 @@ public class FightSceneController {
             MatchHistoryController controller = fxmlLoader.getController();
             controller.setup(playerReplays);
             stage.setScene(new Scene(stageRoot));
-//                    stage.setOnCloseRequest(event -> onExitClicked());
+//            stage.setOnCloseRequest(event -> onExitClicked());
             historyStages.add(stage);
             stage.show();
         } catch (IOException e) {
@@ -139,8 +137,6 @@ public class FightSceneController {
             e.printStackTrace();
         }
     }
-
-    private List<GameReplay> gameReplays = new ArrayList<>();
 
     private void playGame() {
         Task<Double> task = new Task<Double>() {

@@ -74,6 +74,7 @@ public class Game {
             return;
         } else if (movingPlayer instanceof HumanFXPlayer) {
             swapPlayers();
+            return;
         }
         Random random = new Random();
         if(random.nextInt(2) == 1) {
@@ -109,11 +110,6 @@ public class Game {
     public GameResponse nextMove() throws PlayerInitializationException {
         String message;
         if(!started) {
-//            FightStageController.logger.info("Initialization");
-//            FightStageController.logger.info("Occupied Fields");
-//            String occupiedFields = PointsMapper.getPointsAsString(board.getOccupiedFields());
-//            FightStageController.logger.info(occupiedFields);
-
             initializeGame();
             message = "start";
             started = true;

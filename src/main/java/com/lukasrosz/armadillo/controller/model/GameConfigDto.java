@@ -24,7 +24,6 @@ public class GameConfigDto {
 
     private Set<Score> scores = new LinkedHashSet<>();
     private Set<Game> games = new LinkedHashSet<>();
-    private int refreshDelay;
     private int boardSize;
 
 }

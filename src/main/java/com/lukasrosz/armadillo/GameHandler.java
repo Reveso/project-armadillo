@@ -34,7 +34,6 @@ public class GameHandler {
 
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newAiVsAiGame(aiDir1, aiDir2, size);
-        gameConfigDto.setRefreshDelay(delay);
         fightStageController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
@@ -59,7 +58,6 @@ public class GameHandler {
 
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newTournament(mainDir, size);
-        gameConfigDto.setRefreshDelay(delay);
         fightStageController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
@@ -80,7 +78,6 @@ public class GameHandler {
         FightStageController fightStageController = fxmlLoader.getController();
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newSoloGame(aiDir1, aiDir2, size);
-        gameConfigDto.setRefreshDelay(delay);
         fightStageController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
