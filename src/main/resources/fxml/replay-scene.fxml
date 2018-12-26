@@ -20,17 +20,19 @@
                 <Insets topRightBottomLeft="10"/>
             </padding>
 
-            <TextField fx:id="refreshDelayTextField" prefHeight="25.0" prefWidth="48.0" promptText="Delay"/>
+            <TextField fx:id="refreshDelayTextField" prefHeight="0.0" prefWidth="48.0" promptText="Delay"/>
+            <Button fx:id="playButton" onAction="#onPlayButtonAction" prefHeight="0.0" prefWidth="46.0" text="Play"/>
 
-            <Button fx:id="playButton" onAction="#onPlayButtonAction" prefHeight="29.0" prefWidth="96.0" text="Play"/>
-
-            <Button fx:id="previousMoveButton" onAction="#onPreviousMoveButtonAction" prefHeight="29.0" prefWidth="96.0"
-                    text="Previous Move"/>
-
-            <Button fx:id="nextMoveButton" onAction="#onNextMoveButtonAction" prefHeight="29.0" prefWidth="96.0"
+            <Button fx:id="nextMoveButton" onAction="#onNextMoveButtonAction" prefHeight="0.0" prefWidth="96.0"
                     text="Next Move"/>
 
-            <Button onMouseClicked="#onBackButtonMouseClicked" prefHeight="29.0" prefWidth="96.0"
+            <Button fx:id="previousMoveButton" onAction="#onPreviousMoveButtonAction" prefHeight="0.0" prefWidth="96.0"
+                    text="Previous Move"/>
+
+            <Button fx:id="resetButton" onMouseClicked="#onResetButtonAction" prefHeight="0.0" prefWidth="46.0"
+                    text="Reset"/>
+
+            <Button onMouseClicked="#onBackButtonMouseClicked" prefHeight="0.0" prefWidth="96.0"
                     text="Back to history"/>
         </HBox>
     </bottom>

@@ -4,6 +4,7 @@ import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.replay.GameReplay;
 import com.lukasrosz.armadillo.replay.ReplayMove;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -34,6 +35,8 @@ public class ReplayController {
     private GraphicsContext graphicsContext;
     private GameReplay gameReplay;
     private int moveCounter = 0;
+    private int animationDelay = 0;
+    private boolean stopAnimation = true;
 
     public void initialize() {
         Platform.runLater(() -> playButton.requestFocus());
@@ -69,12 +72,71 @@ public class ReplayController {
     }
 
     public void onPlayButtonAction() {
+        if(playButton.getText().toLowerCase().equals("play")) {
+            playButton.setText("Stop");
+            setupAnimationThread();
+        } else {
+            playButton.setText("Play");
+            stopAnimation();
+        }
+    }
+
+    private void setupAnimationThread() {
+        try {
+            animationDelay = Integer.parseInt(refreshDelayTextField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+
+        startAnimation();
+
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                while(onNextMoveButtonAction()) {
+                    Thread.sleep(animationDelay);
+                    if(stopAnimation) {
+                        return null;
+                    }
+                }
+                return null;
+            }
+        };
+
+        new Thread(task).start();
+    }
+
+    private void startAnimation() {
+        stopAnimation = false;
+        nextMoveButton.setDisable(true);
+        previousMoveButton.setDisable(true);
 
     }
 
-    public void onNextMoveButtonAction() {
+    private void stopAnimation() {
+        stopAnimation = true;
+        if(animationDelay <= 1000) {
+            try {
+                Thread.sleep(animationDelay + 100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        nextMoveButton.setDisable(false);
+        previousMoveButton.setDisable(false);
+        animationDelay = 0;
+    }
+
+    private void reset() {
+        stopAnimation();
+        moveCounter = 0;
+        initializeCanvas(gameReplay.getBoardSize());
+    }
+
+    public boolean onNextMoveButtonAction() {
         if(!gameReplay.getMoveMap().containsKey(moveCounter)) {
-            return;
+            return false;
         }
         ReplayMove move = gameReplay.getMoveMap().get(moveCounter++);
 
@@ -92,6 +154,8 @@ public class ReplayController {
 
         fillRectOnPos(x1, y1, color);
         fillRectOnPos(x2, y2, color);
+
+        return true;
     }
 
     public void onPreviousMoveButtonAction() {
@@ -110,6 +174,15 @@ public class ReplayController {
         fillRectOnPos(x1, y1, color);
         fillRectOnPos(x2, y2, color);
 
+    }
+
+    public void onResetButtonAction() {
+        String message = "Reset replay?";
+        ButtonType result = showAlert("Reset", message);
+
+        if(result.equals(ButtonType.OK)) {
+            reset();
+        }
     }
 
     public void onBackButtonMouseClicked() {

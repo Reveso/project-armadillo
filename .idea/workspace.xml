@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e205681d-2039-4506-bc3f-b849a03c449a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/fxml/match-history.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/fxml/match-history.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/match-history.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/match-history.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -25,11 +20,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="153">
-                    <caret line="9" selection-start-line="9" selection-end-line="9" />
+                  <state relative-caret-position="425">
+                    <caret line="25" column="76" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="76" />
                   </state>
                 </provider>
                 <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -45,11 +40,11 @@
                 <provider editor-type-id="JavaFX-Scene-Builder" />
               </entry>
             </file>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="861">
-                    <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+                  <state relative-caret-position="215">
+                    <caret line="128" column="48" lean-forward="true" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
                     <folding>
                       <element signature="imports" expanded="true" />
                     </folding>
@@ -142,10 +137,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="654">
+              <caret line="176" column="39" selection-start-line="176" selection-start-column="39" selection-end-line="176" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2695#3058#0" expanded="true" />
+                <element signature="e#3057#3058#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -319,10 +316,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/match-history.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" />
       </list>
     </option>
@@ -467,7 +464,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545783177088" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545785068906" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mrowenia-najlepsza" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -683,7 +680,7 @@
       <workItem from="1545599972907" duration="13438000" />
       <workItem from="1545653302938" duration="11559000" />
       <workItem from="1545750851371" duration="6668000" />
-      <workItem from="1545769623406" duration="11425000" />
+      <workItem from="1545769623406" duration="12978000" />
     </task>
     <servers />
   </component>
@@ -720,7 +717,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156323000" />
+    <option name="totallyTimeSpent" value="157876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -735,7 +732,7 @@
     <frame x="-7" y="0" width="1294" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23581848" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23581848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -744,8 +741,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2621664" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.395947" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2621664" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3956044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
@@ -1121,14 +1118,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/ReplayMove.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1170,16 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -1194,12 +1173,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="215">
+          <caret line="128" column="48" lean-forward="true" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="76" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="176" column="39" selection-start-line="176" selection-start-column="39" selection-end-line="176" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2695#3058#0" expanded="true" />
+            <element signature="e#3057#3058#0" expanded="true" />
           </folding>
         </state>
       </provider>
