@@ -177,8 +177,10 @@ public class FightSceneController {
                             GameResponse gameResponse = game.nextMove();
                             updateValue(gameResponse.getOccupiedFields());
 
-                            gameReplay.addNewMove(new ReplayMove(
-                                    game.getWaitingPlayer().getPlayerDetails(), game.getLastMove()));
+                            if(gameResponse.getMove() != null) {
+                                gameReplay.addNewMove(new ReplayMove(
+                                        game.getWaitingPlayer().getPlayerDetails(), gameResponse.getMove()));
+                            }
 
                         } catch (PlayerInitializationException e) {
                             e.printStackTrace();
@@ -248,6 +250,12 @@ public class FightSceneController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        gameProgressBar.progressProperty().unbind();
+        gameProgressBar.setProgress(0);
+
+        fightTitleLabel.textProperty().unbind();
+        fightTitleLabel.setText("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESET");
+
         gameConfigDto.getGames().forEach(Game::reset);
         scoreboardList.forEach(Score::reset);
         scoreboardTable.refresh();
