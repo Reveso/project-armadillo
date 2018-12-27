@@ -9,6 +9,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.val;
 
@@ -21,7 +22,7 @@ public class ReplayFromFileMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        File file = new File("referee_files/replays/12_26_2018_14_33_26_test-555555_test-444444.rep");
+        File file = new File("referee_files/replays/12_27_2018_02_16_33_test-444444_test-555555.rep");
         JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
 
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -35,7 +36,8 @@ public class ReplayFromFileMain extends Application {
         Parent fightStageRoot = fxmlLoader.load();
         ReplayController replayController = fxmlLoader.getController();
 
-        replayController.setup(gameReplay, primaryStage.getScene(), "reee", primaryStage.getMaxHeight());
+        replayController.setup(gameReplay, primaryStage.getScene(), "reee",
+                Screen.getPrimary().getVisualBounds().getHeight());
         primaryStage.setScene(new Scene(fightStageRoot));
         primaryStage.setOnCloseRequest(event -> onExitClicked());
         primaryStage.show();

@@ -136,6 +136,7 @@ public class Game {
         gameResult = checkResponse(moveResponse, waitingPlayer, movingPlayer);
 
         if(gameResult != null) {
+            swapPlayers();
             finishGame();
             displayEndLog();
             return new GameResponse(null,1.0);
@@ -144,6 +145,7 @@ public class Game {
         gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
 
         if(gameResult != null) {
+            swapPlayers();
             finishGame();
             lastMove = moveResponse.getMove();
             displayEndLog();

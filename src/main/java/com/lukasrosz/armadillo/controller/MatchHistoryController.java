@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.Getter;
 
@@ -54,7 +55,8 @@ public class MatchHistoryController {
         try {
             Parent stageRoot = fxmlLoader.load();
             ReplayController controller = fxmlLoader.getController();
-            controller.setup(gameReplay, stage.getScene(), stage.getTitle(), stage.getMaxHeight());
+            controller.setup(gameReplay, stage.getScene(), stage.getTitle(),
+                    Screen.getPrimary().getVisualBounds().getHeight());
 
             stage.setTitle(gameReplay.getGameResult().getWinner().getAlias() + " vs "
                     + gameReplay.getGameResult().getLoser().getAlias());
