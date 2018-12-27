@@ -5,6 +5,8 @@ import com.lukasrosz.armadillo.replay.ReplayMove;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -14,12 +16,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class ReplayController {
 
     private Scene previousScene;
     private String previousTitle;
-    private final int FIELD_SIZE = 30;
-    private final Color BOARD_COLOR = Color.LIGHTGRAY;
+    private int fieldSize = 30;
+    private final Color BOARD_COLOR = Color.WHITE;
     private final Color WINNER_COLOR = Color.GREEN;
     private final Color LOSER_COLOR = Color.MEDIUMBLUE;
 
@@ -64,23 +68,32 @@ public class ReplayController {
         player2ColorLabel.setText("blue");
     }
 
-    public void setup(GameReplay gameReplay, Scene previousScene, String previousTitle) {
+    public void setup(GameReplay gameReplay, Scene previousScene, String previousTitle, double screenHeight) {
         this.gameReplay = gameReplay;
         this.previousScene = previousScene;
         this.previousTitle = previousTitle;
         player1AliasLabel.setText(gameReplay.getWinner() + ": ");
         player2AliasLabel.setText(gameReplay.getLoser() + ": ");
+
+        int boardSize = fieldSize * gameReplay.getBoardSize();
+        double maxWindowHeight = 0.8 * screenHeight;
+
+        while(boardSize > maxWindowHeight) {
+            boardSize = --fieldSize * gameReplay.getBoardSize();
+            System.out.println(fieldSize);
+        }
+
         initializeCanvas(gameReplay.getBoardSize());
     }
 
     private void initializeCanvas(int boardSize) {
-        int canvasSize = boardSize*FIELD_SIZE + 2;
+        int canvasSize = boardSize* fieldSize + 2;
         animationCanvas.setHeight(canvasSize);
         animationCanvas.setWidth(canvasSize);
 
         graphicsContext.setFill(BOARD_COLOR);
         graphicsContext.fillRect(0, 0, canvasSize, canvasSize);
-        for(int i=1; i <= canvasSize; i+= FIELD_SIZE) {
+        for(int i=1; i <= canvasSize; i+= fieldSize) {
             graphicsContext.strokeLine(i, 0, i, canvasSize);
             graphicsContext.strokeLine(0, i, canvasSize, i);
         }
@@ -91,7 +104,7 @@ public class ReplayController {
 
     private void fillFieldOnPos(int x, int y, Color color) {
         graphicsContext.setFill(color);
-        graphicsContext.fillRect(x*FIELD_SIZE+2, y*FIELD_SIZE+2, FIELD_SIZE - 2, FIELD_SIZE - 2);
+        graphicsContext.fillRect(x* fieldSize +2, y* fieldSize +2, fieldSize - 2, fieldSize - 2);
     }
 
     public void onPlayButtonAction() {
@@ -215,9 +228,19 @@ public class ReplayController {
         }
     }
 
-    //TODO replay info implementation
-    public void onInfoButtonAction() {
-        showAlert("Error", "Not implemented yet");
+    public void onInfoButtonAction() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/replay-info.fxml"));
+        Parent stageRoot = fxmlLoader.load();
+        ReplayInfoController replayInfoController = fxmlLoader.getController();
+
+        stage.setTitle(gameReplay.getGameResult().getWinner().getAlias() + " vs "
+                + gameReplay.getGameResult().getLoser().getAlias());
+
+        replayInfoController.setup(gameReplay);
+        stage.setScene(new Scene(stageRoot));
+        stage.show();
+
     }
 
     private ButtonType showAlert(String title, String content) {

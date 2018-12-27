@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.ReplayInfoController"
+            style="-fx-background-color: #FFFFFF;">
+
+    <center>
+        <VBox alignment="CENTER_LEFT" spacing="10">
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="winnerLabel" text="Winner: "/>
+                <Label fx:id="winnerAliasLabel" text="alias"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="loserLabel" text="Loser: "/>
+                <Label fx:id="loserAliasLabel" text="alias"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="disqualifiedLabel" text="Disqualified: "/>
+                <Label fx:id="disqualifiedValueLabel" text="true"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="finishTypeLabel" text="Finish Type: "/>
+                <Label fx:id="finishTypeValueLabel" text="finishType"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="2">
+            <Button onMouseClicked="#onCloseButtonMouseClicked" text="Close" alignment="CENTER"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

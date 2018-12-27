@@ -1,22 +1,23 @@
 package com.lukasrosz.armadillo.replay;
 
 import com.lukasrosz.armadillo.game.Game;
-import com.lukasrosz.armadillo.game.GameFinishType;
-import com.lukasrosz.armadillo.game.Move;
 import com.lukasrosz.armadillo.game.Point;
-import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.player.PlayerDetails;
 import com.lukasrosz.armadillo.scoring.GameResult;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
-@XmlRootElement
 @ToString
+@XmlRootElement
 public class GameReplay {
     private int moveCounter = 0;
     private int boardSize;
@@ -36,8 +37,6 @@ public class GameReplay {
     public static GameReplay newReplayFromGame(Game game) {
         GameReplay gameReplay = new GameReplay();
         gameReplay.setBoardSize(game.getBoard().getSize());
-//        gameReplay.setPlayer1(game.getMovingPlayer().getPlayerDetails());
-//        gameReplay.setPlayer2(game.getWaitingPlayer().getPlayerDetails());
         gameReplay.getInitiallyOccupiedFields().addAll(game.getBoard().getOccupiedFields());
 
         return gameReplay;

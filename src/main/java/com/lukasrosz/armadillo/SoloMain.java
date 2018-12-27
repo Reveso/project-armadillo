@@ -1,7 +1,5 @@
 package com.lukasrosz.armadillo;
 
-import com.lukasrosz.armadillo.controller.FightSceneController;
-import com.lukasrosz.armadillo.controller.FightStageController;
 import com.lukasrosz.armadillo.controller.SoloGameController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import javafx.application.Application;
@@ -14,7 +12,7 @@ import lombok.val;
 
 import java.io.File;
 
-public class OldMain extends Application {
+public class SoloMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("/MainController/fight-stage.MainController"));

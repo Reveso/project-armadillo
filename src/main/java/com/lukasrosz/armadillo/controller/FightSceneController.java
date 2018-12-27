@@ -3,16 +3,12 @@ package com.lukasrosz.armadillo.controller;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.controller.model.GameConfigDto;
 import com.lukasrosz.armadillo.game.Game;
-import com.lukasrosz.armadillo.game.GameFinishType;
 import com.lukasrosz.armadillo.game.GameResponse;
-import com.lukasrosz.armadillo.gamemaker.GameMaker;
-import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.player.PlayerDetails;
 import com.lukasrosz.armadillo.replay.GameReplay;
 import com.lukasrosz.armadillo.replay.ReplayMove;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import com.lukasrosz.armadillo.scoring.Score;
-import com.lukasrosz.armadillo.subcontrollers.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -38,8 +34,8 @@ import java.io.PrintStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class FightSceneController {
@@ -68,8 +64,10 @@ public class FightSceneController {
 
     private List<Stage> historyStages = new ArrayList<>();
     private List<GameReplay> gameReplays = new ArrayList<>();
+    private ExecutorService executorService = Executors.newFixedThreadPool(5);
 
     public void initialize() {
+        scoreboardTable.setTooltip(new Tooltip("Double click for matches history"));
         fightTitleLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
         new File("referee_files/scoreboard").mkdirs();
         new File("referee_files/replays").mkdirs();
@@ -84,7 +82,7 @@ public class FightSceneController {
     private TableRow<Score> scoreTableRowFactory(TableView tableView) {
         TableRow<Score> row = new TableRow<>();
         row.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2 && (! row.isEmpty()) && !gameStarted) {
+            if (event.getClickCount() == 2 && (!row.isEmpty()) && !gameStarted) {
                 Score score = row.getItem();
                 List<GameReplay> playerReplays = gameReplays.stream()
                         .filter(gameReplay ->
@@ -105,7 +103,6 @@ public class FightSceneController {
             MatchHistoryController controller = fxmlLoader.getController();
             controller.setup(playerReplays);
             stage.setScene(new Scene(stageRoot));
-//            stage.setOnCloseRequest(event -> onExitClicked());
             historyStages.add(stage);
             stage.show();
         } catch (IOException e) {
@@ -150,6 +147,7 @@ public class FightSceneController {
                 + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".rep";
 
     }
+
     private void playGame() {
         Task<Double> task = new Task<Double>() {
             @Override
@@ -166,7 +164,7 @@ public class FightSceneController {
                     gameReplays.add(gameReplay);
 
                     while (!game.isEnded()) {
-                        if(stopGame) {
+                        if (stopGame) {
                             game.finishGame();
                             updateProgress(0.0, 1.0);
                             updateValue(0.0);
@@ -186,9 +184,8 @@ public class FightSceneController {
                             e.printStackTrace();
                         }
                     }
-
                     System.out.println("============================================================================");
-                    System.out.println(game.isEnded());
+
                     updateValue(1.0);
 
                     saveGameResult(game.getGameResult());
@@ -202,18 +199,8 @@ public class FightSceneController {
                     updateProgress(++progress, gameConfigDto.getGames().size());
 
 
-                    try {
-                        File file = new File("referee_files/replays/" + createFileName(game));
-                        JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
-                        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-                        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-                        jaxbMarshaller.marshal(gameReplay, file);
-                        jaxbMarshaller.marshal(gameReplay, System.out);
-                    } catch (JAXBException e) {
-                        e.printStackTrace();
-                    }
+                    executorService.execute(() ->
+                            saveReplayAsXML(gameReplay, "referee_files/replays/" + createFileName(game)));
                 }
                 saveScoreboardToFile();
                 gameStarted = false;
@@ -225,6 +212,21 @@ public class FightSceneController {
         fightTitleLabel.textProperty().bind(task.titleProperty());
 
         new Thread(task).start();
+    }
+
+    private void saveReplayAsXML(GameReplay gameReplay, String filename) {
+        try {
+            File file = new File(filename);
+            JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            jaxbMarshaller.marshal(gameReplay, file);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void saveGameResult(GameResult gameResult) {
@@ -263,7 +265,7 @@ public class FightSceneController {
             String message = "Do you want to reset the game and lose all the progress?";
             ButtonType result = showAlert("Game Reset", message);
 
-            if(result.equals(ButtonType.OK)) {
+            if (result.equals(ButtonType.OK)) {
                 reset();
                 playButton.setText("Play");
             }
@@ -279,6 +281,7 @@ public class FightSceneController {
     }
 
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
+        stopGame = true;
         Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
         historyStages.forEach(Stage::close);
         stage.close();

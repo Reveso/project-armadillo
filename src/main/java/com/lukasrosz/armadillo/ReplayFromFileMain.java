@@ -35,7 +35,7 @@ public class ReplayFromFileMain extends Application {
         Parent fightStageRoot = fxmlLoader.load();
         ReplayController replayController = fxmlLoader.getController();
 
-        replayController.setup(gameReplay, primaryStage.getScene(), "reee");
+        replayController.setup(gameReplay, primaryStage.getScene(), "reee", primaryStage.getMaxHeight());
         primaryStage.setScene(new Scene(fightStageRoot));
         primaryStage.setOnCloseRequest(event -> onExitClicked());
         primaryStage.show();

@@ -9,7 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.Getter;
 
@@ -26,6 +28,7 @@ public class MatchHistoryController {
     private final ObservableList<GameReplay> gameReplaysList = FXCollections.observableArrayList();
 
     public void initialize() {
+        gameReplaysTable.setTooltip(new Tooltip("Double click for replay"));
         gameReplaysTable.setRowFactory(this::gameReplaysTableRowFactory);
     }
 
@@ -51,7 +54,7 @@ public class MatchHistoryController {
         try {
             Parent stageRoot = fxmlLoader.load();
             ReplayController controller = fxmlLoader.getController();
-            controller.setup(gameReplay, stage.getScene(), stage.getTitle());
+            controller.setup(gameReplay, stage.getScene(), stage.getTitle(), stage.getMaxHeight());
 
             stage.setTitle(gameReplay.getGameResult().getWinner().getAlias() + " vs "
                     + gameReplay.getGameResult().getLoser().getAlias());

@@ -36,7 +36,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
             </columnResizePolicy>
             <columns>
-                <TableColumn sortable="false" text="alias">
+                <TableColumn sortable="false" text="Alias">
                     <cellValueFactory>
                         <PropertyValueFactory property="alias"/>
                     </cellValueFactory>
@@ -74,6 +74,7 @@
             <padding>
                 <Insets topRightBottomLeft="10"/>
             </padding>
+
             <Button fx:id="playButton" onAction="#onPlayButtonAction" prefHeight="29.0" prefWidth="112.0"
                     text="Play"/>
             <Button fx:id="backToSettingsButton" onMouseClicked="#onBackButtonMouseClicked" prefHeight="29.0"

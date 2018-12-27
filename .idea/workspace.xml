@@ -2,37 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e205681d-2039-4506-bc3f-b849a03c449a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/replay-info.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/fxml/replay-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/fxml/replay-scene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_00_57_45_test-444444_test-555555.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_00_57_47_test-444444_JP 100% + VAT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_00_58_15_test-444444_test-555555.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_00_58_18_test-444444_JP 100% + VAT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_00_58_55_test-444444_test-555555.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_00_58_58_test-444444_JP 100% + VAT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_11_25_test-444444_test-555555.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_11_27_test-444444_JP 100% + VAT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_14_00_test-444444_test-555555.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_14_02_test-444444_﻿JP.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_14_04_test-555555_﻿JP.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_18_53_test-444444_test-555555.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_18_55_test-444444_﻿JP.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/referee_files/logs/LOG_12_23_2018_01_18_57_test-555555_﻿JP.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/fxml/fight-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/fxml/fight-scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/OldMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/SoloMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/ReplayMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/ReplayMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -83,7 +65,107 @@
     <favorites_list name="armadillo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2137">
+              <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-info.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="634">
+              <caret line="56" column="97" selection-start-line="56" selection-start-column="97" selection-end-line="56" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/GameHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="103" selection-start-line="37" selection-start-column="103" selection-end-line="37" selection-end-column="103" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,9 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Fx.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/AIvsP.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/bitwa.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/AIvsPController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/soloController.java" />
@@ -138,38 +217,41 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/RawBattleMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainWithGlobal.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/match-history.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/SoloMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/GameHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/resources/css/styles.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/OldMain.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/solo-game.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/jaxb/MarshallingTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Point.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/ReplayMove.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ThreadTestMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/SoloMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-info.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" />
       </list>
     </option>
   </component>
@@ -180,7 +262,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="543" />
+    <option name="y" value="-20" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -192,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,16 +354,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="armadillo" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="armadillo" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -323,24 +397,7 @@
               <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="armadillo" type="462c0819:PsiDirectoryNode" />
-              <item name="subcontrollers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
@@ -371,18 +428,35 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="armadillo" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="armadillo" type="462c0819:PsiDirectoryNode" />
+              <item name="communication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="armadillo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="armadillo" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545832100839" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545872452694" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mrowenia-najlepsza" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -435,34 +509,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainWithGlobal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.MainWithGlobal" />
-      <module name="armadillo_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lukasrosz.armadillo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OldMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.OldMain" />
-      <module name="armadillo_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lukasrosz.armadillo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ReplayFromFileMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.ReplayFromFileMain" />
+      <module name="armadillo_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lukasrosz.armadillo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoloMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.SoloMain" />
+      <module name="armadillo_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lukasrosz.armadillo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadTestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.ThreadTestMain" />
       <module name="armadillo_main" />
       <extension name="coverage">
         <pattern>
@@ -539,18 +613,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.MainWithGlobal" />
-      <item itemvalue="Application.OldMain" />
+      <item itemvalue="Application.SoloMain" />
       <item itemvalue="Application.ReplayFromFileMain" />
+      <item itemvalue="Application.ThreadTestMain" />
       <item itemvalue="JUnit.MarshallingTest.marshallUnmarshall" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ReplayFromFileMain" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SoloMain" />
+        <item itemvalue="Application.ThreadTestMain" />
         <item itemvalue="JUnit.MarshallingTest.marshallUnmarshall" />
-        <item itemvalue="Application.OldMain" />
-        <item itemvalue="Application.MainWithGlobal" />
       </list>
     </recent_temporary>
   </component>
@@ -597,6 +671,8 @@
       <workItem from="1545769623406" duration="17399000" />
       <workItem from="1545823152906" duration="1990000" />
       <workItem from="1545825175928" duration="5655000" />
+      <workItem from="1545834199286" duration="2851000" />
+      <workItem from="1545864160377" duration="8285000" />
     </task>
     <servers />
   </component>
@@ -633,7 +709,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169942000" />
+    <option name="totallyTimeSpent" value="181078000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,17 +723,16 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988372" visible="true" weight="0.1172496" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988372" visible="true" weight="0.11883943" />
       <window_info id="Structure" order="1" sideWeight="0.50116277" side_tool="true" weight="0.1172496" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50116277" side_tool="true" weight="0.1172496" />
-      <window_info anchor="bottom" id="Statistic" weight="0.32969603" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960256" weight="0.18862042" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960256" weight="0.26968044" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3956044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -669,6 +744,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.17692907" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.3281372" />
+      <window_info anchor="bottom" id="Statistic" order="14" weight="0.32969603" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -728,44 +804,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/replay.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/soloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/solo.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MainWindowController.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/CommunicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
@@ -815,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -833,43 +864,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainWithGlobal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="43" />
-          <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main-global.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="282" selection-start-line="10" selection-start-column="268" selection-end-line="10" selection-end-column="282" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -913,26 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/GameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/OldMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="95" selection-start-line="33" selection-start-column="95" selection-end-line="33" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -948,26 +927,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="81" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -981,16 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1021,54 +972,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/jaxb/MarshallingTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="391">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="61" column="9" selection-start-line="47" selection-start-column="7" selection-end-line="61" selection-end-column="9" />
+        <state relative-caret-position="289">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="215" column="21" selection-start-line="204" selection-start-column="20" selection-end-line="215" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/jaxb/MarshallingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ThreadTestMain.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="72" column="70" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="70" />
+        <state relative-caret-position="8">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/SoloMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1085,10 +1038,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/PvPController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/soloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainWithGlobal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="191" column="54" selection-start-line="191" selection-start-column="54" selection-end-line="191" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/GameResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" column="18" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6716#6717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="56" column="97" selection-start-line="56" selection-start-column="97" selection-end-line="56" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="103" selection-start-line="37" selection-start-column="103" selection-end-line="37" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-info.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2137">
+          <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1097,62 +1205,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="80" column="62" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+        <state relative-caret-position="272">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="99" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="61" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="217" column="6" selection-start-line="217" selection-start-column="6" selection-end-line="217" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6897#6898#0" expanded="true" />
-            <element signature="e#6927#6928#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/GameHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

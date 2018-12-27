@@ -42,12 +42,24 @@ public class Game {
 
     private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
                                  AbstractPlayer potentialLoser) {
-        if (response.getMove() == null || !board.setNewMove(response.getMove())) {
+
+        if(response.getMove() == null) {
+            GameFinishType gameFinishType = response.getResponseType().equals(ResponseType.TIMEOUT)
+                    ? GameFinishType.RESPONSE_TIMEOUT
+                    : GameFinishType.NULL_MOVE;
+
+            return new GameResult(potentialWinner.getPlayerDetails(),
+                    potentialLoser.getPlayerDetails(),
+                    checkIfDisqualified(response.getResponseType()),
+                    gameFinishType);
+
+        } else if (!board.setNewMove(response.getMove())) {
+
             return new GameResult(potentialWinner.getPlayerDetails(),
                     potentialLoser.getPlayerDetails(),
                     checkIfDisqualified(ResponseType.EXCEPTION),
                     GameFinishType.INVALID_MOVE);
-            //TODO Different game finish types depending on situation
+
         } else return null;
     }
 
@@ -123,40 +135,40 @@ public class Game {
 
         gameResult = checkResponse(moveResponse, waitingPlayer, movingPlayer);
 
-        //TODO UNSAFE
         if(gameResult != null) {
             finishGame();
-            System.out.println("END GAME: " + board.checkIfEndGame());
-            System.out.println("DSQ: " + gameResult.isDisqualified());
-            System.out.println("Free fields: " + board.getFreeFields());
-            System.out.println("Moved: " + movingPlayer.getPlayerDetails().getAlias());
+            displayEndLog();
             return new GameResponse(null,1.0);
         }
 
         gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
+
         if(gameResult != null) {
             finishGame();
             lastMove = moveResponse.getMove();
-            System.out.println("END GAME: " + board.checkIfEndGame());
-            System.out.println("DSQ: " + gameResult.isDisqualified());
-            System.out.println("Free fields: " + board.getFreeFields());
-            System.out.println("Moved: " + movingPlayer.getPlayerDetails().getAlias());
+            displayEndLog();
             return new GameResponse(moveResponse.getMove(), 1.0);
         }
 
         swapPlayers();
         lastMove = moveResponse.getMove();
+
         val gameResponse = new GameResponse();
         gameResponse.setMove(lastMove);
-
-        System.out.println("===============");
         gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / fieldsNumber);
+
         System.out.println(gameResponse.getOccupiedFields());
+        System.out.println("===============");
 
         return gameResponse;
     }
 
-
+    private void displayEndLog() {
+        System.out.println("END GAME: " + board.checkIfEndGame());
+        System.out.println("DSQ: " + gameResult.isDisqualified());
+        System.out.println("Free fields: " + board.getFreeFields());
+        System.out.println("Moved: " + movingPlayer.getPlayerDetails().getAlias());
+    }
 
     private void swapPlayers() {
         AbstractPlayer temp = movingPlayer;
