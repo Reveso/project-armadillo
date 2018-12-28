@@ -28,7 +28,7 @@
             <children>
                 <HBox alignment="TOP_RIGHT" prefHeight="51.0" prefWidth="446.0">
                     <children>
-                        <TextField fx:id="bitwText" prefHeight="25.0" prefWidth="324.0">
+                        <TextField fx:id="bitwText">
                         </TextField>
                         <Button fx:id="bitwaFileChooser" mnemonicParsing="false" onAction="#bitwaFileChooser" style="-fx-background-radius: 20;" text="Pick a path">
                             <HBox.margin>

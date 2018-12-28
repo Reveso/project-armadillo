@@ -12,7 +12,7 @@
 
 <BorderPane fx:id="soloPane" prefHeight="221.0" prefWidth="446.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.subcontrollers.soloController">
     <bottom>
-        <HBox prefHeight="45.0" prefWidth="484.0" BorderPane.alignment="TOP_RIGHT">
+        <HBox prefHeight="45.0" prefWidth="484.0" BorderPane.alignment="TOP_CENTER">
             <children>
                 <Pane prefHeight="45.0" prefWidth="278.0" />
                 <TextField fx:id="sizeText" prefHeight="25.0" prefWidth="71.0" />
@@ -29,9 +29,9 @@
             <children>
                 <HBox alignment="TOP_LEFT" prefHeight="51.0" prefWidth="446.0">
                     <children>
-                        <TextField fx:id="soloText1" prefHeight="25.0" prefWidth="278.0">
+                        <TextField fx:id="soloText1">
                             <HBox.margin>
-                                <Insets left="70" />
+                                <Insets left="70"></Insets>
                             </HBox.margin>
                         </TextField>
                         <Button fx:id="soloFileChooser1" mnemonicParsing="false" onAction="#soloFileChooser1" style="-fx-background-radius: 20;" text="Pick a path">
@@ -43,9 +43,9 @@
                 </HBox>
                 <HBox alignment="TOP_LEFT" prefHeight="45.0" prefWidth="446.0">
                     <children>
-                        <TextField fx:id="soloText2" prefWidth="278">
+                        <TextField fx:id="soloText2">
                             <HBox.margin>
-                                <Insets left="70" />
+                                <Insets left="70"></Insets>
                             </HBox.margin>
                         </TextField>
                         <Button fx:id="soloFileChooser2" mnemonicParsing="false" onAction="#soloFileChooser2" style="-fx-background-radius: 20;" text="Pick a path">
@@ -53,17 +53,13 @@
                                 <Insets left="10" right="10" />
                             </HBox.margin>
                         </Button>
+                  <CheckBox fx:id="checkBox2" mnemonicParsing="false" onAction="#checkBox2selected" text="Human player">
+                      <HBox.margin>
+                          <Insets right="10" />
+                      </HBox.margin>
+                  </CheckBox>
                     </children>
                 </HBox>
-            <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="93.0" prefHeight="45.0" prefWidth="446.0">
-               <children>
-                  <CheckBox fx:id="checkBox2" mnemonicParsing="false" onAction="#checkBox2selected" text="Human player" alignment="BOTTOM_RIGHT">
-                     <HBox.margin>
-                        <Insets right="10" />
-                     </HBox.margin>
-                  </CheckBox>
-               </children>
-            </HBox>
             </children>
         </VBox>
     </center>

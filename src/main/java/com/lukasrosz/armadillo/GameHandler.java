@@ -20,13 +20,9 @@ public class GameHandler {
 
     private static File dir1, dir2;
     private static int size = 0, delay = 0;
-    Stage fightStage = new Stage();
-
-    public GameHandler(Stage fightStage) {
-        this.fightStage = fightStage;
-    }
 
     public void startAiVsAiGame(File aiDir1, File aiDir2, int size, int delay) throws IOException {
+        Stage fightStage = new Stage();
         this.dir1 = aiDir1;
         this.dir2 = aiDir2;
         this.size = size;
@@ -49,6 +45,7 @@ public class GameHandler {
     }
 
     public void startBattleGame(int size, File mainDir, int delay) throws IOException {
+        Stage fightStage = new Stage();
         this.dir1 = mainDir;
 
         this.size = size;
@@ -69,6 +66,7 @@ public class GameHandler {
     }
 
     public void startSoloGame(File aiDir1, File aiDir2, int size, int delay) throws IOException {
+        Stage fightStage = new Stage();
 
         this.dir1 = aiDir1;
         this.dir2 = aiDir2;
