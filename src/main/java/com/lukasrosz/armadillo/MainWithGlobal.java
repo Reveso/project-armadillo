@@ -21,7 +21,8 @@ public class MainWithGlobal extends Application {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main-global.fxml"));
         BorderPane fightStageRoot = fxmlLoader.load();
-
+        MainController controller = (MainController)  fxmlLoader.getController();
+        controller.setStage(primaryStage);
         stage.setScene(new Scene(fightStageRoot));
         stage.setOnCloseRequest(event -> onExitClicked());
 
