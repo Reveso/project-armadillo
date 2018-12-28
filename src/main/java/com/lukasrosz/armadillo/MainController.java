@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,8 +26,6 @@ public class MainController {
     @FXML
     private BorderPane mainPain;
 
-    private Stage stage;
-
     private com.lukasrosz.armadillo.subcontrollers.AIvsPController aIvsPController;
     private com.lukasrosz.armadillo.subcontrollers.bitwaController bitwaController;
     private com.lukasrosz.armadillo.subcontrollers.PvPController pvPController;
@@ -37,10 +34,6 @@ public class MainController {
     private BorderPane subPain;
     private int size = 16;
     private int delay = 1;
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
 
     public void loadPvP(ActionEvent actionEvent) throws IOException {
         loader = new FXMLLoader(getClass().getResource("/fxml/gamemodecenter/replay.fxml"));
@@ -70,7 +63,7 @@ public class MainController {
 
     @FXML
     public void startClicked(ActionEvent actionEvent) throws IOException {
-        GameHandler gameHandler = new GameHandler(stage);
+        GameHandler gameHandler = new GameHandler();
 
         if (bitwaRadioButton.isSelected()) {
             size = getSize(bitwaController);
