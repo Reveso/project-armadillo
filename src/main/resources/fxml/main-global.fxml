@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.MainController">
@@ -24,7 +29,6 @@
                     </toggleGroup>
                 </RadioButton>
                 <RadioButton fx:id="soloRadioButton" mnemonicParsing="false" onAction="#loadSolo" text="solo" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" />
-                <RadioButton fx:id="PvPRadioButton" mnemonicParsing="false" onAction="#loadPvP" text="replay" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" disable="true"/>
             </children>
         </VBox>
     </left>
@@ -38,7 +42,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Clear" fx:id="clearButton" onAction="#clearClicked">
+                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearClicked" style="-fx-background-radius: 20;" text="Clear">
                     <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </HBox.margin>
@@ -52,6 +56,68 @@
         </HBox>
     </bottom>
     <center>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #444444" BorderPane.alignment="CENTER" />
+        <!--<BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #444444" BorderPane.alignment="CENTER" fx:id="subPain"/>-->
+        <BorderPane fx:id="subPain" prefHeight="221.0" prefWidth="446.0" style="-fx-background-color: #444444" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+            <bottom>
+                <HBox prefHeight="45.0" prefWidth="484.0" style="-fx-background-color: WHITE;" BorderPane.alignment="TOP_CENTER">
+                    <children>
+                        <Pane prefHeight="45.0" prefWidth="278.0" />
+                        <TextField fx:id="sizeText" prefHeight="25.0" prefWidth="71.0" />
+                        <Label fx:id="boardsizeLabel" prefHeight="17.0" prefWidth="82.0" text="boardsize field">
+                            <HBox.margin>
+                                <Insets left="10" right="10" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+            </bottom>
+            <center>
+                <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox alignment="TOP_RIGHT" prefHeight="51.0" prefWidth="446.0">
+                            <children>
+                                <TextField fx:id="soloText1" prefHeight="25.0" prefWidth="339.0">
+                                    <HBox.margin>
+                                        <Insets left="10" />
+                                    </HBox.margin>
+                                </TextField>
+                                <Button fx:id="soloFileChooser1" mnemonicParsing="false" onAction="#soloFilechooser1Handler" style="-fx-background-radius: 20;" text="Pick a path">
+                                    <HBox.margin>
+                                        <Insets left="10" right="10" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="45.0" prefWidth="446.0">
+                            <children>
+                                <TextField fx:id="soloText2" prefHeight="25.0" prefWidth="339.0">
+                                    <HBox.margin>
+                                        <Insets left="10" />
+                                    </HBox.margin>
+                                </TextField>
+                                <Button fx:id="soloFileChooser2" mnemonicParsing="false" onAction="#soloFileChooser2Handler" style="-fx-background-radius: 20;" text="Pick a path">
+                                    <HBox.margin>
+                                        <Insets left="10" right="10" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="93.0" prefHeight="45.0" prefWidth="446.0">
+                            <children>
+                                <CheckBox fx:id="checkBox2" mnemonicParsing="false" onAction="#checkBox2selected" text="Human player">
+                                    <HBox.margin>
+                                        <Insets right="10" />
+                                    </HBox.margin>
+                                </CheckBox>
+                            </children>
+                        </HBox>
+                    </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </VBox>
+            </center>
+        </BorderPane>
+
     </center>
 </BorderPane>
