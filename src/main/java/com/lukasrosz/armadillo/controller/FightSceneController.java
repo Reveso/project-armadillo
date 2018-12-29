@@ -40,6 +40,9 @@ import java.util.stream.Collectors;
 
 public class FightSceneController {
 
+    private Scene previousScene;
+    private String previousTitle;
+
     @Getter
     @Setter
     private GameConfigDto gameConfigDto;
@@ -74,8 +77,10 @@ public class FightSceneController {
         scoreboardTable.setRowFactory(this::scoreTableRowFactory);
     }
 
-    public void setup(GameConfigDto gameConfigDto) {
+    public void setup(GameConfigDto gameConfigDto, Scene previousScene, String previousTitle) {
         this.gameConfigDto = gameConfigDto;
+        this.previousScene = previousScene;
+        this.previousTitle = previousTitle;
         populateScoreboard();
     }
 
@@ -288,11 +293,17 @@ public class FightSceneController {
         return alert.getResult();
     }
 
-    //TODO go to previous Scene
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
-        stopGame = true;
-        Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
-        historyStages.forEach(Stage::close);
-        stage.close();
+        String message = "Do you want to close this window?";
+        ButtonType result = showAlert("Go back", message);
+
+        if(result.equals(ButtonType.OK)) {
+            stopGame = true;
+            historyStages.forEach(Stage::close);
+
+            Stage stage = (Stage) playButton.getScene().getWindow();
+            stage.setScene(previousScene);
+            stage.setTitle(previousTitle);
+        }
     }
 }

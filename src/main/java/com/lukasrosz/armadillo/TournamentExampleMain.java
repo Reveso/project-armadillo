@@ -14,7 +14,7 @@ import lombok.val;
 
 import java.io.File;
 
-public class TournamentMain extends Application {
+public class TournamentExampleMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("/ConfigSceneController/fight-stage.ConfigSceneController"));
@@ -36,7 +36,7 @@ public class TournamentMain extends Application {
 
         gameConfigDto.getGames().forEach(game -> System.out.println(game.getMovingPlayer().getPlayerDetails().getAlias() + " " + game.getWaitingPlayer().getPlayerDetails().getAlias()));
 
-        fightSceneController.setup(gameConfigDto);
+        fightSceneController.setup(gameConfigDto, fightStage.getScene(), "previousTitle");
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
         fightStage.show();

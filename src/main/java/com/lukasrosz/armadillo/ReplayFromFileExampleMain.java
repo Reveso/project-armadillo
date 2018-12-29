@@ -18,7 +18,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-public class ReplayFromFileMain extends Application {
+public class ReplayFromFileExampleMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 

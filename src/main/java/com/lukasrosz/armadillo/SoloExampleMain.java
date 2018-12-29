@@ -12,7 +12,7 @@ import lombok.val;
 
 import java.io.File;
 
-public class SoloMain extends Application {
+public class SoloExampleMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("/ConfigSceneController/fight-stage.ConfigSceneController"));
@@ -37,7 +37,7 @@ public class SoloMain extends Application {
                                 + " "
                                 + game.getWaitingPlayer().getPlayerDetails().getAlias()));
 
-        controller.setup(gameConfigDto);
+        controller.setup(gameConfigDto, fightStage.getScene(), "previousTitle");
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
         fightStage.show();

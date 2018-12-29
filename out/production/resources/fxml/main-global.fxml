@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainPain" prefHeight="200.0" prefWidth="530.0"
+<BorderPane fx:id="mainPain" prefHeight="200.0" prefWidth="560.0"
             xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.lukasrosz.armadillo.controller.ConfigSceneController">
@@ -25,7 +25,7 @@
             <padding>
                 <Insets left="30" right="20"/>
             </padding>
-            <RadioButton fx:id="tournamentRadioButton" onAction="#onTournamentRadioButton" text="bitwa"
+            <RadioButton fx:id="tournamentRadioButton" onAction="#onTournamentRadioButton" text="tournament"
                          textFill="#ebe1e1">
 
                 <toggleGroup>
@@ -66,14 +66,16 @@
     </center>
 
     <bottom>
-        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #666666">
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #666666" spacing="3">
 
             <padding>
                 <Insets topRightBottomLeft="5"/>
             </padding>
+
+            <!--This button looks disabled, it shouldn't-->
             <Button onAction="#startClicked"
-                    style="-fx-background-radius: 20; -fx-text-fill: #B2b2b2; -fx-background-color: #2A2E37;
-                    -fx-border-color: #FFFF8D; -fx-background-radius: 20px; -fx-font-size: 12; -fx-font-style: oblique;
+                    style="-fx-background-radius: 20; -fx-text-fill: #B2b2b2; -fx-background-color: #41464f;
+                    -fx-background-radius: 20px; -fx-font-size: 12; -fx-font-style: oblique;
                     -fx-font-weight: bold;"
                     text="Start"/>
 
