@@ -45,9 +45,14 @@ public class Game {
                                      PlayerDetails potentialLoser) {
 
         if (response.getMove() == null) {
+            //TODO GameFinishType and ResponseType could be 1 class
             GameFinishType gameFinishType = response.getResponseType().equals(ResponseType.TIMEOUT)
                     ? GameFinishType.RESPONSE_TIMEOUT
                     : GameFinishType.NULL_MOVE;
+
+            gameFinishType = response.getResponseType().equals(ResponseType.INVALID_MOVE_PROTOCOL)
+                    ? GameFinishType.INVALID_MOVE_PROTOCOL
+                    : gameFinishType;
 
             if (board.checkIfEndGame()) {
                 return new GameResult(potentialWinner, potentialLoser,
@@ -121,6 +126,8 @@ public class Game {
     }
 
     public GameResponse nextMove() throws PlayerInitializationException {
+        if (ended) return new GameResponse(null, 1.0);
+
         String message;
         if (!started) {
             initializeGame();
@@ -129,8 +136,6 @@ public class Game {
         } else {
             message = PointsMapper.getMoveAsString(lastMove);
         }
-
-        if (ended) return null;
 
         val moveResponse = movingPlayer.askForMove(message);
 

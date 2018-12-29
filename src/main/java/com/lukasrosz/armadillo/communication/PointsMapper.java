@@ -28,15 +28,21 @@ public class PointsMapper {
     }
 
     public static List<Point> getStringAsPoints(String stringPoints) {
-        List<Point> points = new ArrayList<>();
-        String[] fullPoints = stringPoints.split(",");
-        for (String fullPoint : fullPoints) {
-            fullPoint = fullPoint.replaceAll("[{]", "")
-                    .replaceAll("[}]", "");
-            String[] xy = fullPoint.split(";");
-            points.add(new Point(Integer.parseInt(xy[0]), Integer.parseInt(xy[1])));
+        try {
+            List<Point> points = new ArrayList<>();
+            String[] fullPoints = stringPoints.split(",");
+            for (String fullPoint : fullPoints) {
+                fullPoint = fullPoint.replaceAll("[{]", "")
+                        .replaceAll("[}]", "");
+                String[] xy = fullPoint.split(";");
+
+                points.add(new Point(Integer.parseInt(xy[0]), Integer.parseInt(xy[1])));
+            }
+            return points;
+        } catch (Exception e) {
+            System.err.println(e);
+            return null;
         }
-        return points;
     }
 
     public static Move getStringAsMove(String stringPoints) {

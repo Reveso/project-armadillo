@@ -38,7 +38,7 @@ public class AIPlayer extends AbstractPlayer {
     private Move resolveMove(MoveResponse moveResponse, String stringMove) {
         Move move = PointsMapper.getStringAsMove(stringMove);
         if(move == null) {
-            moveResponse.setResponseType(ResponseType.EXCEPTION);
+            moveResponse.setResponseType(ResponseType.INVALID_MOVE_PROTOCOL);
         }
         return move;
     }

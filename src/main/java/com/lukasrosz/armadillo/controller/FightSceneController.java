@@ -187,7 +187,8 @@ public class FightSceneController {
                                         game.getWaitingPlayer().getPlayerDetails(), gameResponse.getMove()));
                             }
 
-                        } catch (PlayerInitializationException e) {
+                        } catch (Exception e) {
+                            System.out.println("KEEEEEEEEEEEEEEE");
                             e.printStackTrace();
                         }
                     }
