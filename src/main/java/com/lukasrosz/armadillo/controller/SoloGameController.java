@@ -183,6 +183,7 @@ public class SoloGameController {
         playButton.setDisable(true);
     }
 
+    //TODO go to previous Scene
     public void onBackButtonMouseClicked() {
         Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
         stage.close();

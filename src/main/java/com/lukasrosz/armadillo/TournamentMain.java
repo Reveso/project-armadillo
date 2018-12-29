@@ -5,25 +5,19 @@ import com.lukasrosz.armadillo.game.Game;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-<<<<<<< HEAD
 import javafx.scene.paint.Color;
-=======
-import javafx.scene.layout.BorderPane;
->>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
 import javafx.stage.Stage;
 import lombok.val;
 
 import java.io.File;
 
-public class Main extends Application {
-<<<<<<< HEAD
+public class TournamentMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("/MainController/fight-stage.MainController"));
+//        Parent root = FXMLLoader.load(getClass().getResource("/ConfigSceneController/fight-stage.ConfigSceneController"));
 //        primaryStage.setTitle("Hello World");
 //        primaryStage.setScene(new Scene(root, 300, 275));
 //        primaryStage.show();
@@ -46,24 +40,6 @@ public class Main extends Application {
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
         fightStage.show();
-=======
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    //TODO stage icon
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main-global.fxml"));
-        Parent stageRoot = fxmlLoader.load();
-
-        primaryStage.setTitle("Armadillo");
-        primaryStage.setScene(new Scene(stageRoot));
-        primaryStage.setOnCloseRequest(event -> onExitClicked());
-        primaryStage.show();
->>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     }
 
     private void onExitClicked() {

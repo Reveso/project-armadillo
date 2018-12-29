@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" line="145" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e205681d-2039-4506-bc3f-b849a03c449a" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ConfigSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ConfigSceneController.java" afterDir="false" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -25,9 +33,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -35,6 +40,7 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="armadillo" type="f1a62948:ProjectNode" />
               </path>
+<<<<<<< HEAD
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="armadillo" type="f1a62948:ProjectNode" />
@@ -46,6 +52,8 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+=======
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
             </expand>
             <select />
           </tree_state>
@@ -59,10 +67,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ConfigSceneController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="186" column="26" selection-start-line="186" selection-start-column="26" selection-end-line="186" selection-end-column="26" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,6 +86,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1793">
@@ -78,11 +94,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="185" column="6" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -113,6 +136,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="688">
               <caret line="75" selection-start-line="75" selection-end-line="75" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="290" column="6" selection-start-line="290" selection-start-column="6" selection-end-line="290" selection-end-column="6" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
             </state>
           </provider>
         </entry>
@@ -120,16 +149,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="527">
               <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="153">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -171,6 +206,12 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="70" column="74" lean-forward="true" selection-start-line="70" selection-end-line="71" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
             </state>
           </provider>
         </entry>
@@ -211,6 +252,30 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AbstractPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/exception/PlayerInitializationException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/FightWindowConfigDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/PlayerDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/Mapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/HumanFXPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/border.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml3.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/borderForfxml2.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/PvP.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/fxml.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/fxml.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Fx.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/AIvsP.fxml" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/bitwa.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/AIvsPController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/soloController.java" />
@@ -218,16 +283,23 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/PvPController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/PvP.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/model/MoveResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/bitwaController.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/replay.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/main-global.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainController.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
+=======
+        <option value="$PROJECT_DIR$/src/main/resources/css/styles.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         <option value="$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/communication/CommunicationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/ProcessCommunicator.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightStageController.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/RawBattleMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java" />
@@ -252,15 +324,31 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayInfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/replay/GameReplay.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/fight-scene.fxml" />
+=======
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/replay.fxml" />
+        <option value="$PROJECT_DIR$/out/production/resources/fxml/main-global.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/center.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/GameHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/SoloMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainWithGlobal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/main-global.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/TournamentMain.java" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/GameFinishType.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-info.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/MatchHistoryController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ConfigSceneController.java" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         <option value="$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java" />
       </list>
     </option>
@@ -285,7 +373,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -363,6 +454,7 @@
               <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+<<<<<<< HEAD
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="armadillo" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
@@ -408,6 +500,8 @@
               <item name="project-armadillo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+=======
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -461,13 +555,23 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545874411671" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mrowenia-najlepsza" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546058200266" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ai_test_directory/simple-board-fighter" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -484,11 +588,15 @@
       <recent name="F:\GitHub\project-armadillo\src\main\resources\fxml" />
       <recent name="F:\GitHub\project-armadillo\src\main\resources" />
     </key>
+<<<<<<< HEAD
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lukasrosz.armadillo.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\GitHub\project-armadillo\src\main\resources\fxml" />
+=======
+    <key name="CopyFile.RECENT_KEYS">
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <recent name="F:\GitHub\project-armadillo\src\main\java\com\lukasrosz\armadillo\controller" />
       <recent name="F:\GitHub\project-armadillo\src\main\java\com\lukasrosz\armadillo" />
     </key>
@@ -505,7 +613,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainWithGlobal">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.Main" />
       <module name="armadillo_main" />
@@ -545,8 +653,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="ThreadTestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.ThreadTestMain" />
+=======
+    <configuration name="TournamentMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.TournamentMain" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <module name="armadillo_main" />
       <extension name="coverage">
         <pattern>
@@ -558,6 +671,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="MarshallingTest.marshallUnmarshall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="armadillo_test" />
       <extension name="coverage">
@@ -569,10 +683,24 @@
       <option name="PACKAGE_NAME" value="com.lukasrosz.armadillo.jaxb" />
       <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.jaxb.MarshallingTest" />
       <option name="METHOD_NAME" value="marshallUnmarshall" />
+=======
+    <configuration name="CommunicationTest.processCommunicationExe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="armadillo_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lukasrosz.armadillo.communication.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lukasrosz.armadillo.communication" />
+      <option name="MAIN_CLASS_NAME" value="com.lukasrosz.armadillo.communication.CommunicationTest" />
+      <option name="METHOD_NAME" value="processCommunicationExe" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+<<<<<<< HEAD
     </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <module name="project-armadillo" />
@@ -635,6 +763,23 @@
         <item itemvalue="Application.SoloMain" />
         <item itemvalue="Application.ThreadTestMain" />
         <item itemvalue="JUnit.MarshallingTest.marshallUnmarshall" />
+=======
+    </configuration>
+    <list>
+      <item itemvalue="Application.TournamentMain" />
+      <item itemvalue="Application.MainWithGlobal" />
+      <item itemvalue="JUnit.CommunicationTest.processCommunicationExe" />
+      <item itemvalue="Application.ReplayFromFileMain" />
+      <item itemvalue="Application.SoloMain" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainWithGlobal" />
+        <item itemvalue="Application.ReplayFromFileMain" />
+        <item itemvalue="Application.SoloMain" />
+        <item itemvalue="Application.TournamentMain" />
+        <item itemvalue="JUnit.CommunicationTest.processCommunicationExe" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       </list>
     </recent_temporary>
   </component>
@@ -670,6 +815,7 @@
       <workItem from="1544958009393" duration="14470000" />
       <workItem from="1544981065690" duration="812000" />
       <workItem from="1544986103909" duration="10037000" />
+<<<<<<< HEAD
       <workItem from="1545022393458" duration="381000" />
       <workItem from="1545311292119" duration="2507000" />
       <workItem from="1545349960815" duration="231000" />
@@ -684,6 +830,9 @@
       <workItem from="1545834199286" duration="2851000" />
       <workItem from="1545864160377" duration="8285000" />
       <workItem from="1545873008519" duration="1425000" />
+=======
+      <workItem from="1546037342071" duration="12989000" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     </task>
     <servers />
   </component>
@@ -720,6 +869,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="182503000" />
   </component>
   <component name="TodoView">
@@ -730,18 +880,28 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+=======
+    <option name="totallyTimeSpent" value="121859000" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988372" visible="true" weight="0.11963434" />
       <window_info id="Structure" order="1" sideWeight="0.50116277" side_tool="true" weight="0.1172496" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16494435" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50116277" side_tool="true" weight="0.1172496" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960256" weight="0.26968044" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3956044" />
@@ -756,17 +916,35 @@
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.3281372" />
       <window_info anchor="bottom" id="Statistic" order="14" weight="0.32969603" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289166" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22213562" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39625585" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32969603" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3219018" />
+      <window_info anchor="bottom" id="Extract Method" order="13" weight="0.329718" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Gradle" order="5" weight="0.32949126" />
+=======
+      <window_info anchor="right" id="Gradle" order="5" weight="0.32954547" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32949126" />
       <window_info anchor="right" id="Database" order="9" />
-      <window_info anchor="right" id="Maven" order="10" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988372" visible="true" weight="0.23905997" />
@@ -815,7 +993,14 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/util/List.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/PvP.fxml" />
+    <entry file="file://$PROJECT_DIR$/frontend templates/main - AIvsAI, PvP, AIvsP center.jpg" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/event/ActionEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/model/MoveResponse.java">
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="492" column="9" selection-start-line="492" selection-start-column="9" selection-end-line="492" selection-end-column="9" />
@@ -883,7 +1068,19 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/scoring/Score.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Iterator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/communication/PointsMapper.java">
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="31" selection-start-line="31" selection-end-line="33" selection-end-column="5" />
@@ -908,6 +1105,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/model/GameConfigDto.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="306">
           <caret line="26" column="26" selection-start-line="26" selection-end-line="27" />
         </state>
@@ -924,14 +1122,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+=======
+        <state relative-caret-position="701">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="61" column="131" selection-start-line="61" selection-start-column="131" selection-end-line="61" selection-end-column="131" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/test/java/com/lukasrosz/armadillo/game/BoardTestSuite.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/fight-stage.fxml">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/PvPController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/replay.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/bitwa.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/solo.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/soloController.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Skinnable.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Control.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Button.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/ButtonBase.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Labeled.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/TextField.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/bitwaController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/subcontrollers/AIvsPController.java" />
+    <entry file="file://$PROJECT_DIR$/out/production/resources/fxml/main-global.fxml">
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
@@ -939,6 +1167,7 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+<<<<<<< HEAD
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -952,6 +1181,23 @@
           <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gamemodecenter/center.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-info.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/replay-scene.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Move.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1002,6 +1248,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/game/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1016,11 +1263,25 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/RawBattleMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/GameHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/SoloMain.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="238">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
@@ -1050,9 +1311,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+=======
+        <state relative-caret-position="357">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="54" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/TournamentMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main-global.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainWithGlobal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1071,11 +1359,18 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/SoloGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="185" column="6" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/player/AIPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/FightSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
@@ -1113,11 +1408,16 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="574">
+          <caret line="290" column="6" selection-start-line="290" selection-start-column="6" selection-end-line="290" selection-end-column="6" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/gamemaker/GameMaker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/controller/ReplayController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="272">
           <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
         </state>
@@ -1154,11 +1454,16 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="559">
+          <caret line="70" column="74" lean-forward="true" selection-start-line="70" selection-end-line="71" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="688">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
@@ -1168,12 +1473,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+=======
+        <state relative-caret-position="338">
+          <caret line="186" column="26" selection-start-line="186" selection-start-column="26" selection-end-line="186" selection-end-column="26" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/ReplayFromFileMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -1233,6 +1543,12 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukasrosz/armadillo/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+>>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </state>
       </provider>
     </entry>

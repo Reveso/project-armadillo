@@ -280,6 +280,7 @@ public class FightSceneController {
         return alert.getResult();
     }
 
+    //TODO go to previous Scene
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
         stopGame = true;
         Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
