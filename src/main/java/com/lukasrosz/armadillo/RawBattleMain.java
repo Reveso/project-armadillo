@@ -9,7 +9,7 @@ import lombok.val;
 
 import java.io.File;
 
-public class RawBattleExampleMain {
+public class RawBattleMain {
 
     public static void main(String[] args) throws Exception {
         val gameMaker = new GameMaker();

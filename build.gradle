@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.lukasrosz'
-version '1.0.0'
+version '0.1.0'
 
 sourceCompatibility = 1.8
 
@@ -19,6 +19,6 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'com.lukasrosz.armadillo.Main'
+        attributes 'Main-Class': 'com.lukasrosz.armadillo.MainWithGlobal'
     }
 }

@@ -76,10 +76,13 @@ public class ReplayController {
         player2AliasLabel.setText(gameReplay.getLoser() + ": ");
 
         int boardSize = fieldSize * gameReplay.getBoardSize();
+//        screenHeight = 1440.0;
         double maxWindowHeight = 0.8 * screenHeight;
-
+        System.out.println("Screen Height: " + screenHeight);
+        System.out.println("MxWindowHeight: " + maxWindowHeight);
         while(boardSize > maxWindowHeight) {
             boardSize = --fieldSize * gameReplay.getBoardSize();
+            System.out.println(fieldSize);
         }
 
         initializeCanvas(gameReplay.getBoardSize());

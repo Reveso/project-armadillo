@@ -18,11 +18,11 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-public class ReplayFromFileExampleMain extends Application {
+public class ReplayFromFileMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        File file = new File("referee_files/replays/12_29_2018_04_57_06_JP 100 + VAT_test-555555.rep");
+        File file = new File("referee_files/replays/12_27_2018_02_16_33_test-444444_test-555555.rep");
         JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
 
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -53,4 +53,3 @@ public class ReplayFromFileExampleMain extends Application {
     }
 
 }
-//_JP 100% +

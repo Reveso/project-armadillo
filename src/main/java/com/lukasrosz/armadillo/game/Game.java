@@ -6,7 +6,6 @@ import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.communication.exception.PlayerInitializationException;
 import com.lukasrosz.armadillo.player.AbstractPlayer;
 import com.lukasrosz.armadillo.player.HumanFXPlayer;
-import com.lukasrosz.armadillo.player.PlayerDetails;
 import com.lukasrosz.armadillo.scoring.GameResult;
 import lombok.*;
 
@@ -38,38 +37,38 @@ public class Game {
         this.movingPlayer = movingPlayer;
         this.waitingPlayer = waitingPlayer;
         this.board = board;
-        fieldsNumber = board.getSize() * board.getSize();
+        fieldsNumber = board.getSize()*board.getSize();
     }
 
-    private GameResult checkResponse(MoveResponse response, PlayerDetails potentialWinner,
-                                     PlayerDetails potentialLoser) {
+    private GameResult checkResponse(MoveResponse response, AbstractPlayer potentialWinner,
+                                 AbstractPlayer potentialLoser) {
 
-        if (response.getMove() == null) {
+        if(response.getMove() == null) {
             GameFinishType gameFinishType = response.getResponseType().equals(ResponseType.TIMEOUT)
                     ? GameFinishType.RESPONSE_TIMEOUT
                     : GameFinishType.NULL_MOVE;
 
-            if (board.checkIfEndGame()) {
-                return new GameResult(potentialWinner, potentialLoser,
-                        false, GameFinishType.NORMAL);
-
-            } else return new GameResult(potentialWinner, potentialLoser,
+            return new GameResult(potentialWinner.getPlayerDetails(),
+                    potentialLoser.getPlayerDetails(),
                     checkIfDisqualified(response.getResponseType()),
                     gameFinishType);
 
         } else if (!board.setNewMove(response.getMove())) {
 
-            if (board.checkIfEndGame()) {
-                return new GameResult(potentialWinner, potentialLoser,
-                        false, GameFinishType.NORMAL);
-
-            } else return new GameResult(potentialWinner, potentialLoser,
+            return new GameResult(potentialWinner.getPlayerDetails(),
+                    potentialLoser.getPlayerDetails(),
                     checkIfDisqualified(ResponseType.EXCEPTION),
                     GameFinishType.INVALID_MOVE);
 
         } else return null;
     }
 
+    private GameResult checkIfEndGame(AbstractPlayer winner, AbstractPlayer loser) {
+        if(board.checkIfEndGame()) {
+            return new GameResult(winner.getPlayerDetails(),
+                    loser.getPlayerDetails(), false, GameFinishType.NORMAL);
+        } else return null;
+    }
 
     private boolean checkIfDisqualified(ResponseType responseType) {
         return responseType.equals(ResponseType.EXCEPTION) ||
@@ -83,14 +82,14 @@ public class Game {
     }
 
     private void pickStartingPlayer() {
-        if (waitingPlayer instanceof HumanFXPlayer) {
+        if(waitingPlayer instanceof HumanFXPlayer) {
             return;
         } else if (movingPlayer instanceof HumanFXPlayer) {
             swapPlayers();
             return;
         }
         Random random = new Random();
-        if (random.nextInt(2) == 1) {
+        if(random.nextInt(2) == 1) {
             swapPlayers();
         }
     }
@@ -101,7 +100,7 @@ public class Game {
         boolean success1 = movingPlayer.initialize(board.getSize(), PointsMapper.getPointsAsString(board.getOccupiedFields()));
         boolean success2 = waitingPlayer.initialize(board.getSize(), PointsMapper.getPointsAsString(board.getOccupiedFields()));
 
-        if (!success1) {
+        if(!success1) {
             finishGame();
 
             gameResult = new GameResult(waitingPlayer.getPlayerDetails(), movingPlayer.getPlayerDetails(),
@@ -122,7 +121,7 @@ public class Game {
 
     public GameResponse nextMove() throws PlayerInitializationException {
         String message;
-        if (!started) {
+        if(!started) {
             initializeGame();
             message = "start";
             started = true;
@@ -134,16 +133,23 @@ public class Game {
 
         val moveResponse = movingPlayer.askForMove(message);
 
-        gameResult = checkResponse(moveResponse, waitingPlayer.getPlayerDetails(),
-                movingPlayer.getPlayerDetails());
+        gameResult = checkResponse(moveResponse, waitingPlayer, movingPlayer);
 
-        if (gameResult != null) {
-            if (!gameResult.getGameFinishType().equals(GameFinishType.NORMAL)) {
-                swapPlayers();
-            }
+        if(gameResult != null) {
+            swapPlayers();
             finishGame();
             displayEndLog();
-            return new GameResponse(null, 1.0);
+            return new GameResponse(null,1.0);
+        }
+
+        gameResult = checkIfEndGame(movingPlayer, waitingPlayer);
+
+        if(gameResult != null) {
+            swapPlayers();
+            finishGame();
+            lastMove = moveResponse.getMove();
+            displayEndLog();
+            return new GameResponse(moveResponse.getMove(), 1.0);
         }
 
         swapPlayers();
@@ -151,7 +157,7 @@ public class Game {
 
         val gameResponse = new GameResponse();
         gameResponse.setMove(lastMove);
-        gameResponse.setOccupiedFields((double) board.getOccupiedFields().size() / fieldsNumber);
+        gameResponse.setOccupiedFields((double)board.getOccupiedFields().size() / fieldsNumber);
 
         System.out.println(gameResponse.getOccupiedFields());
         System.out.println("===============");
@@ -186,5 +192,4 @@ public class Game {
     public int hashCode() {
         return 17;
     }
-
 }

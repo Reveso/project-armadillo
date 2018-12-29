@@ -8,10 +8,7 @@ import com.lukasrosz.armadillo.player.HumanFXPlayer;
 import javafx.animation.AnimationTimer;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -27,9 +24,6 @@ import java.util.Map;
 
 //rather deprecated module, but still can be use for 1v1 with algorithm
 public class SoloGameController {
-
-    private Scene previousScene;
-    private String previousTitle;
 
     @Getter
     @Setter
@@ -54,11 +48,8 @@ public class SoloGameController {
         boardGridPane.getStylesheets().add("/css/styles.css");
     }
 
-    public void setup(GameConfigDto gameConfigDto, Scene previousScene, String previousTitle) {
+    public void setup(GameConfigDto gameConfigDto) {
         this.gameConfigDto = gameConfigDto;
-        this.previousScene = previousScene;
-        this.previousTitle = previousTitle;
-
         game = gameConfigDto.getGames().iterator().next();
         makeBoard();
     }
@@ -193,22 +184,7 @@ public class SoloGameController {
     }
 
     public void onBackButtonMouseClicked() {
-        String message = "Do you want to close this window?";
-        ButtonType result = showAlert("Go back", message);
-
-        if(result.equals(ButtonType.OK)) {
-            Stage stage = (Stage) playButton.getScene().getWindow();
-            stage.setScene(previousScene);
-            stage.setTitle(previousTitle);
-        }
+        Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
+        stage.close();
     }
-
-    private ButtonType showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle(title);
-        alert.setContentText(content);
-        alert.showAndWait();
-        return alert.getResult();
-    }
-
 }

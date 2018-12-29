@@ -1,42 +1,43 @@
 package com.lukasrosz.armadillo;
 
-import com.lukasrosz.armadillo.controller.FightSceneController;
-import com.lukasrosz.armadillo.game.Game;
+import com.lukasrosz.armadillo.controller.SoloGameController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.val;
 
 import java.io.File;
 
-public class TournamentExampleMain extends Application {
+public class SoloMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("/ConfigSceneController/fight-stage.ConfigSceneController"));
+//        Parent root = FXMLLoader.load(getClass().getResource("/MainController/fight-stage.MainController"));
 //        primaryStage.setTitle("Hello World");
 //        primaryStage.setScene(new Scene(root, 300, 275));
 //        primaryStage.show();
 
         Stage fightStage = new Stage();
-        fightStage.setTitle("Tournament");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/solo-game.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
-        FightSceneController fightSceneController = fxmlLoader.getController();
+        SoloGameController controller = fxmlLoader.getController();
 
         val gameMaker = new GameMaker();
-        val gameConfigDto = gameMaker.newTournament(new File("ai_test_directory"), 20);
+//        val gameConfigDto = gameMaker.newTournament(new File("ai_test_directory"), 20);
 //        val gameConfigDto = gameMaker.newHumanVsAIGame(new File("ai_test_directory/283822"), 16);
 //        val gameConfigDto = gameMaker.newAiVsAiGame(new File("ai_test_directory/283822"), new File("ai_test_directory/283823"), 16);
-//        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/283822"), 16);
+        val gameConfigDto = gameMaker.newSoloGame(null, new File("ai_test_directory/444444"), 5);
 
-        gameConfigDto.getGames().forEach(game -> System.out.println(game.getMovingPlayer().getPlayerDetails().getAlias() + " " + game.getWaitingPlayer().getPlayerDetails().getAlias()));
+        gameConfigDto.getGames().forEach(game ->
+                System.out.println(
+                        game.getMovingPlayer().getPlayerDetails().getAlias()
+                                + " "
+                                + game.getWaitingPlayer().getPlayerDetails().getAlias()));
 
-        fightSceneController.setup(gameConfigDto, fightStage.getScene(), "previousTitle");
+        controller.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
         fightStage.show();
@@ -50,5 +51,4 @@ public class TournamentExampleMain extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }

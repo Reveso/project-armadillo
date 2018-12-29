@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.controller.FightStageController">
+    <top>
+        <HBox alignment="CENTER" spacing="10">
+            <Label fx:id="fightTitleLabel"/>
+        </HBox>
+    </top>
+    <center>
+        <GridPane fx:id="boardGridPane" alignment="CENTER" />
+    </center>
+    <right>
+        <ScrollPane>
+            <TableView fx:id="scoreboardTable" editable="true" items="${controller.scoreboardList}">
+                <columns>
+                    <TableColumn sortable="false" text="alias">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="alias" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Surname">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="surname" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Victories">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="victories" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Defeats">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="defeats" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn sortable="false" text="Disqualifications">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="disqualifications" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </ScrollPane>
+    </right>
+    <bottom>
+        <HBox alignment="BOTTOM_LEFT" spacing="10">
+            <padding>
+                <Insets topRightBottomLeft="10" />
+            </padding>
+            <Button fx:id="pauseButton" onAction="#onPauseButtonAction" prefHeight="29.0" prefWidth="112.0" text="Play" />
+            <Button fx:id="backToSettingsButton" prefHeight="29.0" prefWidth="112.0" text="Back to settings"  onMouseClicked="#onBackButtonMouseClicked"/>
+        </HBox>
+    </bottom>
+
+
+</BorderPane>
