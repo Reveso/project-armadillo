@@ -1,6 +1,8 @@
 package com.lukasrosz.armadillo;
 
+import com.lukasrosz.armadillo.controller.FightSceneController;
 import com.lukasrosz.armadillo.controller.FightStageController;
+import com.lukasrosz.armadillo.controller.SoloGameController;
 import com.lukasrosz.armadillo.gamemaker.GameMaker;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -44,29 +46,31 @@ public class GameHandler {
         System.exit(0);
     }
 
-    public void startBattleGame(int size, File mainDir, int delay) throws IOException {
-        Stage fightStage = new Stage();
+    public void startBattleGame(Stage fightStage, int size, File mainDir, int delay) throws IOException {
         this.dir1 = mainDir;
 
         this.size = size;
         this.delay = delay;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-stage.fxml"));
+        fightStage.setTitle("Tournament");
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
-        FightStageController fightStageController = fxmlLoader.getController();
+        FightSceneController fightSceneController = fxmlLoader.getController();
 
 
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newTournament(mainDir, size);
-        fightStageController.setup(gameConfigDto);
+
+
+        fightSceneController.setup(gameConfigDto);
         fightStage.setScene(new Scene(fightStageRoot));
         fightStage.setOnCloseRequest(event -> onExitClicked());
         previousGame = GameGenre.BATTLE;
         fightStage.show();
     }
 
-    public void startSoloGame(File aiDir1, File aiDir2, int size, int delay) throws IOException {
-        Stage fightStage = new Stage();
+    public void startSoloGame(Stage fightStage,File aiDir1, File aiDir2, int size, int delay) throws IOException {
+
 
         this.dir1 = aiDir1;
         this.dir2 = aiDir2;
@@ -75,7 +79,7 @@ public class GameHandler {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-stage.fxml"));
         Parent fightStageRoot = fxmlLoader.load();
-        FightStageController fightStageController = fxmlLoader.getController();
+        SoloGameController fightStageController = fxmlLoader.getController();
         val gameMaker = new GameMaker();
         val gameConfigDto = gameMaker.newSoloGame(aiDir1, aiDir2, size);
         fightStageController.setup(gameConfigDto);
@@ -85,13 +89,13 @@ public class GameHandler {
         fightStage.show();
     }
 
-    public void startPreviousGame() throws IOException {
+    /*public void startPreviousGame() throws IOException {
         if (previousGame == null) {
             return;
         } else if (previousGame.equals(GameGenre.SOLO)) {
-            startSoloGame(dir1, dir2, size, delay);
+            startGame(dir1, dir2, size, delay);
         } else if (previousGame.equals(GameGenre.BATTLE)) {
             startBattleGame(size,dir1, delay);
         }
-    }
+    }*/
 }
