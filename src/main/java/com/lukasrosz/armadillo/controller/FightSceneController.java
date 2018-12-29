@@ -142,9 +142,9 @@ public class FightSceneController {
     }
 
     private String createFileName(Game game) {
-        return getShortDate() + "_"
+        return (getShortDate() + "_"
                 + game.getMovingPlayer().getPlayerDetails().getAlias() + "_"
-                + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".rep";
+                + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".rep").replaceAll("%", "");
 
     }
 
@@ -288,6 +288,7 @@ public class FightSceneController {
         return alert.getResult();
     }
 
+    //TODO go to previous Scene
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
         stopGame = true;
         Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
