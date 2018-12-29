@@ -202,6 +202,7 @@ public class ConfigSceneController {
     }
 
     private void showReplayScene(Stage stage, GameReplay gameReplay) throws IOException {
+        String previousTitle = stage.getTitle();
         stage.setTitle(gameReplay.getGameResult().getWinner().getAlias() + " vs "
                 + gameReplay.getGameResult().getLoser().getAlias());
 
@@ -209,7 +210,7 @@ public class ConfigSceneController {
         Parent stageRoot = fxmlLoader.load();
         ReplayController replayController = fxmlLoader.getController();
 
-        replayController.setup(gameReplay, stage.getScene(), "reee",
+        replayController.setup(gameReplay, stage.getScene(), previousTitle,
                 Screen.getPrimary().getVisualBounds().getHeight());
         stage.setScene(new Scene(stageRoot));
     }

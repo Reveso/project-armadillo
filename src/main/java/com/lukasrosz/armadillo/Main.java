@@ -17,12 +17,14 @@ public class Main extends Application {
         launch(args);
     }
 
+    //TODO stage icon
     @Override
     public void start(Stage primaryStage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main-global.fxml"));
         Parent stageRoot = fxmlLoader.load();
 
+        primaryStage.setTitle("Armadillo");
         primaryStage.setScene(new Scene(stageRoot));
         primaryStage.setOnCloseRequest(event -> onExitClicked());
         primaryStage.show();
