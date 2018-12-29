@@ -1,44 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<<<<<<< HEAD
-<BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukasrosz.armadillo.MainController">
-    <BorderPane.margin>
-    </BorderPane.margin>
-=======
-<BorderPane fx:id="mainPain" prefHeight="200.0" prefWidth="530.0"
+<BorderPane fx:id="mainPain" prefHeight="200.0" prefWidth="560.0"
             xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.lukasrosz.armadillo.controller.ConfigSceneController">
->>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
     <left>
-        <VBox alignment="CENTER" prefHeight="367.0" prefWidth="116.0" spacing="20" style="-fx-background-color: #444444" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER_LEFT" spacing="30"
+              style="-fx-background-color: #444444">
             <fx:define>
-                <ToggleGroup fx:id="mode" />
+                <ToggleGroup fx:id="mode"/>
             </fx:define>
-<<<<<<< HEAD
-            <children>
-
-                <RadioButton fx:id="bitwaRadioButton" mnemonicParsing="false" onAction="#loadBitwa" text="bitwa" textFill="#ebe1e1">
-                    <toggleGroup>
-                        <ToggleGroup fx:id="modeRadioButtons" />
-                    </toggleGroup>
-                </RadioButton>
-                <RadioButton fx:id="soloRadioButton" mnemonicParsing="false" onAction="#loadSolo" text="solo" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" />
-                <RadioButton fx:id="PvPRadioButton" mnemonicParsing="false" onAction="#loadPvP" text="replay" textFill="#ebe1e1" toggleGroup="$modeRadioButtons" disable="true"/>
-            </children>
-=======
             <padding>
                 <Insets left="30" right="20"/>
             </padding>
-            <RadioButton fx:id="tournamentRadioButton" onAction="#onTournamentRadioButton" text="bitwa"
+            <RadioButton fx:id="tournamentRadioButton" onAction="#onTournamentRadioButton" text="tournament"
                          textFill="#ebe1e1">
 
                 <toggleGroup>
@@ -52,50 +39,49 @@
                          textFill="#ebe1e1" toggleGroup="$modeRadioButtons">
 
             </RadioButton>
->>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </VBox>
     </left>
+
+    <center>
+        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: WHITE;">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+
+            <Label fx:id="fileChooserLabel" text="fileChooserLabel"/>
+            <HBox alignment="CENTER_LEFT" prefWidth="446.0"
+                  spacing="10">
+
+                <TextField fx:id="filePathTextField" prefWidth="339.0"/>
+                <Button fx:id="fileChooser" mnemonicParsing="false"
+                        style="-fx-background-radius: 20;"
+                        text="Browse"/>
+            </HBox>
+
+            <Label fx:id="boardSize" prefHeight="17.0" prefWidth="82.0" text="Board size"/>
+            <HBox alignment="CENTER_LEFT" style="-fx-background-color: WHITE;">
+                <TextField fx:id="sizeText" prefHeight="25.0" prefWidth="71.0" promptText="boar size"/>
+            </HBox>
+        </VBox>
+    </center>
+
     <bottom>
-<<<<<<< HEAD
-        <HBox alignment="TOP_RIGHT" prefHeight="33.0" prefWidth="600.0" style="-fx-background-color: #666666" BorderPane.alignment="CENTER">
-
-            <children>
-
-                <Button fx:id="startButton" mnemonicParsing="false" onAction="#startClicked" style="-fx-background-radius: 20;" text="Start">
-                    <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </HBox.margin>
-                </Button>
-                <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Clear" fx:id="clearButton" onAction="#clearClicked">
-                    <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </HBox.margin>
-                </Button>
-                <Button mnemonicParsing="false" onAction="#onExitClicked" style="-fx-background-radius: 20;" text="Exit">
-                    <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
-                    </HBox.margin>
-                </Button>
-            </children>
-=======
-        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #666666">
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #666666" spacing="3">
 
             <padding>
                 <Insets topRightBottomLeft="5"/>
             </padding>
+
+            <!--This button looks disabled, it shouldn't-->
             <Button onAction="#startClicked"
-                    style="-fx-background-radius: 20; -fx-text-fill: #B2b2b2; -fx-background-color: #2A2E37;
-                    -fx-border-color: #FFFF8D; -fx-background-radius: 20px; -fx-font-size: 12; -fx-font-style: oblique;
+                    style="-fx-background-radius: 20; -fx-text-fill: #B2b2b2; -fx-background-color: #41464f;
+                    -fx-background-radius: 20px; -fx-font-size: 12; -fx-font-style: oblique;
                     -fx-font-weight: bold;"
                     text="Start"/>
 
             <Button fx:id="clearButton" onAction="#clearClicked"
                     style="-fx-background-radius: 20;" text="Clear"/>
             <Button onAction="#onExitClicked" style="-fx-background-radius: 20;" text="Exit"/>
->>>>>>> parent of 2d17c8b... Data verification in Config Menu, icon, removed deprecated classes, new build
         </HBox>
     </bottom>
-    <center>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #444444" BorderPane.alignment="CENTER" />
-    </center>
 </BorderPane>

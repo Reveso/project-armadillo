@@ -112,10 +112,6 @@ public class ConfigSceneController {
         return Integer.parseInt(sizeText.getText());
     }
 
-    private File getTextFieldFile(TextField textField) {
-        return new File(String.valueOf(Paths.get(String.valueOf((textField.getText())))));
-    }
-
     public void clearClicked(ActionEvent actionEvent) {
         clearFields();
     }
@@ -129,7 +125,7 @@ public class ConfigSceneController {
         DirectoryChooser dc = new DirectoryChooser();
         Path path = Paths.get(System.getProperties().getProperty("user.dir"));
         dc.setInitialDirectory(new File(String.valueOf(path)));
-        File selectedFile = dc.showDialog(null);
+        File selectedFile = dc.showDialog(getStage());
 
         if (selectedFile != null) {
             filePathTextField.clear();
@@ -140,64 +136,108 @@ public class ConfigSceneController {
     }
 
     public void filePickerHandler(ActionEvent actionEvent) {
+        FileChooser.ExtensionFilter replayExtensions =
+                new FileChooser.ExtensionFilter(
+                        "Armadillo replays", "*.rep");
+
         FileChooser fileChooser = new FileChooser();
         Path path = Paths.get(System.getProperties().getProperty("user.dir"));
         fileChooser.setInitialDirectory(new File(String.valueOf(path)));
+        fileChooser.getExtensionFilters().add(replayExtensions);
 
         File selectedFile = fileChooser.showOpenDialog(getStage());
-
         if (selectedFile != null) {
             filePathTextField.clear();
             filePathTextField.setText(selectedFile.getAbsolutePath());
         } else {
             System.err.println("wrong selected file");
         }
-
     }
 
-    //TODO data verification (+ proper communiaction/alert if failed):
-    //TODO proper boardSize
-    //TODO games set > 0
-    //TODO .rep file for replay, and if correctly unmarshaled
     private void startGame(GameGenre gameGenre) throws Exception {
         Stage stage = getStage();
 
+        File chooserFile = new File(filePathTextField.getText());
+        if(!chooserFile.canRead()) {
+            showAlert("Error", "Could not find the path");
+            return;
+        }
+
+        if(!verifyBoardSize() && sizeText.isVisible()) {
+            showAlert("Error", "Board size must be from range (15; 52).");
+            return;
+        }
+
         if (gameGenre.equals(GameGenre.SOLO)) {
             val gameMaker = new GameMaker();
-            val gameConfigDto = gameMaker.newSoloGame(null, getTextFieldFile(filePathTextField), getBoardSize());
+            val gameConfigDto = gameMaker.newSoloGame(null, chooserFile, getBoardSize());
+            if(gameConfigDto.getGames().size() < 1) {
+                showAlert("Error", "Could not find info.txt");
+                return;
+            }
             showSoloScene(stage, gameConfigDto);
         } else if (gameGenre.equals(GameGenre.BATTLE)) {
             val gameMaker = new GameMaker();
-            val gameConfigDto = gameMaker.newTournament(getTextFieldFile(filePathTextField), getBoardSize());
+            val gameConfigDto = gameMaker.newTournament(chooserFile, getBoardSize());
+            if(gameConfigDto.getGames().size() < 1) {
+                showAlert("Error", "Could not find any info.txt");
+                return;
+            }
             showTournamentScene(stage, gameConfigDto);
         } else if (gameGenre.equals(GameGenre.REPLAY)) {
-            File chooserFile = getTextFieldFile(filePathTextField);
+            if(!filePathTextField.getText().endsWith(".rep")) {
+                showAlert("Error", "Replay file must have .rep extension.");
+                return;
+            }
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
+            GameReplay gameReplay;
+            try {
+                JAXBContext jaxbContext = JAXBContext.newInstance(GameReplay.class);
 
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            System.out.println(chooserFile.getAbsolutePath());
-            GameReplay gameReplay = (GameReplay) jaxbUnmarshaller.unmarshal(chooserFile);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                System.out.println(chooserFile.getAbsolutePath());
+                gameReplay = (GameReplay) jaxbUnmarshaller.unmarshal(chooserFile);
+                showReplayScene(stage, gameReplay);
+            } catch (Exception e) {
+                e.printStackTrace();
+                showAlert("Error", "Corrupted replay file.");
+                return;
+            }
             showReplayScene(stage, gameReplay);
         }
     }
 
+    private boolean verifyBoardSize() {
+        int boardSize;
+
+        try {
+            boardSize = getBoardSize();
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+        return (boardSize > 15 && boardSize < 52);
+    }
 
     private void showSoloScene(Stage stage, GameConfigDto gameConfigDto) throws IOException {
+        String previousTitle = stage.getTitle();
         stage.setTitle("Solo");
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/solo-game.fxml"));
         Parent stageRoot = fxmlLoader.load();
         SoloGameController soloSceneController = fxmlLoader.getController();
-        soloSceneController.setup(gameConfigDto);
+        soloSceneController.setup(gameConfigDto, stage.getScene(), previousTitle);
         stage.setScene(new Scene(stageRoot));
     }
 
     private void showTournamentScene(Stage stage, GameConfigDto gameConfigDto) throws IOException {
+        String previousTitle = stage.getTitle();
         stage.setTitle("Tournament");
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fight-scene.fxml"));
         Parent stageRoot = fxmlLoader.load();
         FightSceneController fightSceneController = fxmlLoader.getController();
-        fightSceneController.setup(gameConfigDto);
+        fightSceneController.setup(gameConfigDto, stage.getScene(), previousTitle);
         stage.setScene(new Scene(stageRoot));
     }
 
@@ -213,6 +253,14 @@ public class ConfigSceneController {
         replayController.setup(gameReplay, stage.getScene(), previousTitle,
                 Screen.getPrimary().getVisualBounds().getHeight());
         stage.setScene(new Scene(stageRoot));
+    }
+
+    private ButtonType showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+        return alert.getResult();
     }
 
     public void onExitClicked(ActionEvent actionEvent) {
