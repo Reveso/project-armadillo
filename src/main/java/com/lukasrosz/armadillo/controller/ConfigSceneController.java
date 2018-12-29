@@ -13,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Screen;
@@ -46,22 +48,27 @@ public class ConfigSceneController {
 
     @FXML
     private Label boardSize;
+    @FXML
+    private Label modeDescriptionLabel;
 
     private enum GameGenre {BATTLE, SOLO, REPLAY}
 
     public void initialize() {
         setAllVisible(false);
+        modeDescriptionLabel.setFont(Font.font(null, FontWeight.BOLD, 16));
     }
 
     public void onSoloRadioButton(ActionEvent actionEvent) {
         setAllVisible(true);
         fileChooser.setOnAction(this::folderChooserHandler);
+        modeDescriptionLabel.setText("Duel between player and a program");
         filePathTextField.setPromptText("Program folder");
         fileChooserLabel.setText("Algorithm program folder");
     }
 
     public void onTournamentRadioButton(ActionEvent actionEvent) {
         setAllVisible(true);
+        modeDescriptionLabel.setText("Tournament of all the programs in root folder");
         fileChooser.setOnAction(this::folderChooserHandler);
         filePathTextField.setPromptText("Tournament root folder");
         fileChooserLabel.setText("Tournament root folder");
@@ -72,6 +79,7 @@ public class ConfigSceneController {
         setAllVisible(false);
         setReplayCenterVisible(true);
         fileChooser.setOnAction(this::filePickerHandler);
+        modeDescriptionLabel.setText("Replay");
         filePathTextField.setPromptText("replay.rep");
         fileChooserLabel.setText("Replay file");
 
@@ -79,6 +87,7 @@ public class ConfigSceneController {
 
     private void setReplayCenterVisible(boolean visible) {
         clearFields();
+        modeDescriptionLabel.setVisible(visible);
         fileChooserLabel.setVisible(visible);
         filePathTextField.setVisible(visible);
         fileChooser.setVisible(visible);
@@ -86,6 +95,7 @@ public class ConfigSceneController {
 
     private void setAllVisible(boolean visible) {
         clearFields();
+        modeDescriptionLabel.setVisible(visible);
         fileChooserLabel.setVisible(visible);
         fileChooser.setVisible(visible);
         sizeText.setVisible(visible);
@@ -164,7 +174,7 @@ public class ConfigSceneController {
         }
 
         if(!verifyBoardSize() && sizeText.isVisible()) {
-            showAlert("Error", "Board size must be from range (15; 52).");
+            showAlert("Error", "Board size must be from range <13; 51>.");
             return;
         }
 
@@ -216,7 +226,7 @@ public class ConfigSceneController {
             return false;
         }
 
-        return (boardSize > 15 && boardSize < 52);
+        return (boardSize >= 13 && boardSize <= 51);
     }
 
     private void showSoloScene(Stage stage, GameConfigDto gameConfigDto) throws IOException {

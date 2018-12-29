@@ -1,15 +1,11 @@
 package com.lukasrosz.armadillo.scoring;
 
-import com.lukasrosz.armadillo.game.GameFinishType;
-import com.lukasrosz.armadillo.player.AbstractPlayer;
+import com.lukasrosz.armadillo.communication.ResponseType;
 import com.lukasrosz.armadillo.player.PlayerDetails;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,5 +15,5 @@ public class GameResult {
     private PlayerDetails winner;
     private PlayerDetails loser;
     private boolean disqualified;
-    private GameFinishType gameFinishType;
+    private ResponseType gameFinishType;
 }

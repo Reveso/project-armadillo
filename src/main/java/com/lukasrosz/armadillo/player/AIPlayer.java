@@ -51,12 +51,12 @@ public class AIPlayer extends AbstractPlayer {
             System.out.println("STRING MOVE " + getPlayerDetails().getAlias());
             System.out.println(stringMove);
             if(stringMove == null) {
-                moveResponse.setResponseType(ResponseType.EXCEPTION);
+                moveResponse.setResponseType(ResponseType.NULL_MOVE);
                 return null;
             }
         } catch (TimeoutException e) {
             e.printStackTrace();
-            moveResponse.setResponseType(ResponseType.TIMEOUT);
+            moveResponse.setResponseType(ResponseType.RESPONSE_TIMEOUT);
             return null;
         } catch (IOException | InterruptedException | ExecutionException e) {
             e.printStackTrace();

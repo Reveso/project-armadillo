@@ -45,40 +45,28 @@ public class Game {
                                      PlayerDetails potentialLoser) {
 
         if (response.getMove() == null) {
-            //TODO GameFinishType and ResponseType could be 1 class
-            GameFinishType gameFinishType = response.getResponseType().equals(ResponseType.TIMEOUT)
-                    ? GameFinishType.RESPONSE_TIMEOUT
-                    : GameFinishType.NULL_MOVE;
-
-            gameFinishType = response.getResponseType().equals(ResponseType.INVALID_MOVE_PROTOCOL)
-                    ? GameFinishType.INVALID_MOVE_PROTOCOL
-                    : gameFinishType;
 
             if (board.checkIfEndGame()) {
                 return new GameResult(potentialWinner, potentialLoser,
-                        false, GameFinishType.NORMAL);
+                        false, ResponseType.NORMAL);
 
             } else return new GameResult(potentialWinner, potentialLoser,
-                    checkIfDisqualified(response.getResponseType()),
-                    gameFinishType);
+                    true, response.getResponseType());
 
         } else if (!board.setNewMove(response.getMove())) {
 
             if (board.checkIfEndGame()) {
                 return new GameResult(potentialWinner, potentialLoser,
-                        false, GameFinishType.NORMAL);
+                        false, ResponseType.NORMAL);
 
             } else return new GameResult(potentialWinner, potentialLoser,
-                    checkIfDisqualified(ResponseType.EXCEPTION),
-                    GameFinishType.INVALID_MOVE);
+                    true, ResponseType.INVALID_MOVE);
 
         } else return null;
     }
 
-
     private boolean checkIfDisqualified(ResponseType responseType) {
-        return responseType.equals(ResponseType.EXCEPTION) ||
-                responseType.equals(ResponseType.TIMEOUT);
+        return !responseType.equals(ResponseType.NORMAL);
     }
 
     public void finishGame() {
@@ -110,7 +98,7 @@ public class Game {
             finishGame();
 
             gameResult = new GameResult(waitingPlayer.getPlayerDetails(), movingPlayer.getPlayerDetails(),
-                    true, GameFinishType.INITIALIZATION_EXCEPTION);
+                    true, ResponseType.INITIALIZATION_EXCEPTION);
 
             throw new PlayerInitializationException(movingPlayer.getPlayerDetails().getAlias()
                     + " was not properly initialized");
@@ -118,7 +106,7 @@ public class Game {
             finishGame();
 
             gameResult = new GameResult(movingPlayer.getPlayerDetails(), waitingPlayer.getPlayerDetails(),
-                    true, GameFinishType.INITIALIZATION_EXCEPTION);
+                    true, ResponseType.INITIALIZATION_EXCEPTION);
 
             throw new PlayerInitializationException(waitingPlayer.getPlayerDetails().getAlias()
                     + " was not properly initialized");
@@ -143,7 +131,7 @@ public class Game {
                 movingPlayer.getPlayerDetails());
 
         if (gameResult != null) {
-            if (!gameResult.getGameFinishType().equals(GameFinishType.NORMAL)) {
+            if (!gameResult.getGameFinishType().equals(ResponseType.NORMAL)) {
                 swapPlayers();
             }
             finishGame();
