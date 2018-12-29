@@ -40,6 +40,9 @@ import java.util.stream.Collectors;
 
 public class FightSceneController {
 
+    private Scene previousScene;
+    private String previousTitle;
+
     @Getter
     @Setter
     private GameConfigDto gameConfigDto;
@@ -74,8 +77,10 @@ public class FightSceneController {
         scoreboardTable.setRowFactory(this::scoreTableRowFactory);
     }
 
-    public void setup(GameConfigDto gameConfigDto) {
+    public void setup(GameConfigDto gameConfigDto, Scene previousScene, String previousTitle) {
         this.gameConfigDto = gameConfigDto;
+        this.previousScene = previousScene;
+        this.previousTitle = previousTitle;
         populateScoreboard();
     }
 
@@ -142,9 +147,9 @@ public class FightSceneController {
     }
 
     private String createFileName(Game game) {
-        return getShortDate() + "_"
+        return (getShortDate() + "_"
                 + game.getMovingPlayer().getPlayerDetails().getAlias() + "_"
-                + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".rep";
+                + game.getWaitingPlayer().getPlayerDetails().getAlias() + ".rep").replaceAll("%", "");
 
     }
 
@@ -177,8 +182,10 @@ public class FightSceneController {
                             GameResponse gameResponse = game.nextMove();
                             updateValue(gameResponse.getOccupiedFields());
 
-                            gameReplay.addNewMove(new ReplayMove(
-                                    game.getWaitingPlayer().getPlayerDetails(), game.getLastMove()));
+                            if(gameResponse.getMove() != null) {
+                                gameReplay.addNewMove(new ReplayMove(
+                                        game.getWaitingPlayer().getPlayerDetails(), gameResponse.getMove()));
+                            }
 
                         } catch (PlayerInitializationException e) {
                             e.printStackTrace();
@@ -248,6 +255,12 @@ public class FightSceneController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        gameProgressBar.progressProperty().unbind();
+        gameProgressBar.setProgress(0);
+
+        fightTitleLabel.textProperty().unbind();
+        fightTitleLabel.setText("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESET");
+
         gameConfigDto.getGames().forEach(Game::reset);
         scoreboardList.forEach(Score::reset);
         scoreboardTable.refresh();
@@ -281,9 +294,16 @@ public class FightSceneController {
     }
 
     public void onBackButtonMouseClicked(MouseEvent mouseEvent) {
-        stopGame = true;
-        Stage stage = (Stage) backToSettingsButton.getScene().getWindow();
-        historyStages.forEach(Stage::close);
-        stage.close();
+        String message = "Do you want to close this window?";
+        ButtonType result = showAlert("Go back", message);
+
+        if(result.equals(ButtonType.OK)) {
+            stopGame = true;
+            historyStages.forEach(Stage::close);
+
+            Stage stage = (Stage) playButton.getScene().getWindow();
+            stage.setScene(previousScene);
+            stage.setTitle(previousTitle);
+        }
     }
 }
