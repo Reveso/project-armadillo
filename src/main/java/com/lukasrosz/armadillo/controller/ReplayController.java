@@ -221,11 +221,9 @@ public class ReplayController {
         ButtonType result = showAlert("Go back", message);
 
         if(result.equals(ButtonType.OK)) {
-            System.out.println(result);
             Stage stage = (Stage) playButton.getScene().getWindow();
             stage.setScene(previousScene);
             stage.setTitle(previousTitle);
-//            stage.show();
         }
     }
 
