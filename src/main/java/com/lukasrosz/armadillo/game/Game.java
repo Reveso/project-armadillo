@@ -82,10 +82,10 @@ public class Game {
             swapPlayers();
             return;
         }
-        Random random = new Random();
-        if (random.nextInt(2) == 1) {
-            swapPlayers();
-        }
+//        Random random = new Random();
+//        if (random.nextInt(2) == 1) {
+//            swapPlayers();
+//        }
     }
 
     private void initializeGame() throws PlayerInitializationException {
@@ -165,19 +165,19 @@ public class Game {
         waitingPlayer = temp;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Game game = (Game) o;
-        return (Objects.equals(movingPlayer, game.movingPlayer) &&
-                Objects.equals(waitingPlayer, game.waitingPlayer)) || (Objects.equals(movingPlayer, game.waitingPlayer) &&
-                Objects.equals(waitingPlayer, game.movingPlayer));
-    }
-
-    @Override
-    public int hashCode() {
-        return 17;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Game game = (Game) o;
+//        return (Objects.equals(movingPlayer, game.movingPlayer) &&
+//                Objects.equals(waitingPlayer, game.waitingPlayer)) || (Objects.equals(movingPlayer, game.waitingPlayer) &&
+//                Objects.equals(waitingPlayer, game.movingPlayer));
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 17;
+//    }
 
 }
