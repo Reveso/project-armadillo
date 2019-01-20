@@ -211,9 +211,7 @@ public class ConfigSceneController {
             } catch (Exception e) {
                 e.printStackTrace();
                 showAlert("Error", "Corrupted replay file.");
-                return;
             }
-            showReplayScene(stage, gameReplay);
         }
     }
 

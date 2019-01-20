@@ -78,7 +78,7 @@ public class ReplayController {
         int boardSize = fieldSize * gameReplay.getBoardSize();
         double maxWindowHeight = 0.8 * screenHeight;
 
-        while(boardSize > maxWindowHeight) {
+        while (boardSize > maxWindowHeight) {
             boardSize = --fieldSize * gameReplay.getBoardSize();
         }
 
@@ -86,13 +86,13 @@ public class ReplayController {
     }
 
     private void initializeCanvas(int boardSize) {
-        int canvasSize = boardSize* fieldSize + 2;
+        int canvasSize = boardSize * fieldSize + 2;
         animationCanvas.setHeight(canvasSize);
         animationCanvas.setWidth(canvasSize);
 
         graphicsContext.setFill(BOARD_COLOR);
         graphicsContext.fillRect(0, 0, canvasSize, canvasSize);
-        for(int i=1; i <= canvasSize; i+= fieldSize) {
+        for (int i = 1; i <= canvasSize; i += fieldSize) {
             graphicsContext.strokeLine(i, 0, i, canvasSize);
             graphicsContext.strokeLine(0, i, canvasSize, i);
         }
@@ -103,11 +103,11 @@ public class ReplayController {
 
     private void fillFieldOnPos(int x, int y, Color color) {
         graphicsContext.setFill(color);
-        graphicsContext.fillRect(x* fieldSize +2, y* fieldSize +2, fieldSize - 2, fieldSize - 2);
+        graphicsContext.fillRect(x * fieldSize + 2, y * fieldSize + 2, fieldSize - 2, fieldSize - 2);
     }
 
     public void onPlayButtonAction() {
-        if(playButton.getText().toLowerCase().equals("play")) {
+        if (playButton.getText().toLowerCase().equals("play")) {
             try {
                 animationDelay = Integer.parseInt(refreshDelayTextField.getText());
             } catch (Exception e) {
@@ -128,9 +128,9 @@ public class ReplayController {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                while(onNextMoveButtonAction()) {
+                while (onNextMoveButtonAction()) {
                     Thread.sleep(animationDelay);
-                    if(stopAnimation) {
+                    if (stopAnimation) {
                         return null;
                     }
                 }
@@ -166,13 +166,13 @@ public class ReplayController {
     }
 
     public boolean onNextMoveButtonAction() {
-        if(!gameReplay.getMoveMap().containsKey(moveCounter)) {
+        if (!gameReplay.getMoveMap().containsKey(moveCounter)) {
             return false;
         }
         ReplayMove move = gameReplay.getMoveMap().get(moveCounter++);
 
         Color color;
-        if(move.getMovingPlayer().equals(gameReplay.getGameResult().getWinner())) {
+        if (move.getMovingPlayer().equals(gameReplay.getGameResult().getWinner())) {
             color = WINNER_COLOR;
         } else {
             color = LOSER_COLOR;
@@ -190,7 +190,7 @@ public class ReplayController {
     }
 
     public void onPreviousMoveButtonAction() {
-        if(moveCounter <= 0) {
+        if (moveCounter <= 0) {
             return;
         }
 
@@ -211,20 +211,15 @@ public class ReplayController {
         String message = "Reset replay?";
         ButtonType result = showAlert("Reset", message);
 
-        if(result.equals(ButtonType.OK)) {
+        if (result.equals(ButtonType.OK)) {
             reset();
         }
     }
 
     public void onBackButtonMouseClicked() {
-        String message = "Do you want to close this replay?";
-        ButtonType result = showAlert("Go back", message);
-
-        if(result.equals(ButtonType.OK)) {
-            Stage stage = (Stage) playButton.getScene().getWindow();
-            stage.setScene(previousScene);
-            stage.setTitle(previousTitle);
-        }
+        Stage stage = (Stage) playButton.getScene().getWindow();
+        stage.setScene(previousScene);
+        stage.setTitle(previousTitle);
     }
 
     public void onInfoButtonAction() throws IOException {

@@ -62,7 +62,7 @@
             </padding>
 
             <!--This button looks disabled, it shouldn't-->
-            <Button onAction="#startClicked" style="-fx-background-radius: 20; -fx-text-fill: #B2b2b2; -fx-background-color: #41464f;                     -fx-background-radius: 20px; -fx-font-size: 12; -fx-font-style: oblique;                     -fx-font-weight: bold;" text="Start" />
+            <Button onAction="#startClicked" style="-fx-background-radius: 20;" text="Start" />
 
             <Button fx:id="clearButton" onAction="#clearClicked" style="-fx-background-radius: 20;" text="Clear" />
             <Button onAction="#onExitClicked" style="-fx-background-radius: 20;" text="Exit" />
