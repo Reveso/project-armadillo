@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-out
+**/out
 build
 # Log file
 *.log
@@ -24,7 +24,8 @@ build
 hs_err_pid*
 
 # IDE
-.idea
+**/.idea
+**/*.iml
 .gradle
 
 build/resources
