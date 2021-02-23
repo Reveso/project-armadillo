@@ -1,6 +1,6 @@
 # project-armadillo
-AISD project
+AISD (Algorithms and Data Structures) university project.
 
-[Current Build \[version: 1.0.8\]](https://github.com/Reveso/project-armadillo/raw/master/build/libs/armadillo-1.0.8.jar)
+[Download release](https://github.com/Revezo/armadillo/releases)
 
 In colaboration with soczystys: https://github.com/soczystys
