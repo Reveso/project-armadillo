@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lukasrosz.armadillo.MapperTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-11-18T19:07:57" hostname="K-06" time="0.001">
-  <properties/>
-  <testcase name="getFreeCellsAsStringTest" classname="com.lukasrosz.armadillo.MapperTestSuite" time="0.0"/>
-  <testcase name="getStringAsCellsTest" classname="com.lukasrosz.armadillo.MapperTestSuite" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

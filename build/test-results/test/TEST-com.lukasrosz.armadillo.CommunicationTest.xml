@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lukasrosz.armadillo.CommunicationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-11-18T19:07:56" hostname="K-06" time="0.627">
-  <properties/>
-  <testcase name="processCommunicationNormal" classname="com.lukasrosz.armadillo.CommunicationTest" time="0.12"/>
-  <testcase name="processCommunicationTimeout" classname="com.lukasrosz.armadillo.CommunicationTest" time="0.506"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
